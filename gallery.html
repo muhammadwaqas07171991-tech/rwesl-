@@ -13,22 +13,10 @@
   <style>
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
       margin-top: 40px;
       width: 100%;
-    }
-
-    @media (max-width: 1200px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     .gallery-item {
@@ -197,7 +185,74 @@
         
         <div class="gallery-grid">
           
-          <!-- Item 1 -->
+          <!-- Google Site Real Laboratory & Field Photos -->
+          <div class="gallery-item" onclick="openLightbox('assets/images/gallery/gallery_79.jpg')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/gallery/gallery_79.jpg" alt="RWESL Field Research" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Field Investigation</span>
+              <h3 class="gallery-title">Watershed Field Monitoring</h3>
+              <p class="gallery-desc">Hydrological monitoring and environmental sampling at regional agricultural watersheds.</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openLightbox('assets/images/gallery/gallery_80.jpg')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/gallery/gallery_80.jpg" alt="RWESL Laboratory Research Activity" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Laboratory Work</span>
+              <h3 class="gallery-title">Environmental Quality Analysis</h3>
+              <p class="gallery-desc">Laboratory instrumentation, spectrophotometry, and water parameter quantification at GNU.</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openLightbox('assets/images/gallery/gallery_81.jpg')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/gallery/gallery_81.jpg" alt="RWESL Scientific Team Activity" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Academic Research</span>
+              <h3 class="gallery-title">Collaborative Modeling Sessions</h3>
+              <p class="gallery-desc">Computational modeling, deep learning architectures, and spatial GIS data synthesis.</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openLightbox('assets/images/gallery/gallery_82.jpg')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/gallery/gallery_82.jpg" alt="Greenhouse Water Management" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Agricultural Systems</span>
+              <h3 class="gallery-title">Greenhouse Water-Curtain Research</h3>
+              <p class="gallery-desc">Monitoring groundwater usage and stream discharge in winter horticulture complexes.</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openLightbox('assets/images/gallery/gallery_83.jpg')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/gallery/gallery_83.jpg" alt="Laboratory Group & Symposium" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Team & Symposia</span>
+              <h3 class="gallery-title">Academic Symposia & Conferences</h3>
+              <p class="gallery-desc">RWESL members presenting advanced research findings at national and international venues.</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openLightbox('assets/images/gallery/gallery_84.jpg')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/gallery/gallery_84.jpg" alt="RWESL Field Instrumentation" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Sensor Deployment</span>
+              <h3 class="gallery-title">Field Sensor Deployment</h3>
+              <p class="gallery-desc">Automated water-level loggers, telemetry units, and real-time hydrological loggers.</p>
+            </div>
+          </div>
+
+          <!-- Geospatial & Computational Modeling Maps -->
           <div class="gallery-item" onclick="openLightbox('assets/images/station_coverage_map.png')">
             <div class="gallery-thumb-wrap">
               <img src="assets/images/station_coverage_map.png" alt="National Water Quality Monitoring Network" class="gallery-img">
@@ -209,7 +264,6 @@
             </div>
           </div>
 
-          <!-- Item 2 -->
           <div class="gallery-item" onclick="openLightbox('assets/images/algal_cyanobacteria_watershed_map.png')">
             <div class="gallery-thumb-wrap">
               <img src="assets/images/algal_cyanobacteria_watershed_map.png" alt="Cyanobacteria Risk Mapping" class="gallery-img">
@@ -221,7 +275,6 @@
             </div>
           </div>
 
-          <!-- Item 3 -->
           <div class="gallery-item" onclick="openLightbox('assets/images/weather_basin_precipitation.png')">
             <div class="gallery-thumb-wrap">
               <img src="assets/images/weather_basin_precipitation.png" alt="Basin Precipitation Telemetry" class="gallery-img">
@@ -233,7 +286,6 @@
             </div>
           </div>
 
-          <!-- Item 4 -->
           <div class="gallery-item" onclick="openLightbox('assets/images/agroclimate_multi_hazard_radar.png')">
             <div class="gallery-thumb-wrap">
               <img src="assets/images/agroclimate_multi_hazard_radar.png" alt="Agroclimate Multi-Hazard Radar" class="gallery-img">
@@ -245,7 +297,6 @@
             </div>
           </div>
 
-          <!-- Item 5 -->
           <div class="gallery-item" onclick="openLightbox('assets/images/quality_summary.png')">
             <div class="gallery-thumb-wrap">
               <img src="assets/images/quality_summary.png" alt="Water Quality Statistical Summary" class="gallery-img">
@@ -257,7 +308,6 @@
             </div>
           </div>
 
-          <!-- Item 6 -->
           <div class="gallery-item" onclick="openLightbox('assets/images/agroclimate_drought_runoff_risk_space.png')">
             <div class="gallery-thumb-wrap">
               <img src="assets/images/agroclimate_drought_runoff_risk_space.png" alt="Drought Runoff Risk Space" class="gallery-img">

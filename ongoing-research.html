@@ -77,12 +77,13 @@
       border-top: 1px solid var(--border-subtle);
     }
 
-    @media (max-width: 900px) {
-      .project-features {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 1024px) {
       .project-card {
-        padding: 28px;
+        grid-template-columns: 1fr !important;
+        padding: 28px !important;
+      }
+      .project-features {
+        grid-template-columns: 1fr !important;
       }
     }
 
@@ -168,55 +169,67 @@
       <div class="container">
         <div class="project-grid">
           
-          <!-- Project 1 -->
-          <div class="project-card">
+          <!-- Project 1: Extreme Weather & Crop Growth Stages -->
+          <div class="project-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center;">
             <div>
               <div class="project-status">
                 <span class="pulse-indicator"></span>
                 Active Project • Climate Change & Agriculture
               </div>
               <h2 class="project-title" style="margin-top: 12px;">Impact of Extreme Weather Events at Different Crop Growth Stages</h2>
-            </div>
-            
-            <div class="project-desc">
-              <p>
-                Climate change is placing unprecedented pressure on agricultural productivity. Across the globe, extreme events such as heatwaves, droughts, flash floods, and cold snaps are intensifying. This research quantifies non-linear crop yield responses to critical temperature thresholds during sensitive physiological phases—such as flowering and grain-filling.
-              </p>
-              <p>
-                By linking systematic micro-climatic observation with agro-meteorological crop models, our lab establishes vulnerability baselines to guide climate-adaptive farming practices and decision-support systems.
-              </p>
+              <div class="project-desc" style="margin-top: 16px;">
+                <p>
+                  Climate change is placing unprecedented pressure on agricultural productivity. Across the globe, extreme events such as heatwaves, droughts, flash floods, and cold snaps are intensifying. This research quantifies non-linear crop yield responses to critical temperature thresholds during sensitive physiological phases—such as flowering and grain-filling.
+                </p>
+                <p>
+                  By linking systematic micro-climatic observation with agro-meteorological crop models, our lab establishes vulnerability baselines to guide climate-adaptive farming practices and decision-support systems.
+                </p>
+              </div>
+
+              <div class="project-features" style="margin-top: 20px;">
+                <div class="feature-item"><span class="feature-dot"></span> Heatwave & Drought Stress Dynamics</div>
+                <div class="feature-item"><span class="feature-dot"></span> Non-linear Crop Vulnerability</div>
+                <div class="feature-item"><span class="feature-dot"></span> Climate-Adaptive Farming Systems</div>
+              </div>
             </div>
 
-            <div class="project-features">
-              <div class="feature-item"><span class="feature-dot"></span> Heatwave & Drought Stress Dynamics</div>
-              <div class="feature-item"><span class="feature-dot"></span> Non-linear Crop Vulnerability</div>
-              <div class="feature-item"><span class="feature-dot"></span> Climate-Adaptive Farming Systems</div>
+            <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border-glass); background: #02060b; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+              <img src="assets/images/research/ongoing_research_49.jpg" alt="Crop Growth Stages & Extreme Weather Impact Diagram" style="width: 100%; height: auto; display: block; object-fit: contain;">
+              <div style="padding: 14px 18px; font-size: 0.85rem; color: var(--text-dim); border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                Figure 1: Critical Crop Phenological Stages & Sensitivity to Climatic Extremes
+              </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="project-card">
+          <!-- Project 2: Deep Learning Evapotranspiration in Nakdong Basin -->
+          <div class="project-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center;">
             <div>
               <div class="project-status">
                 <span class="pulse-indicator"></span>
-                Active Project • Environmental AI & Automation
+                Featured Scientific Initiative • Deep Learning & Hydrology
               </div>
-              <h2 class="project-title" style="margin-top: 12px;">Autonomous Water Quality Agent & Real-Time Geospatial Intelligence</h2>
-            </div>
-            
-            <div class="project-desc">
-              <p>
-                Developing and continuously improving the <strong>K-Water Guard AI Agent</strong>. The system performs automated ingestion of daily physicochemical parameters from Korean water networks, executes statistical quality-assurance algorithms, and publishes spatial contour maps.
-              </p>
-              <p>
-                Specialized modules incorporate harmful algal bloom (cyanobacteria) early-warning indicators and watershed nutrient loading forecasting across the Nakdong River basin.
-              </p>
+              <h2 class="project-title" style="margin-top: 12px;">How Deep Learning Is Improving Evapotranspiration Estimates in South Korea</h2>
+              <div class="project-desc" style="margin-top: 16px;">
+                <p>
+                  Potential evapotranspiration (PET) is fundamental to irrigation planning, drought assessment, and hydrological modeling. In heterogeneous catchments like the <strong>Nakdong River Basin (NRB)</strong>, empirical formulas (Priestley–Taylor, Hargreaves–Samani) suffer from severe regional bias.
+                </p>
+                <p>
+                  RWESL developed a <strong>hybrid CNN–Bidirectional LSTM with Attention Mechanism</strong>, leveraging 50+ years of meteorological records (1973–2024) across 13 ASOS stations. The hybrid model achieved exceptional precision (R² = 0.820, NSE = 0.820), consistently tracking daily cycles and seasonal evapotranspiration dynamics.
+                </p>
+              </div>
+
+              <div class="project-features" style="margin-top: 20px;">
+                <div class="feature-item"><span class="feature-dot"></span> Hybrid CNN-BiLSTM + Attention</div>
+                <div class="feature-item"><span class="feature-dot"></span> 13 Nakdong ASOS Weather Stations</div>
+                <div class="feature-item"><span class="feature-dot"></span> Published in MDPI Water (2025)</div>
+              </div>
             </div>
 
-            <div class="project-features">
-              <div class="feature-item"><span class="feature-dot"></span> 14 Parameters Real-time Telemetry</div>
-              <div class="feature-item"><span class="feature-dot"></span> Algal Bloom Risk Matrix</div>
-              <div class="feature-item"><span class="feature-dot"></span> Automated Daily Reporting Pipelines</div>
+            <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border-glass); background: #02060b; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+              <img src="assets/images/research/ongoing_research_50.jpg" alt="Deep Learning Evapotranspiration Architecture & Results" style="width: 100%; height: auto; display: block; object-fit: contain;">
+              <div style="padding: 14px 18px; font-size: 0.85rem; color: var(--text-dim); border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                Figure 2: Hybrid CNN-BiLSTM Attention Model Framework & Validation Metrics
+              </div>
             </div>
           </div>
 

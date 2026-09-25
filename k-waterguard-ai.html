@@ -13,16 +13,10 @@
   <style>
     .function-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       gap: 28px;
       margin-top: 40px;
       width: 100%;
-    }
-
-    @media (max-width: 1080px) {
-      .function-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     .function-card {
@@ -73,7 +67,7 @@
     /* Parameter Grid - Multi-column */
     .param-pill-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 16px;
       margin-top: 30px;
     }
@@ -202,15 +196,15 @@
 
   <main class="main-content">
     
-    <!-- K-Water Guard Top Banner Showcase -->
-    <div class="container" style="padding-top: 25px;">
+    <!-- Full-Width Banner Showcase -->
+    <div class="container" style="padding-top: 20px;">
       <div class="page-banner-wrap">
         <img src="assets/images/rwesl_banner_k_waterguard.jpg" alt="K-Water Guard AI - Smart Monitoring, AI Protection, Pure Future" class="page-banner-img">
       </div>
     </div>
 
     <!-- Hero Header -->
-    <section class="page-hero" style="padding-top: 20px;">
+    <section class="page-hero">
       <div class="container">
         <div class="badge badge-emerald">
           <span class="pulse-indicator"></span>
@@ -222,7 +216,7 @@
         </p>
 
         <div style="margin-top: 35px;">
-          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 15px 34px;">
+          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 15px 36px;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <polygon points="5 3 19 12 5 21 5 3"/>
             </svg>
@@ -232,7 +226,7 @@
       </div>
     </section>
 
-    <!-- Key Functions Grid (3 Columns) -->
+    <!-- Key Functions Grid -->
     <section class="section-py" style="padding-top: 10px;">
       <div class="container">
         <div class="section-header">
@@ -324,6 +318,131 @@
             </p>
           </div>
 
+        </div>
+
+        <!-- EXTRACTED GOOGLE SITE DIAGRAMS & VISUAL SHOWCASE -->
+        <div style="margin-top: 85px;">
+          <div class="section-header" style="margin-bottom: 30px;">
+            <div class="badge badge-emerald">Extracted System Outputs</div>
+            <h2 class="section-title">System Architecture, Spatial Maps & Analytical Charts</h2>
+            <p class="section-subtitle">
+              Visual outputs generated directly by the K-Water Guard AI Agent from Korean public water quality sources.
+            </p>
+          </div>
+
+          <div class="showcase-grid" style="grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 28px; width: 100%;">
+            
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_9.jpg" alt="Autonomous Data Processing Pipeline" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">Agent Workflow & System Architecture</h4>
+                <p class="showcase-desc">High-level agent architecture outlining automated public API ingestion, verification, and CSV export.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_10.jpg" alt="Data Cleaning & Quality Assurance" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">Data Cleaning & Quality Assurance</h4>
+                <p class="showcase-desc">Automated range-validation, statistical outlier flagging, and continuous master repository updates.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_11.jpg" alt="National Spatial Water Quality Distribution" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">Spatial Water Quality Mapping</h4>
+                <p class="showcase-desc">Geospatial contour maps tracking parameter gradients across South Korea's river basins.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_13.jpg" alt="Ammonia-N Distribution (26-06-2026)" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">Ammonia-N Telemetry (26-06-2026)</h4>
+                <p class="showcase-desc">Nationwide concentration contour map and monitoring station status for Ammonia-N.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_14.jpg" alt="Ammonia-N Analysis Summary" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">Ammonia-N Frequency & Time-Series</h4>
+                <p class="showcase-desc">Frequency distribution histograms and multi-station comparison curves for Ammonia-N.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_15.jpg" alt="BOD Spatial Mapping (26-06-2026)" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">BOD Spatial Mapping (26-06-2026)</h4>
+                <p class="showcase-desc">Biochemical oxygen demand spatial interpolation across the Han, Nakdong, Geum, and Yeongsan basins.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_16.jpg" alt="BOD Statistical Diagnostics" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">BOD Statistical Distribution</h4>
+                <p class="showcase-desc">Statistical boxplots, median concentration tiers, and standard compliance metrics for BOD.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_17.jpg" alt="COD Spatial Analysis (26-06-2026)" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">COD Spatial Mapping (26-06-2026)</h4>
+                <p class="showcase-desc">Automated chemical oxygen demand gradient mapping highlighting agricultural and industrial loading zones.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_18.jpg" alt="COD Summary & Station Rankings" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">COD Trend Analytics</h4>
+                <p class="showcase-desc">Temporal variance decomposition and station ranking matrices for Chemical Oxygen Demand.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_19.jpg" alt="Chlorophyll-a Algal Indicator (26-06-2026)" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">Chlorophyll-a Mapping (26-06-2026)</h4>
+                <p class="showcase-desc">Algal biomass spatial concentration surface used for early detection of harmful cyanobacteria blooms.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="showcase-img-wrap" style="height: 340px;">
+                <img src="assets/images/k_waterguard/k_waterguard_ai_20.jpg" alt="Chlorophyll-a Historical Statistics" class="showcase-img" style="object-fit: contain; background: #02060b;">
+              </div>
+              <div class="showcase-body">
+                <h4 class="showcase-title">Chlorophyll-a Trend Baselines</h4>
+                <p class="showcase-desc">Multi-year seasonality envelopes, bloom probability indices, and threshold alarm indicators.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         <!-- Parameters Tracked Section -->
