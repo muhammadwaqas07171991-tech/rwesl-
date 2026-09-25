@@ -13,44 +13,46 @@
   <style>
     .filter-bar {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 30px 0 40px;
+      margin: 25px 0 45px;
     }
 
     .filter-btn {
-      padding: 8px 18px;
+      padding: 10px 22px;
       border-radius: var(--radius-pill);
       background: var(--bg-surface);
       border: 1px solid var(--border-glass);
       color: var(--text-secondary);
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-size: 0.92rem;
+      font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
     }
 
     .filter-btn:hover, .filter-btn.active {
-      background: rgba(56, 189, 248, 0.18);
+      background: rgba(56, 189, 248, 0.2);
       border-color: var(--cyan);
       color: #ffffff;
-      box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
     }
 
     .pub-list {
       display: flex;
       flex-direction: column;
-      gap: 22px;
-      max-width: 1000px;
+      gap: 26px;
+      width: 100%;
       margin: 0 auto;
     }
 
     .pub-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 28px;
+      border-radius: var(--radius-lg);
+      padding: 34px 38px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       transition: var(--transition);
       display: flex;
       flex-direction: column;
@@ -68,48 +70,49 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .pub-year {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(0, 212, 255, 0.14);
       color: var(--cyan);
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(0, 212, 255, 0.3);
     }
 
     .pub-journal {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #cbd5e1;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #e2e8f0;
       font-style: italic;
     }
 
     .pub-title {
       font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 800;
       color: #ffffff;
-      line-height: 1.4;
-      margin-bottom: 10px;
+      line-height: 1.35;
+      margin-bottom: 12px;
     }
 
     .pub-authors {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
       margin-bottom: 18px;
     }
 
     .pub-authors strong {
-      color: #f8fafc;
+      color: #ffffff;
+      font-weight: 600;
     }
 
     .pub-actions {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
       align-items: center;
       margin-top: auto;
@@ -119,20 +122,20 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: var(--text-secondary);
       text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 500;
+      font-size: 0.85rem;
+      font-weight: 600;
       transition: var(--transition);
       cursor: pointer;
     }
 
     .pub-link-btn:hover {
-      background: rgba(56, 189, 248, 0.15);
+      background: rgba(56, 189, 248, 0.18);
       border-color: var(--cyan);
       color: #ffffff;
     }
@@ -143,10 +146,10 @@
       right: 24px;
       background: #10b981;
       color: #031124;
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       opacity: 0;
       transform: translateY(20px);
@@ -162,13 +165,13 @@
   </style>
 </head>
 <body>
+
   <!-- Full Screen Background System -->
   <div class="page-bg-system">
     <div class="bg-banner-overlay"></div>
     <div class="bg-radial-glow"></div>
     <div class="bg-mesh-grid"></div>
   </div>
-
 
   <!-- Navigation -->
   <header class="site-header">
@@ -203,19 +206,28 @@
   </header>
 
   <main class="main-content">
-    <section class="page-hero">
+    
+    <!-- Publications Top Banner Showcase -->
+    <div class="container" style="padding-top: 25px;">
+      <div class="page-banner-wrap">
+        <img src="assets/images/rwesl_banner_publications.png" alt="RWESL Publications - Advancing Knowledge & Sharing Discoveries" class="page-banner-img">
+      </div>
+    </div>
+
+    <section class="page-hero" style="padding-top: 20px;">
       <div class="container">
         <div class="badge badge-cyan">Scientific Output</div>
         <h1 class="page-title">Publications & Research Papers</h1>
         <p class="page-desc">
-          Peer-reviewed articles in top SCI journals covering artificial intelligence in hydrology, watershed management, groundwater sustainability, and climate adaptation.
+          Peer-reviewed articles in top SCI & SCIE journals covering artificial intelligence in hydrology, watershed management, groundwater sustainability, and climate adaptation.
         </p>
 
         <div class="filter-bar">
           <button class="filter-btn active" data-filter="all">All Studies</button>
-          <button class="filter-btn" data-filter="ai">AI & Machine Learning</button>
-          <button class="filter-btn" data-filter="watershed">Watershed & SWAT</button>
-          <button class="filter-btn" data-filter="groundwater">Groundwater & Climate</button>
+          <button class="filter-btn" data-filter="ai">AI & Deep Learning</button>
+          <button class="filter-btn" data-filter="groundwater">Groundwater Agriculture</button>
+          <button class="filter-btn" data-filter="watershed">Watershed & Drought</button>
+          <button class="filter-btn" data-filter="kci">KCI Publications</button>
         </div>
       </div>
     </section>
@@ -229,21 +241,21 @@
             <div class="pub-meta">
               <span class="pub-year">2026</span>
               <span class="pub-journal">Ecohydrology & Hydrobiology</span>
-              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 8px;">SCI • Elsevier</span>
+              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 3px 10px;">SCI • Q1/Q2 • Elsevier</span>
             </div>
             <h3 class="pub-title">Deep learning-based direct and indirect potential evapotranspiration prediction: A case of the Nakdong River basin, South Korea</h3>
             <div class="pub-authors">
               <strong>Waqas M</strong>, <strong>Kim SM</strong>.
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
-              Investigates deep neural architectures for accurate evapotranspiration prediction across the agricultural sub-basins of the Nakdong River, demonstrating superior performance over conventional empirical formulations.
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.65;">
+              Investigates deep neural architectures for accurate evapotranspiration prediction across the agricultural sub-basins of the Nakdong River, South Korea. Demonstrates superior accuracy over classical empirical equations.
             </p>
             <div class="pub-actions">
-              <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" class="pub-link-btn" style="background: rgba(0, 212, 255, 0.15); color: #7dd3fc; border-color: rgba(56, 189, 248, 0.4);">
+              <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" class="pub-link-btn" style="background: rgba(0, 212, 255, 0.16); color: #7dd3fc; border-color: rgba(56, 189, 248, 0.45);">
                 DOI: 10.1016/j.ecohyd.2026.100772 ↗
               </a>
               <a href="https://www.sciencedirect.com/science/article/pii/S1642359326000467" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
-                ScienceDirect Full Text ↗
+                ScienceDirect Article ↗
               </a>
               <button class="pub-link-btn" onclick="copyCitation('Waqas M, Kim SM. Deep learning-based direct and indirect potential evapotranspiration prediction, a case of the Nakdong River basin, South Korea. Ecohydrology & Hydrobiology, 2026 26(3), 100772.')">
                 Copy Citation
@@ -256,17 +268,17 @@
             <div class="pub-meta">
               <span class="pub-year">2026</span>
               <span class="pub-journal">Water (MDPI)</span>
-              <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 2px 8px;">SCIE • Open Access</span>
+              <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 3px 10px;">SCIE • Open Access</span>
             </div>
             <h3 class="pub-title">Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Statistical and Deep Learning Models</h3>
             <div class="pub-authors">
               <strong>Waqas M</strong>, <strong>Kim SM</strong>.
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
-              Analyzes extensive seasonal groundwater fluctuations across high-intensity water-curtain greenhouse agriculture zones in Gyeongsangnam-Do, coupling statistical decomposition with recurrent deep learning models.
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.65;">
+              Analyzes extensive seasonal groundwater fluctuations across high-intensity water-curtain greenhouse agriculture zones in Gyeongsangnam-Do, coupling statistical time-series decomposition with deep learning models.
             </p>
             <div class="pub-actions">
-              <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" class="pub-link-btn" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.4);">
+              <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" class="pub-link-btn" style="background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);">
                 DOI: 10.3390/w18040444 ↗
               </a>
               <button class="pub-link-btn" onclick="copyCitation('Waqas M, Kim SM. Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Statistical and Deep Learning Models. Water. 2026; 18(4):444.')">
@@ -276,23 +288,74 @@
           </div>
 
           <!-- Publication 3 -->
-          <div class="pub-card" data-category="watershed">
+          <div class="pub-card" data-category="ai">
             <div class="pub-meta">
-              <span class="pub-year">Recent Research</span>
-              <span class="pub-journal">Journal of Agricultural Engineering / KSAE</span>
-              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 8px;">Watershed Systems</span>
+              <span class="pub-year">2025</span>
+              <span class="pub-journal">Water (MDPI)</span>
+              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 3px 10px;">SCIE • Q2 (SJR 0.752)</span>
             </div>
-            <h3 class="pub-title">Agroclimatic Risk Assessment and Watershed Runoff Dynamics in Agricultural Catchments</h3>
+            <h3 class="pub-title">Hybrid Deep Learning Versus Empirical Methods for Daily Potential Evapotranspiration Estimation</h3>
             <div class="pub-authors">
-              <strong>Kim SM</strong>, et al.
+              <strong>Waqas M</strong>, <strong>Kim SM</strong>.
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
-              Distributed hydrological modeling of river basin discharge, non-point source nutrient transport, and climate adaptation strategies for sustainable watershed management.
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.65;">
+              Compares hybrid convolutional and recurrent deep neural networks with traditional Penman-Monteith and Hargreaves empirical formulas across multiple agro-climatic stations.
             </p>
             <div class="pub-actions">
-              <a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
-                View on Google Scholar ↗
+              <a href="https://doi.org/10.3390/w18010032" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
+                DOI: 10.3390/w18010032 ↗
               </a>
+              <button class="pub-link-btn" onclick="copyCitation('Waqas, M., & Kim, S. M. (2025). Hybrid Deep Learning Versus Empirical Methods for Daily Potential Evapotranspiration Estimation. Water, 18(1), 32.')">
+                Copy Citation
+              </button>
+            </div>
+          </div>
+
+          <!-- Publication 4 -->
+          <div class="pub-card" data-category="watershed">
+            <div class="pub-meta">
+              <span class="pub-year">2018</span>
+              <span class="pub-journal">Paddy and Water Environment (Springer)</span>
+              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 3px 10px;">SCI • Q2</span>
+            </div>
+            <h3 class="pub-title">Assessment of Agricultural Drought Vulnerability in South Korea</h3>
+            <div class="pub-authors">
+              <strong>Kim SM</strong>, <strong>Kang MS</strong>, <strong>Jang MW</strong>.
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.65;">
+              Establishes comprehensive vulnerability indices and hydrological modeling frameworks for agricultural drought mitigation across Korean agricultural watersheds.
+            </p>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1007/s10333-018-0661-z" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
+                DOI: 10.1007/s10333-018-0661-z ↗
+              </a>
+              <button class="pub-link-btn" onclick="copyCitation('Kim, S. M., Kang, M. S., & Jang, M. W. (2018). Assessment of agricultural drought vulnerability in South Korea. Paddy and Water Environment, 16(4), 699-714.')">
+                Copy Citation
+              </button>
+            </div>
+          </div>
+
+          <!-- Publication 5 (KCI) -->
+          <div class="pub-card" data-category="kci">
+            <div class="pub-meta">
+              <span class="pub-year">2026</span>
+              <span class="pub-journal">Journal of Agricultural, Life and Environmental Sciences (JALS)</span>
+              <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 3px 10px;">KCI Recognized</span>
+            </div>
+            <h3 class="pub-title">Estimation and Evaluation of Reference Evapotranspiration using Deep Learning Models in Southern South Korea</h3>
+            <div class="pub-authors">
+              <strong>Son J</strong>, <strong>Waqas M</strong>, <strong>Kim SM</strong>.
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.65;">
+              Evaluates recurrent deep neural network architectures for predicting daily reference crop evapotranspiration under micro-climatic variations in southern South Korea.
+            </p>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.14397/jals.2026.60.3.111" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
+                DOI: 10.14397/jals.2026.60.3.111 ↗
+              </a>
+              <button class="pub-link-btn" onclick="copyCitation('Son, J., Waqas, M., & Kim, S. M. (2026). Estimation and Evaluation of Reference Evapotranspiration using Deep Learning Models in Southern South Korea. JALS, 60(3), 111.')">
+                Copy Citation
+              </button>
             </div>
           </div>
 
@@ -308,9 +371,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-            <img src="assets/images/rwesl_logo_circle.png" alt="RWESL Logo" class="brand-logo-img" style="width: 36px; height: 36px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">RWESL</span>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+            <img src="assets/images/rwesl_logo_circle.png" alt="RWESL Logo" class="brand-logo-img" style="width: 44px; height: 44px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: #fff;">RWESL</span>
           </div>
           <p>
             <strong>Regional Water Environment System Laboratory</strong><br>
@@ -368,7 +431,6 @@
       });
     }
 
-    // Filter functionality
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));

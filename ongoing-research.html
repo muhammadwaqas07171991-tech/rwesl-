@@ -14,8 +14,8 @@
     .project-grid {
       display: flex;
       flex-direction: column;
-      gap: 32px;
-      max-width: 1040px;
+      gap: 36px;
+      width: 100%;
       margin: 0 auto;
     }
 
@@ -23,11 +23,13 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 36px;
+      padding: 42px 46px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       transition: var(--transition);
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 24px;
       position: relative;
     }
 
@@ -41,7 +43,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -50,7 +52,7 @@
 
     .project-title {
       font-family: var(--font-heading);
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 800;
       color: #ffffff;
       line-height: 1.25;
@@ -58,47 +60,58 @@
 
     .project-desc {
       color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      line-height: 1.72;
     }
 
     .project-desc p {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .project-features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
       margin-top: 14px;
-      padding-top: 20px;
+      padding-top: 24px;
       border-top: 1px solid var(--border-subtle);
+    }
+
+    @media (max-width: 900px) {
+      .project-features {
+        grid-template-columns: 1fr;
+      }
+      .project-card {
+        padding: 28px;
+      }
     }
 
     .feature-item {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       color: var(--text-secondary);
+      font-weight: 500;
     }
 
     .feature-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
     }
   </style>
 </head>
 <body>
+
   <!-- Full Screen Background System -->
   <div class="page-bg-system">
     <div class="bg-banner-overlay"></div>
     <div class="bg-radial-glow"></div>
     <div class="bg-mesh-grid"></div>
   </div>
-
 
   <!-- Navigation -->
   <header class="site-header">
@@ -133,7 +146,15 @@
   </header>
 
   <main class="main-content">
-    <section class="page-hero">
+    
+    <!-- Ongoing Research Top Banner Showcase -->
+    <div class="container" style="padding-top: 25px;">
+      <div class="page-banner-wrap">
+        <img src="assets/images/rwesl_banner_ongoing_research.png" alt="RWESL Ongoing Research - Water Quality, Watershed Management, Environmental Data Science, AI Monitoring" class="page-banner-img">
+      </div>
+    </div>
+
+    <section class="page-hero" style="padding-top: 20px;">
       <div class="container">
         <div class="badge badge-cyan">Active Initiatives</div>
         <h1 class="page-title">Ongoing Research Projects</h1>
@@ -154,12 +175,12 @@
                 <span class="pulse-indicator"></span>
                 Active Project • Climate Change & Agriculture
               </div>
-              <h2 class="project-title" style="margin-top: 10px;">Impact of Extreme Weather Events at Different Crop Growth Stages</h2>
+              <h2 class="project-title" style="margin-top: 12px;">Impact of Extreme Weather Events at Different Crop Growth Stages</h2>
             </div>
             
             <div class="project-desc">
               <p>
-                Climate change is placing unprecedented pressure on agricultural productivity. Across the globe, extreme events such as heatwaves, droughts, flash floods, and cold snaps are intensifying. This research quantifies non-linear crop yield responses to critical temperature thresholds during critical physiological phases—such as flowering and grain-filling.
+                Climate change is placing unprecedented pressure on agricultural productivity. Across the globe, extreme events such as heatwaves, droughts, flash floods, and cold snaps are intensifying. This research quantifies non-linear crop yield responses to critical temperature thresholds during sensitive physiological phases—such as flowering and grain-filling.
               </p>
               <p>
                 By linking systematic micro-climatic observation with agro-meteorological crop models, our lab establishes vulnerability baselines to guide climate-adaptive farming practices and decision-support systems.
@@ -180,7 +201,7 @@
                 <span class="pulse-indicator"></span>
                 Active Project • Environmental AI & Automation
               </div>
-              <h2 class="project-title" style="margin-top: 10px;">Autonomous Water Quality Agent & Real-Time Geospatial Intelligence</h2>
+              <h2 class="project-title" style="margin-top: 12px;">Autonomous Water Quality Agent & Real-Time Geospatial Intelligence</h2>
             </div>
             
             <div class="project-desc">
@@ -206,7 +227,7 @@
                 <span class="pulse-indicator"></span>
                 Active Project • Hydrogeology & Smart Agriculture
               </div>
-              <h2 class="project-title" style="margin-top: 10px;">Seasonal Groundwater Trends & Water-Curtain Greenhouse Modeling in Gyeongnam</h2>
+              <h2 class="project-title" style="margin-top: 12px;">Seasonal Groundwater Trends & Water-Curtain Greenhouse Modeling in Gyeongnam</h2>
             </div>
             
             <div class="project-desc">
@@ -232,7 +253,7 @@
                 <span class="pulse-indicator"></span>
                 Active Project • Watershed Engineering
               </div>
-              <h2 class="project-title" style="margin-top: 10px;">Watershed Hydrology & Reservoir Optimization (Namgang Dam & Nakdong River)</h2>
+              <h2 class="project-title" style="margin-top: 12px;">Watershed Hydrology & Reservoir Optimization (Namgang Dam & Nakdong River)</h2>
             </div>
             
             <div class="project-desc">
@@ -258,9 +279,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-            <img src="assets/images/rwesl_logo_circle.png" alt="RWESL Logo" class="brand-logo-img" style="width: 36px; height: 36px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">RWESL</span>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+            <img src="assets/images/rwesl_logo_circle.png" alt="RWESL Logo" class="brand-logo-img" style="width: 44px; height: 44px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: #fff;">RWESL</span>
           </div>
           <p>
             <strong>Regional Water Environment System Laboratory</strong><br>

@@ -11,86 +11,120 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .timeline {
-      position: relative;
-      max-width: 900px;
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+      width: 100%;
       margin: 40px auto 0;
-      padding-left: 36px;
     }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 12px;
-      height: 100%;
-      width: 2px;
-      background: linear-gradient(180deg, var(--cyan-bright) 0%, rgba(56, 189, 248, 0.2) 100%);
+    @media (max-width: 1100px) {
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .timeline-item {
-      position: relative;
-      margin-bottom: 45px;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -32px;
-      top: 6px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--bg-surface);
-      border: 3px solid var(--cyan-bright);
-      box-shadow: 0 0 10px var(--cyan-bright);
-    }
-
-    .timeline-card {
+    .event-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 28px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
-    .timeline-card:hover {
+    .event-card:hover {
       border-color: var(--border-glow);
-      transform: translateX(4px);
+      transform: translateY(-5px);
       box-shadow: var(--shadow-glow);
     }
 
-    .timeline-date {
-      font-size: 0.82rem;
+    .event-img-slider {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+      background: #02060b;
+      padding: 8px;
+    }
+
+    .event-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .event-img:hover {
+      transform: scale(1.02);
+    }
+
+    .event-body {
+      padding: 32px 34px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .event-badge {
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--cyan);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .timeline-title {
+    .event-title {
       font-family: var(--font-heading);
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 12px;
+      line-height: 1.3;
+      margin-bottom: 14px;
     }
 
-    .timeline-body {
+    .event-text {
       color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.98rem;
+      line-height: 1.68;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .event-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .event-tag {
+      font-size: 0.76rem;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-secondary);
     }
   </style>
 </head>
 <body>
+
   <!-- Full Screen Background System -->
   <div class="page-bg-system">
     <div class="bg-banner-overlay"></div>
     <div class="bg-radial-glow"></div>
     <div class="bg-mesh-grid"></div>
   </div>
-
 
   <!-- Navigation -->
   <header class="site-header">
@@ -125,12 +159,13 @@
   </header>
 
   <main class="main-content">
+    
     <section class="page-hero">
       <div class="container">
         <div class="badge badge-cyan">Academic Engagements</div>
-        <h1 class="page-title">Events & Lab Activities</h1>
+        <h1 class="page-title">Events & Laboratory Activities</h1>
         <p class="page-desc">
-          Key academic exchanges, bilateral international delegations, scientific workshops, and community engagements led by RWESL members.
+          Bilateral international delegations, international water forums, smart agriculture symposia, and academic outreach led by RWESL and the Korean Society of Agricultural Engineers (KSAE).
         </p>
       </div>
     </section>
@@ -138,63 +173,97 @@
     <section class="section-py" style="padding-top: 10px;">
       <div class="container">
         
-        <div class="timeline">
+        <div class="events-grid">
           
-          <!-- Event 1 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">International Collaboration • Bilateral Exchange</div>
-              <h3 class="timeline-title">Expanding Korea–China Collaboration in Agricultural Engineering 🇰🇷🇨🇳</h3>
-              <div class="timeline-body">
-                <p>
-                  Prof. Sang Min Kim, President of the <strong>Korean Society of Agricultural Engineers (KSAE)</strong> and Head of RWESL, led a high-level academic delegation to the <strong>Chinese Society of Agricultural Engineering (CSAE)</strong>.
-                </p>
-                <p style="margin-top: 10px;">
-                  The bilateral meeting fostered joint research in smart agricultural water management, watershed sustainability, and climate-resilient rural infrastructure.
-                </p>
+          <!-- Event 1: Korea-China Collaboration -->
+          <div class="event-card">
+            <div class="event-img-slider">
+              <img src="assets/images/events/events_activities_53.jpg" alt="Korea China Collaboration" class="event-img">
+              <img src="assets/images/events/events_activities_54.jpg" alt="CSAE KSAE Joint Symposium" class="event-img">
+            </div>
+            <div class="event-body">
+              <div class="event-badge">
+                <span class="pulse-indicator"></span>
+                International Bilateral Delegation • China & Korea
+              </div>
+              <h3 class="event-title">Expanding Korea–China Collaboration in Agricultural Engineering 🇰🇷🇨🇳</h3>
+              <p class="event-text">
+                Prof. Sang Min Kim, President of the <strong>Korean Society of Agricultural Engineers (KSAE)</strong> and Head of RWESL, visited the <strong>Chinese Society of Agricultural Engineering (CSAE)</strong> and <strong>China Agricultural University</strong>. They participated in the <strong>CSAE–KSAE Joint Symposium</strong> under the theme <em>“AI plus AE (Agricultural Engineering)”</em>, establishing vital exchange programs for smart agriculture and climate adaptation.
+              </p>
+              <div class="event-tags">
+                <span class="event-tag">#KSAE</span>
+                <span class="event-tag">#CSAE</span>
+                <span class="event-tag">#AIplusAE</span>
+                <span class="event-tag">#SmartAgriculture</span>
               </div>
             </div>
           </div>
 
-          <!-- Event 2 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">System Launch & Milestone</div>
-              <h3 class="timeline-title">Deployment of K-Water Guard AI Autonomous Agent</h3>
-              <div class="timeline-body">
-                <p>
-                  Official rollout of the autonomous water quality pipeline developed by Mr. Sangbin Ha and Dr. Muhammad Waqas under the guidance of Prof. Sang Min Kim. The agent provides real-time automated ingestion and spatial heatmaps across Korean watersheds.
-                </p>
+          <!-- Event 2: Asia Parliamentarians Water Forum -->
+          <div class="event-card">
+            <div class="event-img-slider">
+              <img src="assets/images/events/events_activities_55.jpg" alt="Asia Parliamentarians Water Forum Lao PDR" class="event-img">
+              <img src="assets/images/events/events_activities_56.jpg" alt="Vientiane Water Forum Delegation" class="event-img">
+            </div>
+            <div class="event-body">
+              <div class="event-badge">
+                <span class="pulse-indicator"></span>
+                International Policy Forum • Vientiane, Lao PDR 🇱🇦
+              </div>
+              <h3 class="event-title">3rd Asia Parliamentarians’ Water Forum (APWF) in Vientiane</h3>
+              <p class="event-text">
+                Prof. Sang Min Kim participated in the 3rd Asia Parliamentarians’ Water Forum in Lao PDR as President of KSAE, alongside Korean National Assembly leaders and Ministry representatives. The forum hosted a joint academic session connecting Lao PDR universities and Korean water research societies to tackle transboundary watershed challenges.
+              </p>
+              <div class="event-tags">
+                <span class="event-tag">#APWF</span>
+                <span class="event-tag">#WaterSecurity</span>
+                <span class="event-tag">#TransboundaryWatersheds</span>
               </div>
             </div>
           </div>
 
-          <!-- Event 3 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Conferences & Academic Symposia</div>
-              <h3 class="timeline-title">Annual KSAE Academic Conference Presentation</h3>
-              <div class="timeline-body">
-                <p>
-                  Presentation of recent breakthrough findings on deep learning potential evapotranspiration (PET) prediction in the Nakdong River basin and groundwater fluctuation modeling under water-curtain greenhouse agriculture.
-                </p>
+          <!-- Event 3: ASABE AIM 2026 USA -->
+          <div class="event-card">
+            <div class="event-img-slider">
+              <img src="assets/images/events/events_activities_66.jpg" alt="ASABE AIM 2026 USA" class="event-img">
+              <img src="assets/images/events/events_activities_67.jpg" alt="AKABFE Technical Session" class="event-img">
+            </div>
+            <div class="event-body">
+              <div class="event-badge">
+                <span class="pulse-indicator"></span>
+                Annual International Meeting • United States 🇺🇸
+              </div>
+              <h3 class="event-title">Participation in ASABE AIM Annual Meeting, USA</h3>
+              <p class="event-text">
+                Lab Head Prof. Sang Min Kim participated in the <strong>ASABE Annual International Meeting</strong>, engaging in technical sessions organized by the Association of Korean Agricultural and Biological Faculty Engineers (AKABFE). He delivered remarks on future directions in agricultural water sustainability and attended student design competitions.
+              </p>
+              <div class="event-tags">
+                <span class="event-tag">#ASABE</span>
+                <span class="event-tag">#AKABFE</span>
+                <span class="event-tag">#GlobalEngineering</span>
               </div>
             </div>
           </div>
 
-          <!-- Event 4 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Field Investigation & Survey</div>
-              <h3 class="timeline-title">Namgang Dam & Nakdong River Watershed Hydrology Surveys</h3>
-              <div class="timeline-body">
-                <p>
-                  Comprehensive field water sampling and sensor calibration campaign conducted across major agricultural tributaries, feeding empirical validation datasets into our SWAT and HSPF hydrological models.
-                </p>
+          <!-- Event 4: Rural Water Forum 2026 Osong -->
+          <div class="event-card">
+            <div class="event-img-slider">
+              <img src="assets/images/events/events_activities_74.jpg" alt="Rural Water Forum Osong" class="event-img">
+              <img src="assets/images/events/events_activities_75.jpg" alt="Roundtable Meeting Korea" class="event-img">
+            </div>
+            <div class="event-body">
+              <div class="event-badge">
+                <span class="pulse-indicator"></span>
+                National Water Policy • Osong, Republic of Korea 🇰🇷
+              </div>
+              <h3 class="event-title">2026 Rural Water Forum: 2nd Roundtable Meeting in Osong</h3>
+              <p class="event-text">
+                Bringing together leading water scientists, agricultural engineers, and policymakers in Osong to analyze the water resources impact of the national Southwestern Semiconductor Cluster Development Plan and formulate strategies for securing clean rural agricultural water supplies.
+              </p>
+              <div class="event-tags">
+                <span class="event-tag">#RuralWaterForum</span>
+                <span class="event-tag">#Osong</span>
+                <span class="event-tag">#WaterAllocation</span>
               </div>
             </div>
           </div>
@@ -210,9 +279,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-            <img src="assets/images/rwesl_logo_circle.png" alt="RWESL Logo" class="brand-logo-img" style="width: 36px; height: 36px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">RWESL</span>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+            <img src="assets/images/rwesl_logo_circle.png" alt="RWESL Logo" class="brand-logo-img" style="width: 44px; height: 44px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: #fff;">RWESL</span>
           </div>
           <p>
             <strong>Regional Water Environment System Laboratory</strong><br>
