@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peer-reviewed publications, SCI journal articles, and research contributions by the Regional Water Environment System Lab (RWESL).">
+  <title>Publications | RWESL - Regional Water Environment System Lab</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px 0 40px;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glass);
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: var(--cyan);
+      color: #ffffff;
+      box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+    }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pub-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pub-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .pub-year {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(0, 212, 255, 0.12);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+
+    .pub-journal {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      font-style: italic;
+    }
+
+    .pub-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .pub-authors {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .pub-authors strong {
+      color: #f8fafc;
+    }
+
+    .pub-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .pub-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .pub-link-btn:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--cyan);
+      color: #ffffff;
+    }
+
+    .toast-copy {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #031124;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .toast-copy.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrap">
+        <a href="index.html" class="brand-link">
+          <div class="brand-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <div class="brand-info">
+            <span class="brand-title">RWESL</span>
+            <span class="brand-sub">Gyeongsang National University</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+          <li class="nav-item active"><a href="publications.html">Publications</a></li>
+          <li class="nav-item"><a href="members.html">Members</a></li>
+          <li class="nav-item"><a href="ongoing-research.html">Ongoing Research</a></li>
+          <li class="nav-item"><a href="events.html">Events/Activities</a></li>
+          <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-nav-agent">
+            <span class="pulse-indicator"></span>
+            AI Agent Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="badge badge-cyan">Scientific Output</div>
+        <h1 class="page-title">Publications & Research Papers</h1>
+        <p class="page-desc">
+          Peer-reviewed articles in top SCI journals covering artificial intelligence in hydrology, watershed management, groundwater sustainability, and climate adaptation.
+        </p>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Studies</button>
+          <button class="filter-btn" data-filter="ai">AI & Machine Learning</button>
+          <button class="filter-btn" data-filter="watershed">Watershed & SWAT</button>
+          <button class="filter-btn" data-filter="groundwater">Groundwater & Climate</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-py" style="padding-top: 10px;">
+      <div class="container">
+        <div class="pub-list">
+          
+          <!-- Publication 1 -->
+          <div class="pub-card" data-category="ai">
+            <div class="pub-meta">
+              <span class="pub-year">2026</span>
+              <span class="pub-journal">Ecohydrology & Hydrobiology</span>
+              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 8px;">SCI • Elsevier</span>
+            </div>
+            <h3 class="pub-title">Deep learning-based direct and indirect potential evapotranspiration prediction: A case of the Nakdong River basin, South Korea</h3>
+            <div class="pub-authors">
+              <strong>Waqas M</strong>, <strong>Kim SM</strong>.
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+              Investigates deep neural architectures for accurate evapotranspiration prediction across the agricultural sub-basins of the Nakdong River, demonstrating superior performance over conventional empirical formulations.
+            </p>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" class="pub-link-btn" style="background: rgba(0, 212, 255, 0.15); color: #7dd3fc; border-color: rgba(56, 189, 248, 0.4);">
+                DOI: 10.1016/j.ecohyd.2026.100772 ↗
+              </a>
+              <a href="https://www.sciencedirect.com/science/article/pii/S1642359326000467" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
+                ScienceDirect Full Text ↗
+              </a>
+              <button class="pub-link-btn" onclick="copyCitation('Waqas M, Kim SM. Deep learning-based direct and indirect potential evapotranspiration prediction, a case of the Nakdong River basin, South Korea. Ecohydrology & Hydrobiology, 2026 26(3), 100772.')">
+                Copy Citation
+              </button>
+            </div>
+          </div>
+
+          <!-- Publication 2 -->
+          <div class="pub-card" data-category="groundwater">
+            <div class="pub-meta">
+              <span class="pub-year">2026</span>
+              <span class="pub-journal">Water (MDPI)</span>
+              <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 2px 8px;">SCIE • Open Access</span>
+            </div>
+            <h3 class="pub-title">Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Statistical and Deep Learning Models</h3>
+            <div class="pub-authors">
+              <strong>Waqas M</strong>, <strong>Kim SM</strong>.
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+              Analyzes extensive seasonal groundwater fluctuations across high-intensity water-curtain greenhouse agriculture zones in Gyeongsangnam-Do, coupling statistical decomposition with recurrent deep learning models.
+            </p>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" class="pub-link-btn" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.4);">
+                DOI: 10.3390/w18040444 ↗
+              </a>
+              <button class="pub-link-btn" onclick="copyCitation('Waqas M, Kim SM. Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Statistical and Deep Learning Models. Water. 2026; 18(4):444.')">
+                Copy Citation
+              </button>
+            </div>
+          </div>
+
+          <!-- Publication 3 -->
+          <div class="pub-card" data-category="watershed">
+            <div class="pub-meta">
+              <span class="pub-year">Recent Research</span>
+              <span class="pub-journal">Journal of Agricultural Engineering / KSAE</span>
+              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 8px;">Watershed Systems</span>
+            </div>
+            <h3 class="pub-title">Agroclimatic Risk Assessment and Watershed Runoff Dynamics in Agricultural Catchments</h3>
+            <div class="pub-authors">
+              <strong>Kim SM</strong>, et al.
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+              Distributed hydrological modeling of river basin discharge, non-point source nutrient transport, and climate adaptation strategies for sustainable watershed management.
+            </p>
+            <div class="pub-actions">
+              <a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
+                View on Google Scholar ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="copyToast" class="toast-copy">Citation copied to clipboard!</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div class="brand-icon" style="width: 36px; height: 36px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">RWESL</span>
+          </div>
+          <p>
+            <strong>Regional Water Environment System Laboratory</strong><br>
+            Department of Smart Agriculture & Agricultural Engineering<br>
+            Gyeongsang National University (GNU), South Korea
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="ongoing-research.html">Ongoing Research</a></li>
+            <li><a href="events.html">Events & Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank">K-Water Guard Dashboard</a></li>
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank">Dr. Muhammad Waqas Portfolio</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank">Prof. Sang Min Kim Scholar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <p>
+            <strong>Lab Director:</strong> Prof. Sang Min Kim<br>
+            <strong>Email:</strong> <a href="mailto:smkim@gnu.ac.kr" style="color: var(--cyan); text-decoration: none;">smkim@gnu.ac.kr</a><br>
+            <strong>Phone:</strong> 055-772-1931
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Regional Water Environment System Lab (RWESL). All rights reserved.</div>
+        <div>Affiliated with Gyeongsang National University, South Korea</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function copyCitation(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+      });
+    }
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.pub-card').forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

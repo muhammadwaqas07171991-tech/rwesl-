@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Events, academic activities, international collaborations, and milestones at the Regional Water Environment System Lab (RWESL).">
+  <title>Events & Activities | RWESL - Regional Water Environment System Lab</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 40px auto 0;
+      padding-left: 36px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 12px;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(180deg, var(--cyan-bright) 0%, rgba(56, 189, 248, 0.2) 100%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 45px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 3px solid var(--cyan-bright);
+      box-shadow: 0 0 10px var(--cyan-bright);
+    }
+
+    .timeline-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: var(--transition);
+    }
+
+    .timeline-card:hover {
+      border-color: var(--border-glow);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .timeline-date {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .timeline-body {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrap">
+        <a href="index.html" class="brand-link">
+          <div class="brand-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <div class="brand-info">
+            <span class="brand-title">RWESL</span>
+            <span class="brand-sub">Gyeongsang National University</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+          <li class="nav-item"><a href="publications.html">Publications</a></li>
+          <li class="nav-item"><a href="members.html">Members</a></li>
+          <li class="nav-item"><a href="ongoing-research.html">Ongoing Research</a></li>
+          <li class="nav-item active"><a href="events.html">Events/Activities</a></li>
+          <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-nav-agent">
+            <span class="pulse-indicator"></span>
+            AI Agent Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="badge badge-cyan">Academic Engagements</div>
+        <h1 class="page-title">Events & Lab Activities</h1>
+        <p class="page-desc">
+          Key academic exchanges, bilateral international delegations, scientific workshops, and community engagements led by RWESL members.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-py" style="padding-top: 10px;">
+      <div class="container">
+        
+        <div class="timeline">
+          
+          <!-- Event 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">International Collaboration • Bilateral Exchange</div>
+              <h3 class="timeline-title">Expanding Korea–China Collaboration in Agricultural Engineering 🇰🇷🇨🇳</h3>
+              <div class="timeline-body">
+                <p>
+                  Prof. Sang Min Kim, President of the <strong>Korean Society of Agricultural Engineers (KSAE)</strong> and Head of RWESL, led a high-level academic delegation to the <strong>Chinese Society of Agricultural Engineering (CSAE)</strong>.
+                </p>
+                <p style="margin-top: 10px;">
+                  The bilateral meeting fostered joint research in smart agricultural water management, watershed sustainability, and climate-resilient rural infrastructure.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">System Launch & Milestone</div>
+              <h3 class="timeline-title">Deployment of K-Water Guard AI Autonomous Agent</h3>
+              <div class="timeline-body">
+                <p>
+                  Official rollout of the autonomous water quality pipeline developed by Mr. Sangbin Ha and Dr. Muhammad Waqas under the guidance of Prof. Sang Min Kim. The agent provides real-time automated ingestion and spatial heatmaps across Korean watersheds.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">Conferences & Academic Symposia</div>
+              <h3 class="timeline-title">Annual KSAE Academic Conference Presentation</h3>
+              <div class="timeline-body">
+                <p>
+                  Presentation of recent breakthrough findings on deep learning potential evapotranspiration (PET) prediction in the Nakdong River basin and groundwater fluctuation modeling under water-curtain greenhouse agriculture.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">Field Investigation & Survey</div>
+              <h3 class="timeline-title">Namgang Dam & Nakdong River Watershed Hydrology Surveys</h3>
+              <div class="timeline-body">
+                <p>
+                  Comprehensive field water sampling and sensor calibration campaign conducted across major agricultural tributaries, feeding empirical validation datasets into our SWAT and HSPF hydrological models.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div class="brand-icon" style="width: 36px; height: 36px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">RWESL</span>
+          </div>
+          <p>
+            <strong>Regional Water Environment System Laboratory</strong><br>
+            Department of Smart Agriculture & Agricultural Engineering<br>
+            Gyeongsang National University (GNU), South Korea
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="ongoing-research.html">Ongoing Research</a></li>
+            <li><a href="events.html">Events & Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank">K-Water Guard Dashboard</a></li>
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank">Dr. Muhammad Waqas Portfolio</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank">Prof. Sang Min Kim Scholar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <p>
+            <strong>Lab Director:</strong> Prof. Sang Min Kim<br>
+            <strong>Email:</strong> <a href="mailto:smkim@gnu.ac.kr" style="color: var(--cyan); text-decoration: none;">smkim@gnu.ac.kr</a><br>
+            <strong>Phone:</strong> 055-772-1931
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Regional Water Environment System Lab (RWESL). All rights reserved.</div>
+        <div>Affiliated with Gyeongsang National University, South Korea</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

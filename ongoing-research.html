@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ongoing Research Projects and Scientific Initiatives at the Regional Water Environment System Lab (RWESL).">
+  <title>Ongoing Research | RWESL - Regional Water Environment System Lab</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .project-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      transition: var(--transition);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--cyan);
+    }
+
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .project-desc p {
+      margin-bottom: 14px;
+    }
+
+    .project-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .feature-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrap">
+        <a href="index.html" class="brand-link">
+          <div class="brand-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <div class="brand-info">
+            <span class="brand-title">RWESL</span>
+            <span class="brand-sub">Gyeongsang National University</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+          <li class="nav-item"><a href="publications.html">Publications</a></li>
+          <li class="nav-item"><a href="members.html">Members</a></li>
+          <li class="nav-item active"><a href="ongoing-research.html">Ongoing Research</a></li>
+          <li class="nav-item"><a href="events.html">Events/Activities</a></li>
+          <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-nav-agent">
+            <span class="pulse-indicator"></span>
+            AI Agent Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="badge badge-cyan">Active Initiatives</div>
+        <h1 class="page-title">Ongoing Research Projects</h1>
+        <p class="page-desc">
+          Advancing cutting-edge solutions across agro-climatic extremes, watershed hydrology, greenhouse water-curtain sustainability, and AI environmental monitoring.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-py" style="padding-top: 10px;">
+      <div class="container">
+        <div class="project-grid">
+          
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div>
+              <div class="project-status">
+                <span class="pulse-indicator"></span>
+                Active Project • Climate Change & Agriculture
+              </div>
+              <h2 class="project-title" style="margin-top: 10px;">Impact of Extreme Weather Events at Different Crop Growth Stages</h2>
+            </div>
+            
+            <div class="project-desc">
+              <p>
+                Climate change is placing unprecedented pressure on agricultural productivity. Across the globe, extreme events such as heatwaves, droughts, flash floods, and cold snaps are intensifying. This research quantifies non-linear crop yield responses to critical temperature thresholds during critical physiological phases—such as flowering and grain-filling.
+              </p>
+              <p>
+                By linking systematic micro-climatic observation with agro-meteorological crop models, our lab establishes vulnerability baselines to guide climate-adaptive farming practices and decision-support systems.
+              </p>
+            </div>
+
+            <div class="project-features">
+              <div class="feature-item"><span class="feature-dot"></span> Heatwave & Drought Stress Dynamics</div>
+              <div class="feature-item"><span class="feature-dot"></span> Non-linear Crop Vulnerability</div>
+              <div class="feature-item"><span class="feature-dot"></span> Climate-Adaptive Farming Systems</div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div>
+              <div class="project-status">
+                <span class="pulse-indicator"></span>
+                Active Project • Environmental AI & Automation
+              </div>
+              <h2 class="project-title" style="margin-top: 10px;">Autonomous Water Quality Agent & Real-Time Geospatial Intelligence</h2>
+            </div>
+            
+            <div class="project-desc">
+              <p>
+                Developing and continuously improving the <strong>K-Water Guard AI Agent</strong>. The system performs automated ingestion of daily physicochemical parameters from Korean water networks, executes statistical quality-assurance algorithms, and publishes spatial contour maps.
+              </p>
+              <p>
+                Specialized modules incorporate harmful algal bloom (cyanobacteria) early-warning indicators and watershed nutrient loading forecasting across the Nakdong River basin.
+              </p>
+            </div>
+
+            <div class="project-features">
+              <div class="feature-item"><span class="feature-dot"></span> 14 Parameters Real-time Telemetry</div>
+              <div class="feature-item"><span class="feature-dot"></span> Algal Bloom Risk Matrix</div>
+              <div class="feature-item"><span class="feature-dot"></span> Automated Daily Reporting Pipelines</div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div>
+              <div class="project-status">
+                <span class="pulse-indicator"></span>
+                Active Project • Hydrogeology & Smart Agriculture
+              </div>
+              <h2 class="project-title" style="margin-top: 10px;">Seasonal Groundwater Trends & Water-Curtain Greenhouse Modeling in Gyeongnam</h2>
+            </div>
+            
+            <div class="project-desc">
+              <p>
+                High-density greenhouse agriculture in Gyeongsangnam-Do heavily relies on water-curtain heating systems during winter. This intensive extraction leads to localized groundwater drawdown and recovery dynamics.
+              </p>
+              <p>
+                We develop hybrid statistical and recurrent deep learning frameworks to forecast seasonal groundwater depth, enabling sustainable aquifer management without compromising crop production.
+              </p>
+            </div>
+
+            <div class="project-features">
+              <div class="feature-item"><span class="feature-dot"></span> Water-Curtain Heating Extraction</div>
+              <div class="feature-item"><span class="feature-dot"></span> Deep Learning Groundwater Trends</div>
+              <div class="feature-item"><span class="feature-dot"></span> Aquifer Sustainability Assessment</div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <div>
+              <div class="project-status">
+                <span class="pulse-indicator"></span>
+                Active Project • Watershed Engineering
+              </div>
+              <h2 class="project-title" style="margin-top: 10px;">Watershed Hydrology & Reservoir Optimization (Namgang Dam & Nakdong River)</h2>
+            </div>
+            
+            <div class="project-desc">
+              <p>
+                Applying distributed hydrological models (SWAT, HSPF) to assess runoff dynamics, reservoir inflow, sediment transport, and non-point source nutrient loads. This research provides evidence-based guidelines for reservoir storage capacity optimization and flood-control operations under extreme precipitation regimes.
+              </p>
+            </div>
+
+            <div class="project-features">
+              <div class="feature-item"><span class="feature-dot"></span> SWAT Watershed Simulation</div>
+              <div class="feature-item"><span class="feature-dot"></span> Namgang Dam Capacity Analysis</div>
+              <div class="feature-item"><span class="feature-dot"></span> Non-Point Source Pollution Control</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div class="brand-icon" style="width: 36px; height: 36px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">RWESL</span>
+          </div>
+          <p>
+            <strong>Regional Water Environment System Laboratory</strong><br>
+            Department of Smart Agriculture & Agricultural Engineering<br>
+            Gyeongsang National University (GNU), South Korea
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="ongoing-research.html">Ongoing Research</a></li>
+            <li><a href="events.html">Events & Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank">K-Water Guard Dashboard</a></li>
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank">Dr. Muhammad Waqas Portfolio</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank">Prof. Sang Min Kim Scholar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <p>
+            <strong>Lab Director:</strong> Prof. Sang Min Kim<br>
+            <strong>Email:</strong> <a href="mailto:smkim@gnu.ac.kr" style="color: var(--cyan); text-decoration: none;">smkim@gnu.ac.kr</a><br>
+            <strong>Phone:</strong> 055-772-1931
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Regional Water Environment System Lab (RWESL). All rights reserved.</div>
+        <div>Affiliated with Gyeongsang National University, South Korea</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

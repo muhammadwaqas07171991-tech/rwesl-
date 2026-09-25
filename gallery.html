@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gallery of watershed monitoring, hydrological research maps, field surveys, and laboratory milestones at RWESL.">
+  <title>Gallery | RWESL - Regional Water Environment System Lab</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .gallery-thumb-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #02060b;
+      position: relative;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .gallery-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .gallery-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .gallery-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Simple Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 9, 14, 0.92);
+      backdrop-filter: blur(16px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 14px;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-size: 2rem;
+      color: #ffffff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrap">
+        <a href="index.html" class="brand-link">
+          <div class="brand-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <div class="brand-info">
+            <span class="brand-title">RWESL</span>
+            <span class="brand-sub">Gyeongsang National University</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+          <li class="nav-item"><a href="publications.html">Publications</a></li>
+          <li class="nav-item"><a href="members.html">Members</a></li>
+          <li class="nav-item"><a href="ongoing-research.html">Ongoing Research</a></li>
+          <li class="nav-item"><a href="events.html">Events/Activities</a></li>
+          <li class="nav-item active"><a href="gallery.html">Gallery</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-nav-agent">
+            <span class="pulse-indicator"></span>
+            AI Agent Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="badge badge-cyan">Visual Highlights</div>
+        <h1 class="page-title">Research & Fieldwork Gallery</h1>
+        <p class="page-desc">
+          Exploration of national water monitoring networks, geospatial GIS maps, AI simulation models, and watershed fieldwork conducted by the RWESL team.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-py" style="padding-top: 10px;">
+      <div class="container">
+        
+        <div class="gallery-grid">
+          
+          <!-- Item 1 -->
+          <div class="gallery-item" onclick="openLightbox('assets/images/station_coverage_map.png')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/station_coverage_map.png" alt="National Water Quality Monitoring Network" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">GIS & Network Coverage</span>
+              <h3 class="gallery-title">South Korea Monitoring Network</h3>
+              <p class="gallery-desc">Automated station spatial distribution tracking all major river sub-basins.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-item" onclick="openLightbox('assets/images/algal_cyanobacteria_watershed_map.png')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/algal_cyanobacteria_watershed_map.png" alt="Cyanobacteria Risk Mapping" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Early Warning Systems</span>
+              <h3 class="gallery-title">Cyanobacteria Risk Radar</h3>
+              <p class="gallery-desc">Predictive watershed risk categorization for harmful algal blooms.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-item" onclick="openLightbox('assets/images/weather_basin_precipitation.png')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/weather_basin_precipitation.png" alt="Basin Precipitation Telemetry" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Hydrometeorology</span>
+              <h3 class="gallery-title">Basin Rainfall & Hydrology</h3>
+              <p class="gallery-desc">Real-time hyetograph and hydrograph analysis for runoff calibration.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-item" onclick="openLightbox('assets/images/agroclimate_multi_hazard_radar.png')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/agroclimate_multi_hazard_radar.png" alt="Agroclimate Multi-Hazard Radar" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Climate Change Models</span>
+              <h3 class="gallery-title">Agroclimate Multi-Hazard Space</h3>
+              <p class="gallery-desc">Compound risk assessment combining drought indices, heatwaves, and runoff stress.</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-item" onclick="openLightbox('assets/images/quality_summary.png')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/quality_summary.png" alt="Water Quality Statistical Summary" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Statistical Analytics</span>
+              <h3 class="gallery-title">Parameter Compliance Baselines</h3>
+              <p class="gallery-desc">Multivariate distribution of pH, DO, TN, TP, and suspended solids.</p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="gallery-item" onclick="openLightbox('assets/images/agroclimate_drought_runoff_risk_space.png')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/images/agroclimate_drought_runoff_risk_space.png" alt="Drought Runoff Risk Space" class="gallery-img">
+            </div>
+            <div class="gallery-caption">
+              <span class="gallery-tag">Watershed Modeling</span>
+              <h3 class="gallery-title">Drought-Runoff Risk Space</h3>
+              <p class="gallery-desc">Sensitivity curves evaluating reservoir replenishment probability.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" class="lightbox-content" src="" alt="Enlarged view">
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div class="brand-icon" style="width: 36px; height: 36px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">RWESL</span>
+          </div>
+          <p>
+            <strong>Regional Water Environment System Laboratory</strong><br>
+            Department of Smart Agriculture & Agricultural Engineering<br>
+            Gyeongsang National University (GNU), South Korea
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="ongoing-research.html">Ongoing Research</a></li>
+            <li><a href="events.html">Events & Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank">K-Water Guard Dashboard</a></li>
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank">Dr. Muhammad Waqas Portfolio</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank">Prof. Sang Min Kim Scholar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <p>
+            <strong>Lab Director:</strong> Prof. Sang Min Kim<br>
+            <strong>Email:</strong> <a href="mailto:smkim@gnu.ac.kr" style="color: var(--cyan); text-decoration: none;">smkim@gnu.ac.kr</a><br>
+            <strong>Phone:</strong> 055-772-1931
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Regional Water Environment System Lab (RWESL). All rights reserved.</div>
+        <div>Affiliated with Gyeongsang National University, South Korea</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function openLightbox(src) {
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = src;
+      modal.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
