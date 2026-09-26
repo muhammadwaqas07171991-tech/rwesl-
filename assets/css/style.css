@@ -84,7 +84,7 @@ body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  background: #020710;
+  background: radial-gradient(ellipse 120% 80% at 50% -10%, #081d3d 0%, #030a17 45%, #01040a 100%);
 }
 
 /* 1. Global Interactive Telemetry Particle Canvas */
@@ -94,71 +94,74 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* 2. Vector Topographic Watershed Contour Overlay */
+/* 2. Sleek Cyber Precision Coordinate Grid (Replaces old organic topo curves) */
 .bg-topo-overlay {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/watershed_contours.svg') no-repeat center top / cover;
-  opacity: 0.7;
-  filter: contrast(1.15);
-  mask-image: radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.15) 90%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.15) 90%);
-  z-index: 2;
-  animation: topo-breathe 14s ease-in-out infinite alternate;
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 80% 65% at 50% 30%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 30%, #000 30%, transparent 85%);
+  z-index: 1;
+  pointer-events: none;
 }
 
-@keyframes topo-breathe {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(1.025); opacity: 0.8; }
-}
-
-/* 3. Deep Cyber Mesh Grid */
+/* 3. Deep Cyber Micro-Dot Matrix */
 .bg-mesh-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.16;
-  background-image:
-    linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: radial-gradient(circle at 50% 30%, black 45%, transparent 92%);
-  -webkit-mask-image: radial-gradient(circle at 50% 30%, black 45%, transparent 92%);
-  z-index: 2;
+  background-image: radial-gradient(rgba(0, 212, 255, 0.18) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 25%, #000 35%, transparent 88%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 25%, #000 35%, transparent 88%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* 4. Multi-Spectrum Atmospheric Aurora Glows */
 .bg-radial-glow {
   position: absolute;
-  top: -160px;
+  top: -180px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1800px;
-  height: 950px;
-  background: radial-gradient(ellipse at 50% 25%, rgba(0, 212, 255, 0.22) 0%, rgba(14, 165, 233, 0.12) 35%, rgba(16, 185, 129, 0.08) 60%, transparent 80%);
-  filter: blur(120px);
+  width: 1600px;
+  max-width: 100vw;
+  height: 900px;
+  background: radial-gradient(ellipse at 50% 25%, rgba(0, 212, 255, 0.22) 0%, rgba(14, 165, 233, 0.14) 32%, rgba(99, 102, 241, 0.09) 55%, transparent 75%);
+  filter: blur(100px);
   z-index: 1;
-  animation: glow-pulse 10s ease-in-out infinite alternate;
+  pointer-events: none;
+  animation: glow-pulse 11s ease-in-out infinite alternate;
 }
 
 .bg-secondary-glow {
   position: absolute;
-  bottom: -200px;
-  right: -100px;
-  width: 1200px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(6, 78, 59, 0.08) 50%, transparent 75%);
-  filter: blur(140px);
+  bottom: 0;
+  right: -80px;
+  width: 1100px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(6, 182, 212, 0.07) 45%, transparent 70%);
+  filter: blur(130px);
   z-index: 1;
+  pointer-events: none;
+  animation: secondary-drift 15s ease-in-out infinite alternate;
 }
 
 @keyframes glow-pulse {
-  0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
-  100% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+  0% { opacity: 0.75; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.06); }
+}
+
+@keyframes secondary-drift {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-35px) scale(1.06); }
 }
 
 .main-content {
@@ -621,6 +624,135 @@ body {
   font-size: 0.92rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+/* ==========================================================================
+   FEATURED PAPERS GRAPHICS (LATEST SCI/SCIE 2026)
+   ========================================================================== */
+.featured-papers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  width: 100%;
+  margin-top: 35px;
+}
+
+@media (max-width: 1024px) {
+  .featured-papers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paper-feature-card {
+  background: rgba(8, 20, 38, 0.72);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.paper-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 28px 60px -12px rgba(0, 212, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.paper-figure-wrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background: #ffffff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+}
+
+.paper-figure-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-feature-card:hover .paper-figure-img {
+  transform: scale(1.035);
+}
+
+.figure-badge-overlay {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.paper-feature-content {
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.paper-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.paper-journal-tag {
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.paper-feature-title {
+  font-family: var(--font-heading);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.paper-authors-line {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin-bottom: 14px;
+}
+
+.paper-authors-line strong {
+  color: #e2e8f0;
+}
+
+.paper-abstract-snippet {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.paper-feature-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 /* ==========================================================================
