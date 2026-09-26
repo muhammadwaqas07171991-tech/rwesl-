@@ -375,10 +375,12 @@
 </head>
 <body>
 
-  <!-- Full Screen Background System -->
+  <!-- Full Screen Modern Hydrological & Telemetry Background -->
   <div class="page-bg-system">
-    <div class="bg-banner-overlay"></div>
+    <canvas id="ambientCanvas"></canvas>
+    <div class="bg-topo-overlay"></div>
     <div class="bg-radial-glow"></div>
+    <div class="bg-secondary-glow"></div>
     <div class="bg-mesh-grid"></div>
   </div>
 
@@ -560,6 +562,93 @@
           </div>
         </div>
 
+        <!-- Scientific Modeling & Laboratory Analytics Showcase -->
+        <div style="margin-top: 85px;">
+          <div class="section-header" style="margin-bottom: 35px;">
+            <div class="badge badge-emerald">Scientific Graphics & Analytics</div>
+            <h2 class="section-title">Latest Laboratory Graphics & Modeling Systems</h2>
+            <p class="section-subtitle">
+              High-resolution computational outputs, geospatial GIS layers, multi-year statistical diagnostics, and predictive radar analytics developed by RWESL researchers. Click any graphic to inspect in full 5K resolution.
+            </p>
+          </div>
+
+          <div class="showcase-grid" style="grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 28px; width: 100%;">
+
+            <!-- Graphic 1: National Telemetry Network -->
+            <div class="showcase-card" onclick="openLightbox('assets/images/station_coverage_map.png')" style="cursor: pointer;">
+              <div class="showcase-img-wrap" style="height: 300px;">
+                <img src="assets/images/station_coverage_map.png" alt="National Water Quality Monitoring Network" class="showcase-img" style="object-fit: cover;">
+              </div>
+              <div class="showcase-body">
+                <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 10px; margin-bottom: 8px;">Geospatial Network • 3392px</span>
+                <h4 class="showcase-title">National Telemetry & Station Network</h4>
+                <p class="showcase-desc">Spatial distribution and watershed monitoring coverage across South Korea's four primary river basins. Click to enlarge in 3392px.</p>
+              </div>
+            </div>
+
+            <!-- Graphic 2: Historical Multi-Year Trends -->
+            <div class="showcase-card" onclick="openLightbox('assets/images/historical_trend_annual_means.png')" style="cursor: pointer;">
+              <div class="showcase-img-wrap" style="height: 300px;">
+                <img src="assets/images/historical_trend_annual_means.png" alt="Multi-Decadal Trend Analysis & Sen's Slope" class="showcase-img" style="object-fit: cover;">
+              </div>
+              <div class="showcase-body">
+                <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 2px 10px; margin-bottom: 8px;">Long-Term Hydrology • 5404px</span>
+                <h4 class="showcase-title">Multi-Year Trend Analysis & Sen's Slope</h4>
+                <p class="showcase-desc">Long-term statistical variance, Mann-Kendall trend trajectories, and decadal concentration baselines. Click to enlarge in 5404px.</p>
+              </div>
+            </div>
+
+            <!-- Graphic 3: Alert Hotspot Matrix -->
+            <div class="showcase-card" onclick="openLightbox('assets/images/alert_hotspot_matrix.png')" style="cursor: pointer;">
+              <div class="showcase-img-wrap" style="height: 300px;">
+                <img src="assets/images/alert_hotspot_matrix.png" alt="Autonomous Water Quality Alert Hotspot Matrix" class="showcase-img" style="object-fit: cover;">
+              </div>
+              <div class="showcase-body">
+                <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 10px; margin-bottom: 8px;">AI Risk Intelligence • 4443px</span>
+                <h4 class="showcase-title">Water Quality Alert Hotspot Matrix</h4>
+                <p class="showcase-desc">Autonomous spatial anomaly detection matrix prioritizing high-risk threshold exceedances across Korean basins. Click to enlarge in 4443px.</p>
+              </div>
+            </div>
+
+            <!-- Graphic 4: Algal Cyanobacteria Mapping -->
+            <div class="showcase-card" onclick="openLightbox('assets/images/algal_cyanobacteria_watershed_map.png')" style="cursor: pointer;">
+              <div class="showcase-img-wrap" style="height: 300px;">
+                <img src="assets/images/algal_cyanobacteria_watershed_map.png" alt="Cyanobacteria Algal Bloom Risk Spatial Surface" class="showcase-img" style="object-fit: cover;">
+              </div>
+              <div class="showcase-body">
+                <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 2px 10px; margin-bottom: 8px;">Early-Warning Radar • 3192px</span>
+                <h4 class="showcase-title">Algal Bloom Risk Spatial Surface</h4>
+                <p class="showcase-desc">Biomass concentration surface and bloom probability modeling for early mitigation of harmful cyanobacteria outbreaks.</p>
+              </div>
+            </div>
+
+            <!-- Graphic 5: Agro-Climate Multi-Hazard Radar -->
+            <div class="showcase-card" onclick="openLightbox('assets/images/agroclimate_multi_hazard_radar.png')" style="cursor: pointer;">
+              <div class="showcase-img-wrap" style="height: 300px;">
+                <img src="assets/images/agroclimate_multi_hazard_radar.png" alt="Agro-Climatic Multi-Hazard Assessment Radar" class="showcase-img" style="object-fit: cover;">
+              </div>
+              <div class="showcase-body">
+                <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 10px; margin-bottom: 8px;">Agro-Climatology • 3109px</span>
+                <h4 class="showcase-title">Agro-Climatic Multi-Hazard Radar</h4>
+                <p class="showcase-desc">Compound vulnerability assessment evaluating drought severity, heat waves, and agricultural runoff risk under climate scenarios.</p>
+              </div>
+            </div>
+
+            <!-- Graphic 6: Basin Precipitation Dynamics -->
+            <div class="showcase-card" onclick="openLightbox('assets/images/weather_basin_precipitation.png')" style="cursor: pointer;">
+              <div class="showcase-img-wrap" style="height: 300px;">
+                <img src="assets/images/weather_basin_precipitation.png" alt="Basin Precipitation & Hydrological Telemetry" class="showcase-img" style="object-fit: cover;">
+              </div>
+              <div class="showcase-body">
+                <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 2px 10px; margin-bottom: 8px;">Hydrometeorology • 4597px</span>
+                <h4 class="showcase-title">Basin Precipitation & Telemetry</h4>
+                <p class="showcase-desc">Continuous rainfall distribution contours and hydrological runoff telemetry across major river catchments.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <!-- Leadership Spotlight on Home -->
         <div style="margin-top: 75px;">
           <div class="section-header" style="margin-bottom: 26px;">
@@ -737,6 +826,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox Modal for 5K Full-Res Graphics -->
+  <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()" style="position: fixed; inset: 0; background: rgba(3, 8, 16, 0.94); backdrop-filter: blur(20px); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 24px;">
+    <button onclick="closeLightbox()" style="position: absolute; top: 24px; right: 32px; font-size: 2.2rem; color: #ffffff; background: none; border: none; cursor: pointer; padding: 10px; line-height: 1;">&times;</button>
+    <img id="lightboxImg" src="" alt="Enlarged High-Resolution Graphic" style="max-width: 90vw; max-height: 85vh; border-radius: 14px; border: 1px solid var(--border-glow); box-shadow: 0 0 60px rgba(0, 212, 255, 0.35); object-fit: contain;">
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>

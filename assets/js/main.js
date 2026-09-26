@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(c => observer.observe(c));
   }
 
-  // 3. Fluid Wave Canvas Simulation
+  // 3. Fluid Wave Canvas Simulation (for Hero section)
   const canvas = document.getElementById('waveCanvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -93,4 +93,122 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     draw();
   }
+
+  // 4. Global Ambient Hydrological Telemetry Network Canvas
+  const ambientCanvas = document.getElementById('ambientCanvas');
+  if (ambientCanvas) {
+    const actx = ambientCanvas.getContext('2d');
+    let awidth, aheight;
+    let particles = [];
+    const particleCount = Math.min(Math.floor(window.innerWidth / 30), 45);
+
+    let mouse = { x: null, y: null, maxDist: 150 };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    function resizeAmbient() {
+      awidth = ambientCanvas.width = window.innerWidth;
+      aheight = ambientCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeAmbient);
+    resizeAmbient();
+
+    class TelemetryNode {
+      constructor() {
+        this.x = Math.random() * awidth;
+        this.y = Math.random() * aheight;
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
+        this.radius = Math.random() * 2 + 1.2;
+        this.color = Math.random() > 0.4 ? 'rgba(0, 212, 255,' : 'rgba(16, 185, 129,';
+        this.baseAlpha = Math.random() * 0.35 + 0.15;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0) this.x = awidth;
+        if (this.x > awidth) this.x = 0;
+        if (this.y < 0) this.y = aheight;
+        if (this.y > aheight) this.y = 0;
+      }
+
+      draw() {
+        let alpha = this.baseAlpha;
+        if (mouse.x !== null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mouse.maxDist) {
+            alpha = Math.min(1, this.baseAlpha + (1 - dist / mouse.maxDist) * 0.6);
+          }
+        }
+
+        actx.beginPath();
+        actx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        actx.fillStyle = this.color + alpha + ')';
+        actx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new TelemetryNode());
+    }
+
+    function animateAmbient() {
+      actx.clearRect(0, 0, awidth, aheight);
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 115) {
+            const lineAlpha = (1 - dist / 115) * 0.18;
+            actx.beginPath();
+            actx.moveTo(particles[i].x, particles[i].y);
+            actx.lineTo(particles[j].x, particles[j].y);
+            actx.strokeStyle = 'rgba(56, 189, 248,' + lineAlpha + ')';
+            actx.lineWidth = 0.8;
+            actx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animateAmbient);
+    }
+    animateAmbient();
+  }
 });
+
+// Global Lightbox modal helpers
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}

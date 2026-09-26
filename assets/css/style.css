@@ -84,42 +84,81 @@ body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  background: #020710;
 }
 
-.bg-banner-overlay {
+/* 1. Global Interactive Telemetry Particle Canvas */
+#ambientCanvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: 650px;
-  background: url('../images/rwesl_banner_home.png') no-repeat center top / cover;
-  opacity: 0.16;
-  filter: blur(2px) saturate(1.3);
-  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
+/* 2. Vector Topographic Watershed Contour Overlay */
+.bg-topo-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/watershed_contours.svg') no-repeat center top / cover;
+  opacity: 0.7;
+  filter: contrast(1.15);
+  mask-image: radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.15) 90%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.15) 90%);
+  z-index: 2;
+  animation: topo-breathe 14s ease-in-out infinite alternate;
+}
+
+@keyframes topo-breathe {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.025); opacity: 0.8; }
+}
+
+/* 3. Deep Cyber Mesh Grid */
 .bg-mesh-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.22;
+  opacity: 0.16;
   background-image:
     linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(circle at 50% 25%, black 45%, transparent 95%);
-  -webkit-mask-image: radial-gradient(circle at 50% 25%, black 45%, transparent 95%);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at 50% 30%, black 45%, transparent 92%);
+  -webkit-mask-image: radial-gradient(circle at 50% 30%, black 45%, transparent 92%);
+  z-index: 2;
 }
 
+/* 4. Multi-Spectrum Atmospheric Aurora Glows */
 .bg-radial-glow {
   position: absolute;
-  top: -120px;
+  top: -160px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1600px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, rgba(37, 99, 235, 0.09) 50%, transparent 80%);
-  filter: blur(100px);
+  width: 1800px;
+  height: 950px;
+  background: radial-gradient(ellipse at 50% 25%, rgba(0, 212, 255, 0.22) 0%, rgba(14, 165, 233, 0.12) 35%, rgba(16, 185, 129, 0.08) 60%, transparent 80%);
+  filter: blur(120px);
+  z-index: 1;
+  animation: glow-pulse 10s ease-in-out infinite alternate;
+}
+
+.bg-secondary-glow {
+  position: absolute;
+  bottom: -200px;
+  right: -100px;
+  width: 1200px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(6, 78, 59, 0.08) 50%, transparent 75%);
+  filter: blur(140px);
+  z-index: 1;
+}
+
+@keyframes glow-pulse {
+  0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.05); }
 }
 
 .main-content {
