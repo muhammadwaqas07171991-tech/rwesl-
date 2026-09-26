@@ -14,9 +14,9 @@
     /* Specific Home Page Enhancements */
     .hero-section {
       position: relative;
-      padding: 40px 0 70px;
+      padding: 30px 0 25px;
       overflow: hidden;
-      min-height: 85vh;
+      min-height: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -490,6 +490,62 @@
       </div>
     </section>
 
+    <!-- Aerial Drone & Watershed Field Telemetry Showcase -->
+    <section class="drone-video-section">
+      <div class="container">
+        <div class="drone-video-card">
+          <div class="drone-video-wrapper">
+            <video class="drone-video-player" id="dronePlayer" autoplay loop muted playsinline preload="auto">
+              <source src="assets/videos/bg-drone.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            
+            <!-- Tech HUD Telemetry Overlays -->
+            <div class="drone-hud-top">
+              <div class="drone-hud-badge">
+                <span class="live-rec-dot"></span>
+                <span>UAV FIELD TELEMETRY • LIVE STREAM</span>
+              </div>
+              <div class="drone-hud-coords">
+                <span>GPS: 35.1542° N, 128.0991° E</span>
+                <span class="hud-sep">|</span>
+                <span>ALT: 120m AGL</span>
+                <span class="hud-sep">|</span>
+                <span>CAM: 4K RES</span>
+              </div>
+            </div>
+
+            <div class="drone-hud-bottom">
+              <div class="drone-hud-info">
+                <div class="badge badge-emerald" style="font-size: 0.72rem; padding: 3px 10px; margin-bottom: 6px;">Aerial Watershed Intelligence</div>
+                <h3 class="drone-hud-title">Autonomous Drone Surveillance & Field Hydrology</h3>
+                <p class="drone-hud-desc">
+                  Real-time aerial observation of agricultural watershed dynamics, river-corridor runoff, and high-intensity greenhouse farming zones across Gyeongsangnam-do.
+                </p>
+              </div>
+              <div class="drone-hud-controls">
+                <button class="drone-btn" id="droneMuteBtn" onclick="toggleDroneAudio()" title="Toggle Audio">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="droneMuteIcon">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                    <line x1="23" y1="9" x2="17" y2="15"/>
+                    <line x1="17" y1="9" x2="23" y2="15"/>
+                  </svg>
+                  <span id="droneMuteText">Sound Off</span>
+                </button>
+                <button class="drone-btn" id="dronePlayBtn" onclick="toggleDronePlay()" title="Play/Pause">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="dronePlayIcon">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                  <span id="dronePlayText">Pause</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Core Research Pillars (Full Width 3 Columns) -->
     <section class="section-py">
       <div class="container">
@@ -666,30 +722,41 @@
           <div class="section-header" style="margin-bottom: 26px;">
             <div class="badge badge-cyan">Leadership</div>
             <h2 class="section-title">Research Leadership</h2>
+            <p class="section-subtitle">
+              Directing forward-looking scientific research in hydrological modeling, watershed water quality, and agricultural resilience at Gyeongsang National University.
+            </p>
           </div>
 
-          <div class="leadership-strip">
-            <div class="lead-card">
-              <div class="lead-avatar-wrap">
-                <img src="assets/images/team/prof_sang_min_kim.jpg" alt="Prof. Sang Min Kim" class="lead-avatar-img">
-              </div>
-              <div>
-                <div style="font-size: 0.8rem; font-weight: 700; color: var(--cyan); text-transform: uppercase;">Head of Laboratory • PI</div>
-                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #fff; margin: 4px 0;">Prof. Sang Min Kim</h4>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">President, Korean Society of Agricultural Engineers (KSAE)</p>
-                <a href="members.html" style="font-size: 0.85rem; color: var(--cyan); text-decoration: none; font-weight: 600;">View Profile & Scholar ↗</a>
+          <div class="lead-spotlight-card">
+            <div class="lead-spotlight-avatar">
+              <img src="assets/images/team/prof_sang_min_kim.jpg" alt="Prof. Sang Min Kim" class="lead-spotlight-img">
+              <div class="lead-spotlight-status">
+                <span class="status-pulse-dot"></span>
+                <span>PI & Lab Director</span>
               </div>
             </div>
-
-            <div class="lead-card">
-              <div class="lead-avatar-wrap">
-                <img src="assets/images/team/dr_muhammad_waqas.jpg" alt="Dr. Muhammad Waqas" class="lead-avatar-img">
+            <div class="lead-spotlight-info">
+              <div class="badge badge-cyan" style="font-size: 0.78rem; padding: 4px 12px; margin-bottom: 10px; align-self: flex-start;">Head of Laboratory • Principal Investigator</div>
+              <h3 class="lead-spotlight-name">Prof. Sang Min Kim</h3>
+              <div class="lead-spotlight-title">President, Korean Society of Agricultural Engineers (KSAE)</div>
+              <div class="lead-spotlight-dept">Professor, Dept. of Smart Agriculture Systems / Dept. of Agricultural Engineering, Gyeongsang National University (GNU)</div>
+              <p class="lead-spotlight-bio">
+                Prof. Sang Min Kim is the Director of the Regional Water Environment System Laboratory (RWESL). With extensive national and international leadership in hydrological modeling, watershed water quality management, non-point source pollution mitigation, and climate adaptation, he spearheads major research initiatives bridging environmental hydrology with smart agricultural systems across South Korea.
+              </p>
+              <div class="lead-spotlight-tags">
+                <span class="pillar-tag">Watershed Hydrology</span>
+                <span class="pillar-tag">SWAT & HSPF Modeling</span>
+                <span class="pillar-tag">Water Curtain Agriculture</span>
+                <span class="pillar-tag">Climate Change Adaptation</span>
+                <span class="pillar-tag">KSAE Leadership</span>
               </div>
-              <div>
-                <div style="font-size: 0.8rem; font-weight: 700; color: var(--cyan); text-transform: uppercase;">Senior Researcher</div>
-                <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #fff; margin: 4px 0;">Dr. Muhammad Waqas</h4>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">PhD in Environment, Climate Change & Sustainability</p>
-                <a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank" style="font-size: 0.85rem; color: var(--cyan); text-decoration: none; font-weight: 600;">View Portfolio & Publications ↗</a>
+              <div class="lead-spotlight-actions">
+                <a href="members.html" class="btn btn-sm btn-primary">
+                  View Full Academic Profile & Scholar ↗
+                </a>
+                <a href="publications.html" class="btn btn-sm btn-outline">
+                  View Research Publications
+                </a>
               </div>
             </div>
           </div>
