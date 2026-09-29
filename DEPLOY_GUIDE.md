@@ -9,7 +9,7 @@ This folder contains the complete, modern, unified **RWESL Laboratory Website** 
 | File | Page | Highlights |
 | :--- | :--- | :--- |
 | [`index.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/index.html) | **Home** | Fluid wave canvas, real-time counters, research pillars, K-Water Guard agent spotlight. |
-| [`k-waterguard-ai.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/k-waterguard-ai.html) | **K-WaterGuard AI** | Full agent architecture, 14 telemetry parameters, developer credits, direct dashboard launch. |
+| [`k-waterguard-ai.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/k-waterguard-ai.html) | **K-WaterGuard AI** | Full agent architecture, 14 telemetry parameters, research team credits, direct dashboard launch. |
 | [`publications.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/publications.html) | **Publications** | Instant category filters (AI/ML, Watershed, Groundwater), DOI links, 1-click citation copy. |
 | [`members.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/members.html) | **Members** | Prof. Sang Min Kim (PI & KSAE President), Dr. Muhammad Waqas, graduate & undergraduate researchers. |
 | [`ongoing-research.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/ongoing-research.html) | **Ongoing Research** | Climate extremes on crops, Namgang Dam & Nakdong River hydrology, water-curtain groundwater modeling. |
