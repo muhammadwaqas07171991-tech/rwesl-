@@ -284,6 +284,29 @@ body {
   gap: 12px;
 }
 
+.btn-nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  color: #60a5fa;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+}
+
+.btn-nav-social:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(24, 119, 242, 0.55);
+}
+
 .btn-nav-agent {
   display: inline-flex;
   align-items: center;
