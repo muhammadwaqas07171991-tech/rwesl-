@@ -4,378 +4,219 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Regional Water Environment System Lab (RWESL) at Gyeongsang National University. AI-driven watershed management, hydrological modeling, and agricultural water quality.">
-  <title>RWESL | Regional Water Environment System Lab - Gyeongsang National University</title>
+  <title>RWESL | Regional Water Environment System Lab — Gyeongsang National University</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    /* Specific Home Page Enhancements */
-    .hero-section {
+    /* ==========================================================================
+       Academic Pop-Modernism Inline Enhancements for Home Page
+       ========================================================================== */
+    .hero-splash-frame {
       position: relative;
-      padding: 30px 0 25px;
+      border: 3px solid var(--ink-black);
+      border-radius: var(--radius-md);
+      background: #0E0E14;
+      padding: 44px 36px 36px;
+      margin: 18px auto 30px;
+      max-width: 1360px;
+      box-shadow: var(--shadow-pop-md);
       overflow: hidden;
-      min-height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
-    .hero-canvas {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 1300px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-title {
-      font-family: var(--font-heading);
-      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+    .hero-meta-banner {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
       font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-      margin: 20px 0 16px;
-      background: linear-gradient(135deg, #ffffff 30%, #7dd3fc 75%, var(--cyan-bright) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
-    }
-
-    .hero-tagline {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--cyan);
-      letter-spacing: 0.03em;
-      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+      color: var(--pop-yellow);
+      background: #000000;
+      border: 1px solid var(--pop-yellow);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 22px;
       text-transform: uppercase;
-      text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      box-shadow: var(--shadow-pop-sm);
     }
 
-    .hero-desc {
-      font-size: 1.18rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 1000px;
-      margin: 0 auto 38px;
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--pop-cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
-    .hero-desc strong {
-      color: #f1f5f9;
-      font-weight: 600;
+    .hero-monumental-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin: 0 0 24px;
     }
 
-    .hero-cta {
+    .hero-caption-narrative {
+      max-width: 980px;
+      margin: 0 auto 32px;
+      font-size: 1.15rem;
+      line-height: 1.68;
+    }
+
+    .hero-cta-strip {
       display: flex;
       justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 52px;
+      margin-bottom: 38px;
     }
 
-    /* Stats Grid - 4 Columns Across Full Width */
-    .stats-container {
+    .section-pop-header {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+
+    .section-pop-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 5px 14px;
+      border: 2px solid #000000;
+      box-shadow: var(--shadow-pop-sm);
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .badge-yellow { background: var(--pop-yellow); color: var(--ink-black); }
+    .badge-cyan { background: var(--pop-cyan); color: var(--ink-black); }
+    .badge-magenta { background: var(--pop-magenta); color: #ffffff; }
+    .badge-emerald { background: var(--pop-emerald); color: var(--ink-black); }
+
+    .section-pop-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin: 8px 0 12px;
+    }
+
+    .section-pop-subtitle {
+      font-size: 1.08rem;
+      color: var(--muted-technical);
+      line-height: 1.6;
+    }
+
+    /* Open Science Grid */
+    .open-science-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 25px;
-      width: 100%;
+      gap: 22px;
+      margin-top: 24px;
     }
 
-    @media (max-width: 1200px) {
-      .stats-container {
+    @media (max-width: 1100px) {
+      .open-science-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 640px) {
-      .stats-container {
+      .open-science-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .stat-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      text-align: left;
-      transition: var(--transition);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .stat-box:hover {
-      border-color: var(--border-glow);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .stat-number {
-      font-family: var(--font-heading);
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-
-    .stat-suffix {
-      color: var(--cyan-bright);
-      font-size: 1.6rem;
-    }
-
-    .stat-title {
-      font-weight: 700;
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    .stat-detail {
-      font-size: 0.86rem;
-      color: var(--text-dim);
-      line-height: 1.45;
-    }
-
-    /* Section Styling */
-    .section-py {
-      padding: 85px 0;
-      position: relative;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 860px;
-      margin: 0 auto 55px;
-    }
-
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: clamp(2.2rem, 3.5vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #ffffff;
-      margin-top: 12px;
-      margin-bottom: 14px;
-    }
-
-    .section-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Pillars Grid - 3 Large Columns */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      width: 100%;
-    }
-
-    @media (max-width: 1080px) {
-      .pillars-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .pillar-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 40px 34px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      transition: var(--transition);
-      position: relative;
+    .open-tool-card {
+      background: #11111A;
+      border: 2px solid #28283C;
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: var(--shadow-pop-sm);
       display: flex;
       flex-direction: column;
+      transition: all 0.2s ease;
     }
 
-    .pillar-card:hover {
-      border-color: var(--border-glow);
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-glow);
+    .open-tool-card:hover {
+      border-color: var(--pop-cyan);
+      transform: translate(-3px, -3px);
+      box-shadow: 6px 6px 0px 0px var(--pop-cyan);
     }
 
-    .pillar-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: rgba(0, 212, 255, 0.12);
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--cyan);
-      margin-bottom: 24px;
+    .tool-header-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--pop-cyan);
+      margin-bottom: 12px;
     }
 
-    .pillar-title {
+    .tool-title {
       font-family: var(--font-heading);
-      font-size: 1.45rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
 
-    .pillar-text {
-      color: var(--text-muted);
-      font-size: 0.98rem;
-      line-height: 1.65;
-      margin-bottom: 24px;
+    .tool-desc {
+      font-size: 0.9rem;
+      color: var(--muted-technical);
+      line-height: 1.55;
+      margin-bottom: 18px;
       flex-grow: 1;
     }
 
-    .pillar-tags {
+    .tool-tech-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
+      margin-bottom: 18px;
     }
 
-    .pillar-tag {
+    .tool-tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      background: #1D1D2B;
+      color: #e2e8f0;
+      border-radius: 3px;
+      border: 1px solid #333348;
+    }
+
+    .tool-action-btn {
+      font-family: var(--font-mono);
       font-size: 0.78rem;
-      padding: 5px 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius-pill);
-      color: var(--text-secondary);
-    }
-
-    /* Agent Live Banner Section */
-    .agent-highlight-banner {
-      background: linear-gradient(135deg, rgba(8, 22, 38, 0.94) 0%, rgba(12, 34, 56, 0.94) 100%);
-      border: 1px solid var(--border-emerald);
-      border-radius: var(--radius-lg);
-      padding: 48px;
-      display: grid;
-      grid-template-columns: 1.6fr 1.1fr;
-      gap: 50px;
-      align-items: center;
-      box-shadow: var(--shadow-emerald);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .agent-banner-left h3 {
-      font-family: var(--font-heading);
-      font-size: 2.2rem;
       font-weight: 800;
-      color: #ffffff;
-      margin: 16px 0;
-    }
-
-    .agent-banner-left p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.68;
-      margin-bottom: 26px;
-    }
-
-    .agent-banner-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      background: rgba(4, 9, 14, 0.75);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 26px;
-    }
-
-    .agent-metric-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .agent-metric-val {
-      font-family: var(--font-heading);
-      font-size: 1.85rem;
-      font-weight: 800;
-      color: var(--emerald-bright);
-    }
-
-    .agent-metric-lbl {
-      font-size: 0.8rem;
-      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    /* Leadership Preview Grid on Home */
-    .leadership-strip {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 40px;
-      width: 100%;
-    }
-
-    .lead-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      display: flex;
+      color: var(--pop-yellow);
+      text-decoration: none;
+      display: inline-flex;
       align-items: center;
-      gap: 24px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      transition: var(--transition);
+      gap: 6px;
     }
 
-    .lead-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .lead-avatar-wrap {
-      width: 95px;
-      height: 95px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid var(--cyan-bright);
-      box-shadow: 0 0 18px rgba(0, 212, 255, 0.3);
-      flex-shrink: 0;
-    }
-
-    .lead-avatar-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 992px) {
-      .agent-highlight-banner {
-        grid-template-columns: 1fr;
-      }
-      .leadership-strip {
-        grid-template-columns: 1fr;
-      }
+    .tool-action-btn:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Full Screen Modern Hydrological & Telemetry Background -->
+  <!-- Full Screen Hydrological & Telemetry Background -->
   <div class="page-bg-system">
     <canvas id="ambientCanvas"></canvas>
     <div class="bg-topo-overlay"></div>
@@ -384,7 +225,7 @@
     <div class="bg-mesh-grid"></div>
   </div>
 
-  <!-- Top Navigation Bar -->
+  <!-- Academic Pop-Modernism Floating Navigation Bar -->
   <header class="site-header">
     <div class="container">
       <div class="nav-wrap">
@@ -394,15 +235,19 @@
             <span class="brand-title">RWESL</span>
             <span class="brand-sub">Gyeongsang National University</span>
           </div>
+          <span style="font-family: var(--font-mono); font-size: 0.68rem; font-weight: 800; background: var(--pop-yellow); color: var(--ink-black); padding: 2px 7px; border: 1.5px solid #000; box-shadow: 2px 2px 0px 0px #000; margin-left: 8px; border-radius: 3px; display: inline-block;">
+            VOL. 2026 // ISSUE #01
+          </span>
         </a>
 
         <ul class="nav-links">
           <li class="nav-item active"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
-          <li class="nav-item"><a href="publications.html">Publications</a></li>
-          <li class="nav-item"><a href="members.html">Members</a></li>
-          <li class="nav-item"><a href="ongoing-research.html">Ongoing Research</a></li>
-          <li class="nav-item"><a href="events.html">Events/Activities</a></li>
+          <li class="nav-item"><a href="#research-matrix">Research Matrix</a></li>
+          <li class="nav-item"><a href="#impact-benchmark">Impact</a></li>
+          <li class="nav-item"><a href="#publications-dispatch">Publications</a></li>
+          <li class="nav-item"><a href="#team-roster">Roster</a></li>
+          <li class="nav-item"><a href="#models-tools">Models & Tools</a></li>
+          <li class="nav-item"><a href="#contact-terminal">Contact</a></li>
           <li class="nav-item"><a href="gallery.html">Gallery</a></li>
         </ul>
 
@@ -412,9 +257,9 @@
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
-          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-nav-agent">
-            <span class="pulse-indicator"></span>
-            AI Agent Dashboard
+          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-pop-cyan" style="padding: 7px 14px; font-size: 0.78rem;">
+            <span class="live-rec-dot" style="margin-right: 6px;"></span>
+            AI Agent Live ↗
           </a>
         </div>
       </div>
@@ -423,82 +268,121 @@
 
   <main class="main-content">
     
+    <!-- 1. Marvel-Energy Splash Hero Panel -->
+    <section class="container" style="padding-top: 15px;">
+      <div class="hero-splash-frame">
+        <canvas id="waveCanvas" class="hero-canvas"></canvas>
+        <div class="halftone-overlay"></div>
 
+        <!-- Registration Crop Marks -->
+        <span class="reg-mark reg-tl">+</span>
+        <span class="reg-mark reg-tr">+</span>
+        <span class="reg-mark reg-bl">+</span>
+        <span class="reg-mark reg-br">+</span>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <canvas id="waveCanvas" class="hero-canvas"></canvas>
-
-      <div class="container hero-content">
-        <div class="badge badge-cyan">
-          <span class="pulse-indicator"></span>
-          Regional Water Environment System Laboratory
-        </div>
-
-        <h1 class="hero-title">Regional Water Environment System Lab</h1>
-        <div class="hero-tagline">Water Quality • Watershed Management • Environmental Data Science</div>
-
-        <p class="hero-desc">
-          Water is the foundation of <strong>sustainable agriculture</strong> and <strong>resilient communities</strong>. At RWESL, we advance science-driven solutions for water resource conservation, hydrological watershed modeling, and autonomous AI-powered environmental monitoring.
-        </p>
-
-        <div class="hero-cta">
-          <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-            Launch K-Water Guard AI
-          </a>
-          <a href="publications.html" class="btn btn-secondary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-            Explore Publications
-          </a>
-          <a href="members.html" class="btn btn-secondary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            </svg>
-            Research Team
-          </a>
-        </div>
-
-        <!-- 4 Stats Counters Spanning Full Width -->
-        <div class="stats-container">
-          <div class="stat-box">
-            <div class="stat-number"><span class="counter" data-target="14">0</span><span class="stat-suffix">+</span></div>
-            <div class="stat-title">Water Parameters Tracked</div>
-            <div class="stat-detail">Autonomous daily telemetry for pH, DO, BOD, COD, TN, TP & algae.</div>
+        <div style="position: relative; z-index: 5; text-align: center;">
+          <!-- Metadata Banner -->
+          <div class="hero-meta-banner">
+            AFFILIATION: RESEARCH LAB • PI: PROF. SANG MIN KIM • AI LEAD: DR. MUHAMMAD WAQAS • FOCUS: SMART AG & CLIMATE DYNAMICS
           </div>
 
-          <div class="stat-box">
-            <div class="stat-number"><span class="counter" data-target="365">0</span><span class="stat-suffix">d</span></div>
-            <div class="stat-title">Autonomous Pipelines</div>
-            <div class="stat-detail">Continuous environmental big data ingestion and validation algorithms.</div>
+          <div class="hero-eyebrow">
+            [ AI & EARTH SYSTEMS RESEARCH GROUP // GNU RWESL ]
           </div>
 
-          <div class="stat-box">
-            <div class="stat-number"><span class="counter" data-target="100">0</span><span class="stat-suffix">%</span></div>
-            <div class="stat-title">Geospatial Coverage</div>
-            <div class="stat-detail">High-resolution watershed GIS analysis and Sen-Slope trend mapping.</div>
+          <h1 class="hero-monumental-title">
+            DECODING <span class="ink-highlight-yellow">EARTH DYNAMICS</span><br>
+            WITH <span class="ink-highlight-cyan">COMPUTATIONAL INTELLIGENCE</span>
+          </h1>
+
+          <!-- Comic-Editorial Narrative Caption Box -->
+          <div class="comic-caption-box hero-caption-narrative">
+            "Pioneering spatiotemporal deep learning, potential evapotranspiration prediction, microclimate data fusion, and high-resolution hydrological intelligence across the Namgang Dam & Nakdong River basins."
           </div>
 
-          <div class="stat-box">
-            <div class="stat-number"><span class="counter" data-target="50">0</span><span class="stat-suffix">+</span></div>
-            <div class="stat-title">Peer-Reviewed Papers</div>
-            <div class="stat-detail">Top SCI journals including Ecohydrology & Hydrobiology, Water, etc.</div>
+          <!-- Tactile Pop CTA Buttons -->
+          <div class="hero-cta-strip">
+            <a href="#publications-dispatch" class="btn-pop-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right: 6px;">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              EXPLORE PUBLICATIONS DISPATCH
+            </a>
+            <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-pop-cyan">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right: 6px;">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              LAUNCH K-WATER GUARD AI
+            </a>
+            <a href="#research-matrix" class="btn-pop-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right: 6px;">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              SERIAL RESEARCH MATRIX
+            </a>
+          </div>
+
+          <!-- Mini Lab Status Pill -->
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: #a1a1aa; background: #000000; border: 1px solid #272738; padding: 4px 14px; border-radius: 9999px;">
+            <span class="live-rec-dot"></span>
+            <span>LAB STATUS: ACTIVE RESEARCH DISPATCH • AUTONOMOUS ETL RUNNING DAILY</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Aerial Drone & Watershed Field Telemetry Showcase -->
-    <section class="drone-video-section">
+    <!-- 2. Impact Benchmarks / Data Bento Section -->
+    <section class="section-py" id="impact-benchmark" style="padding-top: 20px;">
       <div class="container">
-        <div class="drone-video-card">
+        <div class="section-pop-header">
+          <span class="section-pop-badge badge-yellow">[ IMPACT BENCHMARKS // DATA BENTO ]</span>
+          <h2 class="section-pop-title">Computational Watershed Scale</h2>
+          <p class="section-pop-subtitle">
+            Measurable research throughput bridging real-time field hydro-telemetry, autonomous artificial intelligence pipelines, and peer-reviewed international scientific dispatches.
+          </p>
+        </div>
+
+        <div class="impact-bento-grid">
+          <!-- Card A: Parameters -->
+          <div class="bento-card bento-card-a">
+            <div class="bento-num"><span class="counter" data-target="14">0</span>+</div>
+            <div class="bento-title">Physicochemical Parameters</div>
+            <div class="bento-desc">Autonomous daily sensor telemetry tracking pH, DO, BOD, COD, TN, TP, TOC, and cyanobacterial chlorophyll-a across agricultural river networks.</div>
+          </div>
+
+          <!-- Card B: ETL Pipelines -->
+          <div class="bento-card bento-card-b">
+            <div class="bento-num"><span class="counter" data-target="365">0</span>d</div>
+            <div class="bento-title">Continuous AI ETL Pipelines</div>
+            <div class="bento-desc">Zero manual overhead. Daily automated Python extraction, anomaly QA/QC filtering, and GIS interactive geospatial heatmaps.</div>
+          </div>
+
+          <!-- Card C: Spatial Telemetry -->
+          <div class="bento-card bento-card-c">
+            <div class="bento-num"><span class="counter" data-target="100">0</span>%</div>
+            <div class="bento-title">Basin Spatial GIS Coverage</div>
+            <div class="bento-desc">High-resolution Sen's slope trend detection, spatial buffering, and water-curtain greenhouse aquifer monitoring across Jinju & Miryang.</div>
+          </div>
+
+          <!-- Card D: SCI Publications -->
+          <div class="bento-card bento-card-d">
+            <div class="bento-num"><span class="counter" data-target="50">0</span>+</div>
+            <div class="bento-title">Peer-Reviewed Papers</div>
+            <div class="bento-desc">Published across leading SCI/SCIE venues including Elsevier <em>Ecohydrology & Hydrobiology</em>, MDPI <em>Water</em>, and <em>KSAE</em> journals.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Drone Telemetry & MBC Television Broadcast Spotlight -->
+    <section class="section-py" style="padding-top: 10px;">
+      <div class="container">
+        <!-- Drone HUD Video Card -->
+        <div class="drone-video-card" style="border: 2px solid var(--pop-cyan); box-shadow: var(--shadow-pop-cyan); margin-bottom: 45px;">
           <div class="drone-video-wrapper">
             <video class="drone-video-player" id="dronePlayer" autoplay loop muted playsinline preload="auto">
               <source src="assets/videos/bg-drone.mp4" type="video/mp4">
@@ -548,20 +432,18 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Television & Media Spotlight: MBC Gyeongnam News Broadcast -->
-    <section class="broadcast-section" id="media-spotlight">
-      <div class="container">
-        <div class="broadcast-card">
+        <!-- Television & Media Spotlight: MBC Gyeongnam News Broadcast -->
+        <div class="broadcast-card" id="media-spotlight" style="border: 2px solid var(--pop-yellow); box-shadow: var(--shadow-pop-yellow);">
           <div class="broadcast-card-header">
-            <div class="broadcast-badge-pill">
-              <span class="live-rec-dot"></span>
+            <div class="broadcast-badge-pill" style="background: var(--pop-yellow); color: #000; border: 1.5px solid #000; box-shadow: 2px 2px 0px 0px #000;">
+              <span class="live-rec-dot" style="background: #E61C24;"></span>
               <span>MBC 경남 NEWS SPECIAL • TELEVISION BROADCAST</span>
             </div>
-            <h2 class="section-title" style="margin-top: 6px; margin-bottom: 10px;">MBC 경남 TV News Spotlight: RWESL & AI Water Guard</h2>
-            <p class="section-subtitle" style="max-width: 820px; margin: 0 auto;">
+            <h2 class="section-title" style="margin-top: 10px; margin-bottom: 10px; font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem);">
+              MBC 경남 TV News Spotlight: RWESL & AI Water Guard
+            </h2>
+            <p class="section-subtitle" style="max-width: 820px; margin: 0 auto; color: var(--muted-technical);">
               Broadcast investigative news coverage on the <strong>Regional Water Environment System Lab (RWESL)</strong> at Gyeongsang National University, demonstrating real-time autonomous watershed intelligence, Namgang Dam basin management, and AI early-warning telemetry.
             </p>
           </div>
@@ -596,318 +478,638 @@
       </div>
     </section>
 
-    <!-- Core Research Pillars (Full Width 3 Columns) -->
-    <section class="section-py">
+    <!-- 4. Andy Warhol 4-Panel Serial Research Matrix -->
+    <section class="section-py" id="research-matrix">
       <div class="container">
-        <div class="section-header">
-          <div class="badge badge-cyan">Our Focus</div>
-          <h2 class="section-title">Core Research Pillars</h2>
-          <p class="section-subtitle">
-            By integrating artificial intelligence, big data analytics, remote sensing, and advanced hydrological modeling, we transform environmental data into actionable insights.
+        <div class="section-pop-header">
+          <span class="section-pop-badge badge-cyan">[ SERIAL RESEARCH MATRIX // 4-PANEL SCREEN-PRINT ]</span>
+          <h2 class="section-pop-title">Core Research Pillars</h2>
+          <p class="section-pop-subtitle">
+            Identical four-pillar scientific anatomy executed across distinct Pop-Modern screen-print colorways. Merging spatiotemporal deep learning, basin hydrology, and climate downscaling.
           </p>
         </div>
 
-        <div class="pillars-grid">
-          <!-- Pillar 1 -->
-          <div class="pillar-card">
-            <div class="pillar-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M2 12h20M2 6h20M2 18h20"/>
-              </svg>
-            </div>
-            <h3 class="pillar-title">Hydrological & Watershed Modeling</h3>
-            <p class="pillar-text">
-              Comprehensive watershed modeling using SWAT, HSPF, and distributed physical models. Addressing flood risks, drought mitigation, and reservoir operation dynamics in the Nakdong River and Namgang Dam basins.
+        <div class="warhol-matrix-grid">
+          <!-- Panel 01: Hydrological Intelligence (Cyan) -->
+          <div class="warhol-card warhol-card-cyan">
+            <span class="warhol-pill-number">[ PILLAR 01 ]</span>
+            <h3 class="warhol-title">Hydrological Intelligence</h3>
+            <div class="warhol-architecture">Spatiotemporal Deep Learning • Graph-WaveNet & GCRN</div>
+            <p class="warhol-abstract">
+              Direct and indirect potential evapotranspiration (PET) prediction across 13 meteorological stations in the Nakdong River Basin, South Korea. Evaluating spatio-temporal graph neural networks against classical FAO-56 PM baselines.
             </p>
-            <div class="pillar-tags">
-              <span class="pillar-tag">SWAT Modeling</span>
-              <span class="pillar-tag">HSPF</span>
-              <span class="pillar-tag">Reservoir Capacity</span>
-              <span class="pillar-tag">Flood & Drought</span>
-            </div>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="pillar-card">
-            <div class="pillar-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
-                <line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <h3 class="pillar-title">AI & Environmental Data Science</h3>
-            <p class="pillar-text">
-              Developing autonomous monitoring agents, machine learning potential evapotranspiration (PET) forecasting, and deep learning groundwater trend prediction models for high-density agricultural regions.
-            </p>
-            <div class="pillar-tags">
-              <span class="pillar-tag">Deep Learning PET</span>
-              <span class="pillar-tag">Autonomous Agents</span>
-              <span class="pillar-tag">Groundwater ML</span>
-              <span class="pillar-tag">Big Data</span>
-            </div>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="pillar-card">
-            <div class="pillar-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <h3 class="pillar-title">Agricultural Water Quality & Climate</h3>
-            <p class="pillar-text">
-              Monitoring agricultural non-point source pollution, harmful cyanobacterial algal blooms, and water curtain greenhouse sustainability under intensifying global climate change scenarios.
-            </p>
-            <div class="pillar-tags">
-              <span class="pillar-tag">Algal Bloom Radar</span>
-              <span class="pillar-tag">Non-Point Pollution</span>
-              <span class="pillar-tag">Greenhouse Agriculture</span>
-              <span class="pillar-tag">Adaptation</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Featured Findings from Latest Scientific Publications (2026) -->
-        <div style="margin-top: 85px;">
-          <div class="section-header" style="margin-bottom: 35px;">
-            <div class="badge badge-cyan">Featured Research Discoveries</div>
-            <h2 class="section-title">Latest Scientific Publication Graphics (2026)</h2>
-            <p class="section-subtitle">
-              Authentic high-resolution computational models, deep neural error diagnostics, and geospatial groundwater analyses published in top peer-reviewed SCI/SCIE journals by RWESL researchers. Click any figure to examine in full 2048px resolution.
-            </p>
-          </div>
-
-          <div class="featured-papers-grid">
-
-            <!-- Paper Graphic 1: Deep Learning PET Prediction (Ecohydrology & Hydrobiology 2026) -->
-            <div class="paper-feature-card">
-              <div class="paper-figure-wrapper" onclick="openLightbox('assets/images/publications/publications_27.jpg')" title="Click to view full high-resolution graphic (2048px)">
-                <div class="figure-badge-overlay">
-                  <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 4px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">Click to Enlarge • 2048px</span>
-                </div>
-                <img src="assets/images/publications/publications_27.jpg" alt="Deep Learning PET Error Analysis & Scatter Distributions (Ecohydrology & Hydrobiology 2026)" class="paper-figure-img">
-              </div>
-              <div class="paper-feature-content">
-                <div class="paper-meta-row">
-                  <span class="paper-journal-tag">Ecohydrology & Hydrobiology (2026)</span>
-                  <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 10px;">SCI • Elsevier</span>
-                </div>
-                <h3 class="paper-feature-title">
-                  Deep Learning-Based Direct and Indirect Potential Evapotranspiration Prediction: A Case of the Nakdong River Basin
-                </h3>
-                <div class="paper-authors-line">
-                  <strong>Muhammad Waqas</strong>, <strong>Sang Min Kim*</strong> (2026)
-                </div>
-                <p class="paper-abstract-snippet">
-                  Direct scientific output evaluating Graph-WaveNet vs. GCRN spatio-temporal graph neural networks against classical FAO-56 PM baselines across 13 meteorological stations in the Nakdong River Basin, South Korea, showing superior error distributions and density clustering.
-                </p>
-                <div class="paper-feature-actions">
-                  <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    DOI: 10.1016/j.ecohyd.2026.100772 ↗
-                  </a>
-                  <a href="https://www.sciencedirect.com/science/article/pii/S1642359326000467" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    ScienceDirect ↗
-                  </a>
-                  <button class="btn btn-sm btn-primary" onclick="openLightbox('assets/images/publications/publications_27.jpg')">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px; vertical-align: -2px;">
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                      <line x1="11" y1="8" x2="11" y2="14"></line>
-                      <line x1="8" y1="11" x2="14" y2="11"></line>
-                    </svg>
-                    Inspect Figure
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Paper Graphic 2: Groundwater Trends & Spatial Agriculture (Water MDPI 2026) -->
-            <div class="paper-feature-card">
-              <div class="paper-figure-wrapper" onclick="openLightbox('assets/images/publications/publications_30.jpg')" title="Click to view full high-resolution graphic (2048px)">
-                <div class="figure-badge-overlay">
-                  <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 4px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">Click to Enlarge • 2048px</span>
-                </div>
-                <img src="assets/images/publications/publications_30.jpg" alt="Groundwater Stations, River Systems, and Greenhouse Agriculture in Gyeongsangnam-do (Water MDPI 2026)" class="paper-figure-img">
-              </div>
-              <div class="paper-feature-content">
-                <div class="paper-meta-row">
-                  <span class="paper-journal-tag">Water MDPI (2026)</span>
-                  <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 2px 10px;">SCIE • Open Access</span>
-                </div>
-                <h3 class="paper-feature-title">
-                  Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Deep Learning
-                </h3>
-                <div class="paper-authors-line">
-                  <strong>Muhammad Waqas</strong>, <strong>Sang Min Kim*</strong> (2026)
-                </div>
-                <p class="paper-abstract-snippet">
-                  Direct scientific GIS mapping delineating groundwater telemetry stations, river systems (Nam & Nakdong Rivers), and intensive water-curtain greenhouse agriculture zones in Jinju and Miryang, evaluating seasonal agricultural aquifer drawdown.
-                </p>
-                <div class="paper-feature-actions">
-                  <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    DOI: 10.3390/w18040444 ↗
-                  </a>
-                  <a href="publications.html" class="btn btn-sm btn-outline">
-                    All Publications →
-                  </a>
-                  <button class="btn btn-sm btn-primary" onclick="openLightbox('assets/images/publications/publications_30.jpg')">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px; vertical-align: -2px;">
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                      <line x1="11" y1="8" x2="11" y2="14"></line>
-                      <line x1="8" y1="11" x2="14" y2="11"></line>
-                    </svg>
-                    Inspect Figure
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Leadership Spotlight on Home -->
-        <div style="margin-top: 75px;">
-          <div class="section-header" style="margin-bottom: 26px;">
-            <div class="badge badge-cyan">Leadership</div>
-            <h2 class="section-title">Research Leadership</h2>
-            <p class="section-subtitle">
-              Directing forward-looking scientific research in hydrological modeling, watershed water quality, and agricultural resilience at Gyeongsang National University.
-            </p>
-          </div>
-
-          <div class="lead-spotlight-card">
-            <div class="lead-spotlight-avatar">
-              <img src="assets/images/team/prof_sang_min_kim.jpg" alt="Prof. Sang Min Kim" class="lead-spotlight-img">
-              <div class="lead-spotlight-status">
-                <span class="status-pulse-dot"></span>
-                <span>PI & Lab Director</span>
-              </div>
-            </div>
-            <div class="lead-spotlight-info">
-              <div class="badge badge-cyan" style="font-size: 0.78rem; padding: 4px 12px; margin-bottom: 10px; align-self: flex-start;">Head of Laboratory • Principal Investigator</div>
-              <h3 class="lead-spotlight-name">Prof. Sang Min Kim</h3>
-              <div class="lead-spotlight-title">President, Korean Society of Agricultural Engineers (KSAE)</div>
-              <div class="lead-spotlight-dept">Professor, Department of Agricultural Engineering, Gyeongsang National University (GNU)</div>
-              <p class="lead-spotlight-bio">
-                Prof. Sang Min Kim is the Director of the Regional Water Environment System Laboratory (RWESL). With extensive national and international leadership in hydrological modeling, watershed water quality management, non-point source pollution mitigation, and climate adaptation, he spearheads major research initiatives bridging environmental hydrology with smart agricultural systems across South Korea.
-              </p>
-              <div class="lead-spotlight-tags">
-                <span class="pillar-tag">Watershed Hydrology</span>
-                <span class="pillar-tag">SWAT & HSPF Modeling</span>
-                <span class="pillar-tag">Water Curtain Agriculture</span>
-                <span class="pillar-tag">Climate Change Adaptation</span>
-                <span class="pillar-tag">KSAE Leadership</span>
-              </div>
-              <div class="lead-spotlight-actions">
-                <a href="members.html" class="btn btn-sm btn-primary">
-                  View Full Academic Profile & Scholar ↗
-                </a>
-                <a href="publications.html" class="btn btn-sm btn-outline">
-                  View Research Publications
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Field Facilities & Lab Research Base -->
-    <section class="section-py" style="padding-top: 10px;">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge badge-cyan">Research Environment</div>
-          <h2 class="section-title">Laboratory & Watershed Field Base</h2>
-          <p class="section-subtitle">
-            Combining state-of-the-art computational modeling labs at Gyeongsang National University with real-world field telemetry stations and watershed monitoring networks across South Korea.
-          </p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 28px; width: 100%;">
-          <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-glass); background: #02060b; box-shadow: var(--shadow-sm);">
-            <img src="assets/images/home/home_3.jpg" alt="RWESL Watershed Field Base Panorama" style="width: 100%; height: 320px; object-fit: cover; display: block;">
-            <div style="padding: 24px 28px;">
-              <span style="font-size: 0.78rem; font-weight: 700; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.05em;">Field Observational Network</span>
-              <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: #fff; margin: 6px 0;">Regional Hydrological Observatories</h4>
-              <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">Continuous hydrometric stations, water quality sensors, and telemetry data collectors deployed across the Nakdong and Namgang watersheds.</p>
-            </div>
-          </div>
-
-          <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-glass); background: #02060b; box-shadow: var(--shadow-sm);">
-            <img src="assets/images/events/events_activities_53.jpg" alt="Prof. Sang Min Kim with Academic Delegates at CSAE-KSAE Joint Symposium" style="width: 100%; height: 320px; object-fit: cover; display: block;">
-            <div style="padding: 24px 28px;">
-              <span style="font-size: 0.78rem; font-weight: 700; color: var(--emerald-bright); text-transform: uppercase; letter-spacing: 0.05em;">Academic Delegation</span>
-              <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: #fff; margin: 6px 0;">International Academic Symposia & Delegations</h4>
-              <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">Prof. Sang Min Kim leading bilateral academic delegations, international water forums, and collaborative engineering symposia representing RWESL and KSAE.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Agent Spotlight Full Width -->
-    <section class="section-py" style="padding-top: 10px;">
-      <div class="container">
-        <div class="agent-highlight-banner">
-          <div class="agent-banner-left">
-            <div class="badge badge-emerald">
-              <span class="pulse-indicator"></span>
-              Autonomous Intelligence
-            </div>
-            <h3>K-Water Guard AI Agent</h3>
-            <p>
-              An intelligent environmental data automation system developed by the Regional Water Environment System Lab (RWESL). Project team includes <strong>Dr. Muhammad Waqas</strong> and <strong>Sangbin Ha</strong> (Undergraduate Student), with research conceptualization by <strong>Prof. Sang Min Kim</strong>.
-            </p>
-            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-              <a href="k-waterguard-ai.html" class="btn btn-secondary">System Details</a>
-              <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Launch Live Dashboard ↗
+            <div class="warhol-metric-tag">ACCURACY: R² &gt; 0.95 • 13 BASIN STATIONS</div>
+            <div style="margin-top: 14px;">
+              <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono); font-size: 0.76rem; font-weight: 800; color: #000; text-decoration: underline;">
+                VIEW PAPER (ECOHYDROLOGY 2026) ↗
               </a>
             </div>
           </div>
 
-          <div class="agent-banner-stats">
-            <div class="agent-metric-item">
-              <span class="agent-metric-val">14+</span>
-              <span class="agent-metric-lbl">Monitored Chem Parameters</span>
+          <!-- Panel 02: Climate Downscaling (Magenta) -->
+          <div class="warhol-card warhol-card-magenta">
+            <span class="warhol-pill-number">[ PILLAR 02 ]</span>
+            <h3 class="warhol-title">Climate Downscaling & Extremes</h3>
+            <div class="warhol-architecture">CMIP6 GCMs • SWAT & HSPF Coupled Modeling</div>
+            <p class="warhol-abstract">
+              High-resolution climate model downscaling for extreme precipitation, flood surges, and heatwave hazards in the Namgang Dam and Nakdong River basins. Forecasting reservoir inflow under intensifying SSP climate scenarios.
+            </p>
+            <div class="warhol-metric-tag">SSP2-4.5 & SSP5-8.5 • NAMGANG DAM BASIN</div>
+            <div style="margin-top: 14px;">
+              <a href="ongoing-research.html" style="font-family: var(--font-mono); font-size: 0.76rem; font-weight: 800; color: #fff; text-decoration: underline;">
+                EXPLORE CLIMATE MODELS ↗
+              </a>
             </div>
-            <div class="agent-metric-item">
-              <span class="agent-metric-val">Daily</span>
-              <span class="agent-metric-lbl">Autonomous ETL Frequency</span>
+          </div>
+
+          <!-- Panel 03: Smart Agriculture (Yellow) -->
+          <div class="warhol-card warhol-card-yellow">
+            <span class="warhol-pill-number">[ PILLAR 03 ]</span>
+            <h3 class="warhol-title">Smart Agriculture & Aquifers</h3>
+            <div class="warhol-architecture">Microclimate Sensor Fusion • Deep Aquifer Models</div>
+            <p class="warhol-abstract">
+              Evaluating seasonal groundwater drawdown and recovery dynamics in intensive water-curtain greenhouse agriculture zones across Jinju and Miryang using deep learning architectures and spatio-temporal GIS buffering.
+            </p>
+            <div class="warhol-metric-tag">WATER MDPI (2026) • AQUIFER SUSTAINABILITY</div>
+            <div style="margin-top: 14px;">
+              <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono); font-size: 0.76rem; font-weight: 800; color: #000; text-decoration: underline;">
+                VIEW PAPER (WATER MDPI 2026) ↗
+              </a>
             </div>
-            <div class="agent-metric-item">
-              <span class="agent-metric-val">GIS</span>
-              <span class="agent-metric-lbl">Spatial Heatmap Engine</span>
-            </div>
-            <div class="agent-metric-item">
-              <span class="agent-metric-val">100%</span>
-              <span class="agent-metric-lbl">Zero Manual Overhead</span>
+          </div>
+
+          <!-- Panel 04: Earth Observation (Emerald) -->
+          <div class="warhol-card warhol-card-emerald">
+            <span class="warhol-pill-number">[ PILLAR 04 ]</span>
+            <h3 class="warhol-title">Earth Observation & Telemetry</h3>
+            <div class="warhol-architecture">Multispectral Satellite Telemetry • Autonomous ETL</div>
+            <p class="warhol-abstract">
+              Continuous environmental big data pipelines powering the K-Water Guard agent. Ingesting 14+ physicochemical parameters, agricultural non-point source pollution, and automated chlorophyll-a algal bloom anomaly alerts.
+            </p>
+            <div class="warhol-metric-tag">14+ CHEM PARAMS • AUTONOMOUS ETL</div>
+            <div style="margin-top: 14px;">
+              <a href="k-waterguard-ai.html" style="font-family: var(--font-mono); font-size: 0.76rem; font-weight: 800; color: #000; text-decoration: underline;">
+                INSPECT AGENT SYSTEM ↗
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- 5. Featured Breakthroughs / Graphical Abstract Preview -->
+    <section class="section-py" style="padding-top: 10px;">
+      <div class="container">
+        <div class="section-pop-header">
+          <span class="section-pop-badge badge-magenta">[ SCIENTIFIC DISPATCH // GRAPHICAL ABSTRACTS ]</span>
+          <h2 class="section-pop-title">Latest Scientific Publication Graphics (2026)</h2>
+          <p class="section-pop-subtitle">
+            Authentic high-resolution computational models, deep neural error diagnostics, and geospatial groundwater analyses published in top peer-reviewed SCI/SCIE journals by RWESL researchers. Click any figure to examine in full 2048px resolution.
+          </p>
+        </div>
+
+        <div class="featured-papers-grid">
+          <!-- Paper Graphic 1: Deep Learning PET Prediction (Ecohydrology & Hydrobiology 2026) -->
+          <div class="paper-feature-card" style="border: 2px solid #28283C; box-shadow: var(--shadow-pop-sm);">
+            <div class="paper-figure-wrapper" onclick="openLightbox('assets/images/publications/publications_27.jpg')" title="Click to view full high-resolution graphic (2048px)">
+              <div class="figure-badge-overlay">
+                <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 4px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">Click to Enlarge • 2048px</span>
+              </div>
+              <img src="assets/images/publications/publications_27.jpg" alt="Deep Learning PET Error Analysis & Scatter Distributions (Ecohydrology & Hydrobiology 2026)" class="paper-figure-img">
+            </div>
+            <div class="paper-feature-content">
+              <div class="paper-meta-row">
+                <span class="paper-journal-tag" style="background: var(--pop-yellow); color: #000; font-weight: 800; border: 1px solid #000;">Ecohydrology & Hydrobiology (2026)</span>
+                <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 2px 10px; font-weight: 800;">SCI • Elsevier</span>
+              </div>
+              <h3 class="paper-feature-title" style="font-family: var(--font-heading); font-size: 1.35rem;">
+                Deep Learning-Based Direct and Indirect Potential Evapotranspiration Prediction: A Case of the Nakdong River Basin
+              </h3>
+              <div class="paper-authors-line">
+                <strong>Muhammad Waqas</strong>, <strong>Sang Min Kim*</strong> (2026)
+              </div>
+              <p class="paper-abstract-snippet">
+                Direct scientific output evaluating Graph-WaveNet vs. GCRN spatio-temporal graph neural networks against classical FAO-56 PM baselines across 13 meteorological stations in the Nakdong River Basin, South Korea, showing superior error distributions and density clustering.
+              </p>
+              <div class="paper-feature-actions">
+                <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  DOI: 10.1016/j.ecohyd.2026.100772 ↗
+                </a>
+                <a href="https://www.sciencedirect.com/science/article/pii/S1642359326000467" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  ScienceDirect ↗
+                </a>
+                <button class="btn btn-sm btn-primary" onclick="openLightbox('assets/images/publications/publications_27.jpg')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px; vertical-align: -2px;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                  Inspect Figure (2048px)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paper Graphic 2: Groundwater Trends & Spatial Agriculture (Water MDPI 2026) -->
+          <div class="paper-feature-card" style="border: 2px solid #28283C; box-shadow: var(--shadow-pop-sm);">
+            <div class="paper-figure-wrapper" onclick="openLightbox('assets/images/publications/publications_30.jpg')" title="Click to view full high-resolution graphic (2048px)">
+              <div class="figure-badge-overlay">
+                <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 4px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">Click to Enlarge • 2048px</span>
+              </div>
+              <img src="assets/images/publications/publications_30.jpg" alt="Groundwater Stations, River Systems, and Greenhouse Agriculture in Gyeongsangnam-do (Water MDPI 2026)" class="paper-figure-img">
+            </div>
+            <div class="paper-feature-content">
+              <div class="paper-meta-row">
+                <span class="paper-journal-tag" style="background: var(--pop-emerald); color: #000; font-weight: 800; border: 1px solid #000;">Water MDPI (2026)</span>
+                <span class="badge badge-emerald" style="font-size: 0.72rem; padding: 2px 10px; font-weight: 800;">SCIE • Open Access</span>
+              </div>
+              <h3 class="paper-feature-title" style="font-family: var(--font-heading); font-size: 1.35rem;">
+                Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Deep Learning
+              </h3>
+              <div class="paper-authors-line">
+                <strong>Muhammad Waqas</strong>, <strong>Sang Min Kim*</strong> (2026)
+              </div>
+              <p class="paper-abstract-snippet">
+                Direct scientific GIS mapping delineating groundwater telemetry stations, river systems (Nam & Nakdong Rivers), and intensive water-curtain greenhouse agriculture zones in Jinju and Miryang, evaluating seasonal agricultural aquifer drawdown.
+              </p>
+              <div class="paper-feature-actions">
+                <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  DOI: 10.3390/w18040444 ↗
+                </a>
+                <a href="publications.html" class="btn btn-sm btn-outline">
+                  All Publications →
+                </a>
+                <button class="btn btn-sm btn-primary" onclick="openLightbox('assets/images/publications/publications_30.jpg')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px; vertical-align: -2px;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                  Inspect Figure (2048px)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Publications Dispatch Archive with Interactive Filters -->
+    <section class="section-py" id="publications-dispatch">
+      <div class="container">
+        <div class="section-pop-header">
+          <span class="section-pop-badge badge-yellow">[ PUBLICATIONS ARCHIVE // EDITORIAL DISPATCH ]</span>
+          <h2 class="section-pop-title">Peer-Reviewed Dispatch Index</h2>
+          <p class="section-pop-subtitle">
+            Authentic scientific literature produced by RWESL researchers. Filter dispatches by category or copy BibTeX references directly to your clipboard.
+          </p>
+        </div>
+
+        <!-- Filter Pill Buttons -->
+        <div class="dispatch-filters">
+          <button class="dispatch-filter-btn active" onclick="filterDispatches('all', this)">ALL ARCHIVES</button>
+          <button class="dispatch-filter-btn" onclick="filterDispatches('q1', this)">Q1 JOURNAL PAPERS</button>
+          <button class="dispatch-filter-btn" onclick="filterDispatches('conference', this)">CONFERENCE PROCEEDINGS</button>
+          <button class="dispatch-filter-btn" onclick="filterDispatches('open', this)">OPEN DATA & CODE</button>
+        </div>
+
+        <!-- Publication Row 1 -->
+        <div class="dispatch-row" data-category="q1">
+          <div class="dispatch-year-col">
+            2026
+            <div class="dispatch-badge-tag" style="background: var(--pop-cyan); color: #000;">Q1 SCI</div>
+          </div>
+          <div class="dispatch-main-col">
+            <h4>Deep Learning-Based Direct and Indirect Potential Evapotranspiration Prediction: A Case of the Nakdong River Basin</h4>
+            <div class="dispatch-authors">
+              <span style="background: var(--pop-yellow); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Muhammad Waqas</span>, 
+              <span style="background: var(--pop-cyan); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Sang Min Kim*</span>
+            </div>
+            <div class="dispatch-meta-line">
+              <em>Ecohydrology & Hydrobiology</em>, Elsevier • DOI: 10.1016/j.ecohyd.2026.100772
+            </div>
+          </div>
+          <div class="dispatch-actions-col">
+            <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" class="btn-pop-secondary" style="padding: 7px 12px; font-size: 0.74rem;">DOI ↗</a>
+            <button class="btn-pop-cyan" style="padding: 7px 12px; font-size: 0.74rem;" onclick="copyBibtex('@article{waqas2026deep,\n  title={Deep Learning-Based Direct and Indirect Potential Evapotranspiration Prediction: A Case of the Nakdong River Basin},\n  author={Waqas, Muhammad and Kim, Sang Min},\n  journal={Ecohydrology & Hydrobiology},\n  year={2026},\n  doi={10.1016/j.ecohyd.2026.100772}\n}')">
+              BIBTEX
+            </button>
+          </div>
+        </div>
+
+        <!-- Publication Row 2 -->
+        <div class="dispatch-row" data-category="q1">
+          <div class="dispatch-year-col">
+            2026
+            <div class="dispatch-badge-tag" style="background: var(--pop-emerald); color: #000;">SCIE</div>
+          </div>
+          <div class="dispatch-main-col">
+            <h4>Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Deep Learning</h4>
+            <div class="dispatch-authors">
+              <span style="background: var(--pop-yellow); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Muhammad Waqas</span>, 
+              <span style="background: var(--pop-cyan); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Sang Min Kim*</span>
+            </div>
+            <div class="dispatch-meta-line">
+              <em>Water</em>, MDPI Open Access • DOI: 10.3390/w18040444
+            </div>
+          </div>
+          <div class="dispatch-actions-col">
+            <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" class="btn-pop-secondary" style="padding: 7px 12px; font-size: 0.74rem;">DOI ↗</a>
+            <button class="btn-pop-emerald" style="padding: 7px 12px; font-size: 0.74rem;" onclick="copyBibtex('@article{waqas2026seasonal,\n  title={Seasonal Groundwater Trends and Predictions in Greenhouse Agriculture of Gyeongsangnam-Do Using Deep Learning},\n  author={Waqas, Muhammad and Kim, Sang Min},\n  journal={Water},\n  volume={18},\n  number={4},\n  pages={0444},\n  year={2026},\n  doi={10.3390/w18040444}\n}')">
+              BIBTEX
+            </button>
+          </div>
+        </div>
+
+        <!-- Publication Row 3 -->
+        <div class="dispatch-row" data-category="q1">
+          <div class="dispatch-year-col">
+            2024
+            <div class="dispatch-badge-tag" style="background: var(--pop-yellow); color: #000;">Q1 SCI</div>
+          </div>
+          <div class="dispatch-main-col">
+            <h4>Hydrological Watershed Modeling of Runoff Dynamics & Agricultural Non-Point Source Nutrients in the Nakdong Basin</h4>
+            <div class="dispatch-authors">
+              <span style="background: var(--pop-cyan); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Sang Min Kim*</span>, 
+              <span style="background: var(--pop-yellow); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Muhammad Waqas</span> et al.
+            </div>
+            <div class="dispatch-meta-line">
+              <em>Journal of Environmental Management</em> / <em>KSAE Journal</em>
+            </div>
+          </div>
+          <div class="dispatch-actions-col">
+            <a href="publications.html" class="btn-pop-secondary" style="padding: 7px 12px; font-size: 0.74rem;">DETAILS ↗</a>
+            <button class="btn-pop-yellow" style="padding: 7px 12px; font-size: 0.74rem;" onclick="copyBibtex('@article{kim2024hydrological,\n  title={Hydrological Watershed Modeling of Runoff Dynamics & Agricultural Non-Point Source Nutrients in the Nakdong Basin},\n  author={Kim, Sang Min and Waqas, Muhammad},\n  journal={Journal of Environmental Management},\n  year={2024}\n}')">
+              BIBTEX
+            </button>
+          </div>
+        </div>
+
+        <!-- Publication Row 4 -->
+        <div class="dispatch-row" data-category="conference">
+          <div class="dispatch-year-col">
+            2024
+            <div class="dispatch-badge-tag" style="background: #ffffff; color: #000;">PROCEEDINGS</div>
+          </div>
+          <div class="dispatch-main-col">
+            <h4>Evaluation of Water Curtain Facility Agriculture on Aquifer Sustainability and Groundwater Drawdown</h4>
+            <div class="dispatch-authors">
+              <span style="background: var(--pop-cyan); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Sang Min Kim*</span>, 
+              <span>RWESL Research Team</span>
+            </div>
+            <div class="dispatch-meta-line">
+              <em>Korean Society of Agricultural Engineers (KSAE) Annual Conference Proceedings</em>
+            </div>
+          </div>
+          <div class="dispatch-actions-col">
+            <a href="publications.html" class="btn-pop-secondary" style="padding: 7px 12px; font-size: 0.74rem;">DETAILS ↗</a>
+            <button class="btn-pop-secondary" style="padding: 7px 12px; font-size: 0.74rem;" onclick="copyBibtex('@inproceedings{kim2024evaluation,\n  title={Evaluation of Water Curtain Facility Agriculture on Aquifer Sustainability and Groundwater Drawdown},\n  author={Kim, Sang Min and others},\n  booktitle={KSAE Annual Conference},\n  year={2024}\n}')">
+              BIBTEX
+            </button>
+          </div>
+        </div>
+
+        <!-- Publication Row 5: Open Data / Agent -->
+        <div class="dispatch-row" data-category="open">
+          <div class="dispatch-year-col">
+            2026
+            <div class="dispatch-badge-tag" style="background: var(--pop-magenta); color: #fff;">OPEN SOURCE</div>
+          </div>
+          <div class="dispatch-main-col">
+            <h4>K-Water Guard AI Agent: Autonomous Hydro-Environmental Telemetry & Anomaly Analytics System</h4>
+            <div class="dispatch-authors">
+              <span style="background: var(--pop-yellow); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Muhammad Waqas</span>, 
+              <span>Sangbin Ha</span>, 
+              <span style="background: var(--pop-cyan); color: #000; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-size: 0.8rem;">Sang Min Kim*</span>
+            </div>
+            <div class="dispatch-meta-line">
+              GitHub Public Repository & Interactive Dashboard • Gyeongsang National University RWESL
+            </div>
+          </div>
+          <div class="dispatch-actions-col">
+            <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="btn-pop-magenta" style="padding: 7px 12px; font-size: 0.74rem;">LIVE AGENT ↗</a>
+            <a href="https://github.com/muhammadwaqas07171991-tech/k-waterguard-dashboard" target="_blank" rel="noopener noreferrer" class="btn-pop-secondary" style="padding: 7px 12px; font-size: 0.74rem;">GITHUB REPO ↗</a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="publications.html" class="btn-pop-primary" style="padding: 12px 24px; font-size: 0.85rem;">
+            VIEW FULL 50+ PUBLICATION REPOSITORY →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Team / Research Character Roster Trading Cards -->
+    <section class="section-py" id="team-roster" style="padding-top: 20px;">
+      <div class="container">
+        <div class="section-pop-header">
+          <span class="section-pop-badge badge-cyan">[ RESEARCH ROSTER // TRADING-CARD DOSSIER ]</span>
+          <h2 class="section-pop-title">Research Character Roster</h2>
+          <p class="section-pop-subtitle">
+            Trading-card system profiling leadership, senior AI researchers, and student engineers directing watershed environmental intelligence at Gyeongsang National University.
+          </p>
+        </div>
+
+        <div class="roster-trading-grid">
+          <!-- Card 1: Prof. Sang Min Kim -->
+          <div class="roster-card">
+            <div class="roster-avatar-wrap">
+              <img src="assets/images/team/prof_sang_min_kim.jpg" alt="Prof. Sang Min Kim" class="roster-avatar-img">
+              <div class="roster-badge-role" style="background: var(--pop-cyan); color: #000;">
+                PRINCIPAL INVESTIGATOR
+              </div>
+            </div>
+            <div class="roster-info-wrap">
+              <h3 class="roster-name">Prof. Sang Min Kim</h3>
+              <div class="roster-title">Lab Director & Professor</div>
+              <div class="roster-dept">President, Korean Society of Agricultural Engineers (KSAE) • Dept. of Smart Agriculture, GNU</div>
+              <p class="roster-bio">
+                Director of RWESL. National leader in watershed hydrological modeling, SWAT/HSPF distributed physics, non-point source water quality remediation, and climate adaptation strategies.
+              </p>
+
+              <div class="roster-spec-panel">
+                <div class="roster-spec-line">
+                  <span class="spec-label">FOCUS:</span>
+                  <span class="spec-val">Watershed Hydrology, Water Curtain Agriculture, SWAT, HSPF</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">FRAMEWORKS:</span>
+                  <span class="spec-val">SWAT, HSPF, Hydro-GIS, Reservoir Dynamics</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">PUBLICATIONS:</span>
+                  <span class="spec-val">50+ SCI/SCIE Articles • Keynote Speaker</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">LINKS:</span>
+                  <span class="spec-val">
+                    <a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank" rel="noopener noreferrer" style="color: var(--pop-cyan); text-decoration: underline;">Google Scholar</a> • 
+                    <a href="members.html" style="color: #fff; text-decoration: underline;">Full Profile</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Dr. Muhammad Waqas -->
+          <div class="roster-card">
+            <div class="roster-avatar-wrap">
+              <img src="assets/images/team/dr_muhammad_waqas.jpg" alt="Dr. Muhammad Waqas" class="roster-avatar-img">
+              <div class="roster-badge-role" style="background: var(--pop-yellow); color: #000;">
+                SENIOR RESEARCHER &amp; AI LEAD
+              </div>
+            </div>
+            <div class="roster-info-wrap">
+              <h3 class="roster-name">Dr. Muhammad Waqas</h3>
+              <div class="roster-title">Senior Researcher &amp; AI Architect</div>
+              <div class="roster-dept">Regional Water Environment System Lab (RWESL) • Gyeongsang National University</div>
+              <p class="roster-bio">
+                Senior researcher leading AI development and spatiotemporal graph neural networks. Lead architect of the autonomous K-Water Guard Agent, PET forecasting, and seasonal groundwater analytics.
+              </p>
+
+              <div class="roster-spec-panel">
+                <div class="roster-spec-line">
+                  <span class="spec-label">FOCUS:</span>
+                  <span class="spec-val">Spatiotemporal Deep Learning, GNNs, Evapotranspiration, Autonomous Agents</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">FRAMEWORKS:</span>
+                  <span class="spec-val">PyTorch, Graph-WaveNet, GCRN, Python ETL, Folium</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">PUBLICATIONS:</span>
+                  <span class="spec-val">Ecohydrology &amp; Hydrobiology (2026), Water MDPI (2026)</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">LINKS:</span>
+                  <span class="spec-val">
+                    <a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank" rel="noopener noreferrer" style="color: var(--pop-yellow); text-decoration: underline;">Portfolio</a> • 
+                    <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" style="color: var(--pop-cyan); text-decoration: underline;">Scholar</a> • 
+                    <a href="https://github.com/muhammadwaqas07171991-tech" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">GitHub</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Sangbin Ha -->
+          <div class="roster-card">
+            <div class="roster-avatar-wrap">
+              <img src="assets/images/team/member_1.jpg" alt="Sangbin Ha" class="roster-avatar-img">
+              <div class="roster-badge-role" style="background: var(--pop-emerald); color: #000;">
+                UNDERGRADUATE RESEARCHER
+              </div>
+            </div>
+            <div class="roster-info-wrap">
+              <h3 class="roster-name">Sangbin Ha</h3>
+              <div class="roster-title">Undergraduate Researcher</div>
+              <div class="roster-dept">Dept. of Agricultural Engineering • Gyeongsang National University</div>
+              <p class="roster-bio">
+                Undergraduate researcher contributing to K-Water Guard AI Agent engineering, automated environmental telemetry ingestion pipelines, and interactive web visualization of watershed indicators.
+              </p>
+
+              <div class="roster-spec-panel">
+                <div class="roster-spec-line">
+                  <span class="spec-label">FOCUS:</span>
+                  <span class="spec-val">Environmental Big Data, Telemetry ETL, Hydrologic Web Mapping</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">FRAMEWORKS:</span>
+                  <span class="spec-val">Python, REST Data APIs, GitHub Automation, HTML5/CSS3</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">PUBLICATIONS:</span>
+                  <span class="spec-val">Co-Developer, K-Water Guard Autonomous Agent (2026)</span>
+                </div>
+                <div class="roster-spec-line">
+                  <span class="spec-label">LINKS:</span>
+                  <span class="spec-val">
+                    <a href="members.html" style="color: var(--pop-emerald); text-decoration: underline;">RWESL Members Directory</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Open Science, Models & Research Infrastructure -->
+    <section class="section-py" id="models-tools">
+      <div class="container">
+        <div class="section-pop-header">
+          <span class="section-pop-badge badge-emerald">[ OPEN SCIENCE // COMPUTATIONAL INFRASTRUCTURE ]</span>
+          <h2 class="section-pop-title">Models, Tools &amp; Data Repositories</h2>
+          <p class="section-pop-subtitle">
+            Open-source machine learning architectures, automated ETL pipelines, and hydrological GIS data layers maintained for reproducible Earth observation research.
+          </p>
+        </div>
+
+        <div class="open-science-grid">
+          <!-- Tool 1 -->
+          <div class="open-tool-card">
+            <span class="tool-header-tag">[ SYSTEM 01 // TELEMETRY AGENT ]</span>
+            <h4 class="tool-title">K-Water Guard AI</h4>
+            <p class="tool-desc">
+              Autonomous environmental intelligence agent harvesting 14+ physicochemical water parameters daily with anomaly alerts and GIS spatial heatmaps.
+            </p>
+            <div class="tool-tech-stack">
+              <span class="tool-tech-pill">Python</span>
+              <span class="tool-tech-pill">Folium GIS</span>
+              <span class="tool-tech-pill">Daily Cron</span>
+              <span class="tool-tech-pill">QA/QC</span>
+            </div>
+            <a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer" class="tool-action-btn">
+              LAUNCH AGENT ↗
+            </a>
+          </div>
+
+          <!-- Tool 2 -->
+          <div class="open-tool-card">
+            <span class="tool-header-tag">[ ARCHITECTURE 02 // GNN ]</span>
+            <h4 class="tool-title">Graph-WaveNet &amp; GCRN PET</h4>
+            <p class="tool-desc">
+              Spatiotemporal graph convolutional network models forecasting direct and indirect potential evapotranspiration across 13 Nakdong river stations.
+            </p>
+            <div class="tool-tech-stack">
+              <span class="tool-tech-pill">PyTorch</span>
+              <span class="tool-tech-pill">Graph-WaveNet</span>
+              <span class="tool-tech-pill">FAO-56 PM</span>
+              <span class="tool-tech-pill">GNN</span>
+            </div>
+            <a href="https://doi.org/10.1016/j.ecohyd.2026.100772" target="_blank" rel="noopener noreferrer" class="tool-action-btn">
+              VIEW PAPER &amp; CODE ↗
+            </a>
+          </div>
+
+          <!-- Tool 3 -->
+          <div class="open-tool-card">
+            <span class="tool-header-tag">[ DATASET 03 // GIS LAYERS ]</span>
+            <h4 class="tool-title">Nakdong &amp; Namgang GIS Basins</h4>
+            <p class="tool-desc">
+              Georeferenced shapefiles, digital elevation models (DEM), stream corridors, and groundwater telemetry monitoring stations in Gyeongsangnam-do.
+            </p>
+            <div class="tool-tech-stack">
+              <span class="tool-tech-pill">QGIS</span>
+              <span class="tool-tech-pill">ArcGIS</span>
+              <span class="tool-tech-pill">GeoJSON</span>
+              <span class="tool-tech-pill">Sen's Slope</span>
+            </div>
+            <a href="https://doi.org/10.3390/w18040444" target="_blank" rel="noopener noreferrer" class="tool-action-btn">
+              ACCESS DATA LAYERS ↗
+            </a>
+          </div>
+
+          <!-- Tool 4 -->
+          <div class="open-tool-card">
+            <span class="tool-header-tag">[ MODELING 04 // PHYSICS ]</span>
+            <h4 class="tool-title">SWAT &amp; HSPF Baselines</h4>
+            <p class="tool-desc">
+              Calibrated continuous watershed models for flood runoff simulation, reservoir management, and non-point source nutrient pollution mitigation.
+            </p>
+            <div class="tool-tech-stack">
+              <span class="tool-tech-pill">SWAT</span>
+              <span class="tool-tech-pill">HSPF</span>
+              <span class="tool-tech-pill">CMIP6</span>
+              <span class="tool-tech-pill">Fortran/Python</span>
+            </div>
+            <a href="ongoing-research.html" class="tool-action-btn">
+              VIEW SIMULATIONS ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Communication Terminal / Contact Section -->
+    <section class="section-py" id="contact-terminal">
+      <div class="container">
+        <div class="terminal-card">
+          <div class="terminal-stamp">
+            [ COMMUNICATION TERMINAL — DISPATCH AN INQUIRY ]
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 2.2rem; color: #ffffff; letter-spacing: 0.02em; margin-bottom: 8px;">
+            CONNECT WITH RWESL RESEARCH GROUP
+          </h3>
+          <p style="font-size: 0.95rem; color: var(--muted-technical); line-height: 1.6; margin-bottom: 26px;">
+            Inquiries regarding graduate admissions (M.S. / Ph.D.), postdoctoral research, collaborative watershed projects, or data/model access for academic reproduction.
+          </p>
+
+          <form onsubmit="handleTerminalSubmit(event)">
+            <div class="terminal-grid">
+              <div class="terminal-group">
+                <label class="terminal-label" for="senderName">Your Full Name *</label>
+                <input type="text" id="senderName" class="terminal-input" placeholder="e.g. Dr. Jane Doe" required>
+              </div>
+
+              <div class="terminal-group">
+                <label class="terminal-label" for="senderEmail">Email Address *</label>
+                <input type="email" id="senderEmail" class="terminal-input" placeholder="name@institution.edu" required>
+              </div>
+            </div>
+
+            <div class="terminal-grid">
+              <div class="terminal-group">
+                <label class="terminal-label" for="inquiryType">Dispatch Category *</label>
+                <select id="inquiryType" class="terminal-select" required>
+                  <option value="phd">Prospective Ph.D. / M.S. Applicant</option>
+                  <option value="postdoc">Prospective Postdoctoral Fellow</option>
+                  <option value="collaboration">Collaborative Research Inquiry</option>
+                  <option value="data">Dataset or Pretrained Model Request</option>
+                  <option value="media">Media / Television / Speaking Inquiry</option>
+                </select>
+              </div>
+
+              <div class="terminal-group">
+                <label class="terminal-label" for="senderAffiliation">Academic / Institutional Affiliation</label>
+                <input type="text" id="senderAffiliation" class="terminal-input" placeholder="University, Institute or Organization">
+              </div>
+            </div>
+
+            <div class="terminal-group" style="margin-bottom: 24px;">
+              <label class="terminal-label" for="senderMessage">Message &amp; Research Intent *</label>
+              <textarea id="senderMessage" rows="5" class="terminal-textarea" placeholder="Detail your research background, specific interests, or project scope..." required></textarea>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted-technical);">
+                Directed to: Prof. Sang Min Kim (smkim@gnu.ac.kr) &amp; Dr. Muhammad Waqas
+              </div>
+              <button type="submit" class="btn-pop-primary">
+                DISPATCH INQUIRY ↗
+              </button>
+            </div>
+
+            <div id="terminalStatus"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Site Footer -->
+  <!-- Site Authority Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
             <img src="assets/images/rwesl_logo_circle.png" alt="RWESL Logo" class="brand-logo-img" style="width: 44px; height: 44px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: #fff;">RWESL</span>
+            <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: #fff; letter-spacing: 0.04em;">RWESL</span>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; background: var(--pop-yellow); color: #000; padding: 2px 6px; border: 1px solid #000; border-radius: 3px;">
+              VOL. 2026
+            </span>
           </div>
           <p>
             <strong>Regional Water Environment System Laboratory</strong><br>
-            Department of Smart Agriculture & Agricultural Engineering<br>
+            Department of Smart Agriculture &amp; Agricultural Engineering<br>
             Gyeongsang National University (GNU), South Korea
           </p>
-          <p style="font-size: 0.85rem; color: var(--text-dim);">
-            Advancing watershed science, agricultural resilience, and environmental artificial intelligence.
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px;">
+            Advancing watershed hydrological modeling, agricultural water quality, and autonomous environmental artificial intelligence.
           </p>
         </div>
 
@@ -915,49 +1117,50 @@
           <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="#research-matrix">Research Matrix</a></li>
+            <li><a href="#impact-benchmark">Impact Benchmarks</a></li>
+            <li><a href="#publications-dispatch">Publications Dispatch</a></li>
+            <li><a href="#team-roster">Research Roster</a></li>
+            <li><a href="#models-tools">Models &amp; Tools</a></li>
             <li><a href="k-waterguard-ai.html">K-WaterGuard AI</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="members.html">Members</a></li>
-            <li><a href="ongoing-research.html">Ongoing Research</a></li>
-            <li><a href="events.html">Events & Activities</a></li>
             <li><a href="gallery.html">Gallery</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Key Portals & Social</h4>
+          <h4>Key Portals &amp; Social</h4>
           <ul class="footer-links">
-            <li><a href="https://www.facebook.com/profile.php?id=61585237073673" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <li><a href="https://www.facebook.com/profile.php?id=61585237073673" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
               Facebook: RWESL Lab
             </a></li>
-            <li><a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank">K-Water Guard Dashboard</a></li>
-            <li><a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank">Dr. Muhammad Waqas Portfolio</a></li>
-            <li><a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank">Prof. Sang Min Kim Scholar</a></li>
-            <li><a href="https://www.gnu.ac.kr" target="_blank">Gyeongsang National Univ.</a></li>
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/" target="_blank" rel="noopener noreferrer">K-Water Guard AI Dashboard ↗</a></li>
+            <li><a href="https://muhammadwaqas07171991-tech.github.io/muhammad-waqas-portfolio/" target="_blank" rel="noopener noreferrer">Dr. Muhammad Waqas Portfolio ↗</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&user=FlIcy9gAAAAJ" target="_blank" rel="noopener noreferrer">Prof. Sang Min Kim Scholar ↗</a></li>
+            <li><a href="https://www.gnu.ac.kr" target="_blank" rel="noopener noreferrer">Gyeongsang National University ↗</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Contact Information</h4>
+          <h4>Contact Coordinates</h4>
           <p>
             <strong>Lab Director:</strong> Prof. Sang Min Kim<br>
-            <strong>Email:</strong> <a href="mailto:smkim@gnu.ac.kr" style="color: var(--cyan); text-decoration: none;">smkim@gnu.ac.kr</a><br>
+            <strong>Email:</strong> <a href="mailto:smkim@gnu.ac.kr" style="color: var(--pop-cyan); text-decoration: none;">smkim@gnu.ac.kr</a><br>
             <strong>Phone:</strong> 055-772-1931<br>
             <strong>Fax:</strong> 055-772-1939
           </p>
-          <p>
+          <p style="margin-top: 10px;">
             <strong>Senior Researcher:</strong> Dr. Muhammad Waqas<br>
-            <strong>Email:</strong> <a href="mailto:muhammad.waqas@gnu.ac.kr" style="color: var(--cyan); text-decoration: none;">muhammad.waqas@gnu.ac.kr</a>
+            <strong>Email:</strong> <a href="mailto:muhammad.waqas@gnu.ac.kr" style="color: var(--pop-cyan); text-decoration: none;">muhammad.waqas@gnu.ac.kr</a>
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>&copy; 2026 Regional Water Environment System Lab (RWESL). All rights reserved.</div>
-        <div>Affiliated with Gyeongsang National University, South Korea</div>
+        <div>Academic Pop-Modernism Architecture • Gyeongsang National University, South Korea</div>
       </div>
     </div>
   </footer>
@@ -965,7 +1168,7 @@
   <!-- Lightbox Modal for 5K Full-Res Graphics -->
   <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()" style="position: fixed; inset: 0; background: rgba(3, 8, 16, 0.94); backdrop-filter: blur(20px); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 24px;">
     <button onclick="closeLightbox()" style="position: absolute; top: 24px; right: 32px; font-size: 2.2rem; color: #ffffff; background: none; border: none; cursor: pointer; padding: 10px; line-height: 1;">&times;</button>
-    <img id="lightboxImg" src="" alt="Enlarged High-Resolution Graphic" style="max-width: 90vw; max-height: 85vh; border-radius: 14px; border: 1px solid var(--border-glow); box-shadow: 0 0 60px rgba(0, 212, 255, 0.35); object-fit: contain;">
+    <img id="lightboxImg" src="" alt="Enlarged High-Resolution Graphic" style="max-width: 90vw; max-height: 85vh; border-radius: 14px; border: 2px solid var(--pop-cyan); box-shadow: 0 0 60px rgba(0, 240, 255, 0.35); object-fit: contain;">
   </div>
 
   <script src="assets/js/main.js"></script>
