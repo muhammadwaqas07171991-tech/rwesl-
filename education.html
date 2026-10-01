@@ -11,24 +11,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .edu-page-container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
-
     .edu-page-title {
       font-family: var(--font-heading);
       font-size: 2.2rem;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .edu-page-subtitle {
       color: var(--text-muted);
       font-size: 0.98rem;
-      margin-bottom: 32px;
+      margin: 0;
+    }
+
+    /* Multi-column grid starting from left top corner */
+    .lecture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(460px, 640px));
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .lecture-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* YouTube-style Video Card */
@@ -38,7 +46,13 @@
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
-      margin-bottom: 40px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .lecture-card:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 212, 255, 0.15);
     }
 
     .video-viewport {
@@ -93,7 +107,7 @@
     }
 
     .lecture-info {
-      padding: 24px 26px 28px;
+      padding: 22px 24px 26px;
     }
 
     /* Left Top Corner Box Above Title */
@@ -129,17 +143,17 @@
 
     .lecture-title {
       font-family: var(--font-heading);
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.35;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .lecture-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
+      font-size: 0.92rem;
+      line-height: 1.6;
     }
 
     .lecture-desc strong {
@@ -157,7 +171,7 @@
       background: none;
       border: none;
       color: var(--cyan);
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
@@ -178,7 +192,7 @@
       background: rgba(3, 11, 24, 0.6);
       border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: 10px;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: #cbd5e1;
       line-height: 1.6;
     }
@@ -238,65 +252,73 @@
   </header>
 
   <main class="main-content">
-    <div class="edu-page-container">
+    <div class="container" style="padding-top: 40px; padding-bottom: 80px;">
       
-      <h1 class="edu-page-title">Education</h1>
-      <p class="edu-page-subtitle">Video lectures and educational materials from RWESL.</p>
+      <!-- Page Header (Left-aligned) -->
+      <div style="margin-bottom: 28px;">
+        <h1 class="edu-page-title">Education</h1>
+        <p class="edu-page-subtitle">Video lectures and educational materials from RWESL.</p>
+      </div>
 
-      <!-- Lecture: DAD Analysis Video (YouTube Style) -->
-      <article class="lecture-card" id="lecture-dad">
-        
-        <!-- Video Viewport with Left Top Corner Box -->
-        <div class="video-viewport">
-          <div class="video-corner-box">
-            <span class="live-dot"></span>
-            <span>Lecture 01 • DAD Analysis (50s HD)</span>
+      <!-- Lectures Grid: Starting from left top corner -->
+      <div class="lecture-grid">
+
+        <!-- Lecture 01: DAD Analysis Video (Placed in Top-Left Corner) -->
+        <article class="lecture-card" id="lecture-dad">
+          
+          <!-- Video Viewport with Left Top Corner Badge -->
+          <div class="video-viewport">
+            <div class="video-corner-box">
+              <span class="live-dot"></span>
+              <span>Lecture 01 • DAD Analysis (50s HD)</span>
+            </div>
+
+            <video controls playsinline preload="metadata" poster="assets/images/dad_screens/screen_01_spatial_variation.jpg">
+              <!-- Local video -->
+              <source src="assets/videos/dad_analysis_animation.mp4" type="video/mp4">
+              <!-- Online CDN Fallback -->
+              <source src="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
+              <source src="https://muhammadwaqas07171991-tech.github.io/rwesl-/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
 
-          <video controls playsinline preload="metadata" poster="assets/images/dad_screens/screen_01_spatial_variation.jpg">
-            <!-- Local video -->
-            <source src="assets/videos/dad_analysis_animation.mp4" type="video/mp4">
-            <!-- Online CDN Fallback -->
-            <source src="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
-            <source src="https://muhammadwaqas07171991-tech.github.io/rwesl-/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+          <!-- Lecture Info with Left Top Corner Badge Box -->
+          <div class="lecture-info">
+            
+            <!-- Box on Left Top Corner above title -->
+            <div class="lecture-badge-row">
+              <span class="badge-lecture">Lecture 01</span>
+              <span class="badge-topic">Depth–Area–Duration (DAD)</span>
+            </div>
 
-        <!-- Lecture Info with Left Top Corner Badge Box -->
-        <div class="lecture-info">
-          
-          <!-- Box on Left Top Corner above title -->
-          <div class="lecture-badge-row">
-            <span class="badge-lecture">Lecture 01</span>
-            <span class="badge-topic">Depth–Area–Duration (DAD)</span>
-          </div>
+            <h2 class="lecture-title">🎬 Visualizing DAD Analysis in Hydrology 🌧️💧</h2>
+            
+            <p class="lecture-desc">
+              A <strong>50-second scientific animation</strong> explaining <strong>Depth–Area–Duration (DAD) Analysis</strong>—a key concept in hydrology for understanding how rainfall depth varies with <strong>storm duration and spatial area</strong>. The goal is to transform a numerical hydrology concept into a <strong>clear, visual, and engaging learning experience</strong>.
+            </p>
 
-          <h2 class="lecture-title">🎬 Visualizing DAD Analysis in Hydrology 🌧️💧</h2>
-          
-          <p class="lecture-desc">
-            A <strong>50-second scientific animation</strong> explaining <strong>Depth–Area–Duration (DAD) Analysis</strong>—a key concept in hydrology for understanding how rainfall depth varies with <strong>storm duration and spatial area</strong>. The goal is to transform a numerical hydrology concept into a <strong>clear, visual, and engaging learning experience</strong>.
-          </p>
-
-          <!-- YouTube-style Show More Box -->
-          <div class="show-more-box">
-            <button id="showMoreBtn" class="show-more-btn" onclick="toggleShowMore()">
-              <span>Show more</span> ▾
-            </button>
-            <div id="moreDetails" style="display: none;">
-              <div class="more-details-content">
-                <p><strong>Methodology:</strong> Depth–Area–Duration (DAD) Analysis & Attenuation Curves</p>
-                <p><strong>Watershed Focus:</strong> Namgang Dam Basin & Nakdong River, South Korea</p>
-                <p><strong>Duration & Quality:</strong> 50 Seconds • 1080p Full High-Definition</p>
-                <p><strong>Institution:</strong> Regional Water Environment System Laboratory (RWESL), Gyeongsang National University</p>
+            <!-- YouTube-style Show More Box -->
+            <div class="show-more-box">
+              <button id="showMoreBtn" class="show-more-btn" onclick="toggleShowMore()">
+                <span>Show more</span> ▾
+              </button>
+              <div id="moreDetails" style="display: none;">
+                <div class="more-details-content">
+                  <p><strong>Methodology:</strong> Depth–Area–Duration (DAD) Analysis & Attenuation Curves</p>
+                  <p><strong>Watershed Focus:</strong> Namgang Dam Basin & Nakdong River, South Korea</p>
+                  <p><strong>Duration & Quality:</strong> 50 Seconds • 1080p Full High-Definition</p>
+                  <p><strong>Institution:</strong> Regional Water Environment System Laboratory (RWESL), Gyeongsang National University</p>
+                </div>
               </div>
             </div>
+
           </div>
+        </article>
 
-        </div>
-      </article>
+        <!-- New daily lectures will naturally sit right next to or below Lecture 01 -->
 
-      <!-- Space left empty for your new lectures below -->
+      </div>
 
     </div>
   </main>
