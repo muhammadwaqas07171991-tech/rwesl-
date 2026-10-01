@@ -1307,3 +1307,14 @@ body {
     text-align: center;
   }
 }
+
+/* DAD Analysis Screen Cards Hover Effects */
+.dad-screen-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.6) !important;
+  box-shadow: 0 14px 30px rgba(0, 212, 255, 0.18);
+}
+.dad-screen-item:hover .dad-img-hover {
+  transform: scale(1.06);
+}
+
