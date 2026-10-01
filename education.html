@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Education | RWESL - Regional Water Environment System Lab</title>
-  <meta name="description" content="RWESL Hydrology Education: Depth-Area-Duration (DAD) Analysis video lecture.">
+  <meta name="description" content="RWESL Visual Hydrology Education: Depth-Area-Duration (DAD) Analysis scientific animation and interactive keyframe breakdown.">
   <link rel="icon" type="image/png" href="assets/images/rwesl_logo_circle.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,180 +25,109 @@
       margin: 0;
     }
 
-    /* Multi-column grid starting from left top corner */
-    .lecture-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(460px, 640px));
-      gap: 32px;
-      align-items: start;
+    /* Educational Hero Card - Matching Index Banner Exactly */
+    .edu-hero-card {
+      position: relative;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      background: linear-gradient(135deg, rgba(8, 22, 38, 0.94) 0%, rgba(12, 34, 56, 0.94) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 212, 255, 0.12);
+      padding: 40px 44px;
+      transition: all 0.35s ease;
     }
 
-    @media (max-width: 600px) {
-      .lecture-grid {
+    .edu-hero-card:hover {
+      border-color: rgba(56, 189, 248, 0.6);
+      box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 212, 255, 0.2);
+    }
+
+    .edu-card-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .edu-card-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .edu-hero-card {
+        padding: 28px 22px;
       }
     }
 
-    /* YouTube-style Video Card */
-    .lecture-card {
-      background: rgba(10, 22, 41, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-
-    .lecture-card:hover {
-      border-color: rgba(56, 189, 248, 0.5);
-      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 212, 255, 0.15);
-    }
-
-    .video-viewport {
+    .video-preview-box {
       position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
       background: #000;
+      aspect-ratio: 16 / 9;
     }
 
-    .video-viewport video {
+    .video-preview-box video {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       display: block;
       outline: none;
     }
 
-    /* Left Top Corner Overlay Box on Video */
-    .video-corner-box {
+    .video-play-overlay {
       position: absolute;
-      top: 14px;
-      left: 16px;
-      display: inline-flex;
+      inset: 0;
+      background: rgba(3, 11, 24, 0.42);
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      background: rgba(3, 11, 24, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.45);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 5;
+    }
+
+    .video-play-overlay:hover {
+      background: rgba(3, 11, 24, 0.28);
+    }
+
+    .video-play-overlay:hover .play-circle-btn {
+      transform: scale(1.08);
+      box-shadow: 0 0 36px rgba(0, 212, 255, 0.9);
+    }
+
+    .play-circle-btn {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0, 212, 255, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #030712;
+      box-shadow: 0 0 28px rgba(0, 212, 255, 0.75);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .play-badge-pill {
+      background: rgba(3, 11, 24, 0.88);
       color: #38bdf8;
       font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 10px #10b981;
-      animation: pulse-dot 1.8s infinite ease-in-out;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(1.3); }
-    }
-
-    .lecture-info {
-      padding: 22px 24px 26px;
-    }
-
-    /* Left Top Corner Box Above Title */
-    .lecture-badge-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .badge-lecture {
-      background: linear-gradient(135deg, #0284c7 0%, #00d4ff 100%);
-      color: #030712;
-      font-size: 0.74rem;
-      font-weight: 800;
-      padding: 4px 12px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .badge-topic {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      color: #7dd3fc;
-      font-size: 0.74rem;
-      font-weight: 700;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 9999px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
       text-transform: uppercase;
-    }
-
-    .lecture-title {
-      font-family: var(--font-heading);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1.35;
-      margin-bottom: 10px;
-    }
-
-    .lecture-desc {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
-
-    .lecture-desc strong {
-      color: #e2e8f0;
-    }
-
-    /* YouTube-style Show More Box */
-    .show-more-box {
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .show-more-btn {
-      background: none;
-      border: none;
-      color: var(--cyan);
-      font-size: 0.84rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 0;
-      transition: opacity 0.2s ease;
-    }
-
-    .show-more-btn:hover {
-      opacity: 0.8;
-      text-decoration: underline;
-    }
-
-    .more-details-content {
-      margin-top: 12px;
-      padding: 14px 18px;
-      background: rgba(3, 11, 24, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      border-radius: 10px;
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
-
-    .more-details-content p {
-      margin: 4px 0;
+      letter-spacing: 0.05em;
     }
   </style>
 </head>
@@ -252,7 +181,7 @@
   </header>
 
   <main class="main-content">
-    <div class="container" style="padding-top: 40px; padding-bottom: 80px;">
+    <div class="container" style="padding-top: 40px; padding-bottom: 90px;">
       
       <!-- Page Header (Left-aligned) -->
       <div style="margin-bottom: 28px;">
@@ -260,70 +189,96 @@
         <p class="edu-page-subtitle">Video lectures and educational materials from RWESL.</p>
       </div>
 
-      <!-- Lectures Grid: Starting from left top corner -->
-      <div class="lecture-grid">
-
-        <!-- Lecture 01: DAD Analysis Video (Placed in Top-Left Corner) -->
-        <article class="lecture-card" id="lecture-dad">
+      <!-- Hero Lecture Card: Displayed exactly like the provided screenshot -->
+      <div class="edu-hero-card">
+        <div class="edu-card-grid">
           
-          <!-- Video Viewport with Left Top Corner Badge -->
-          <div class="video-viewport">
-            <div class="video-corner-box">
-              <span class="live-dot"></span>
-              <span>Lecture 01 • DAD Analysis (50s HD)</span>
+          <!-- Left Column: Content & Badges -->
+          <div>
+            <div class="broadcast-badge-pill" style="border-color: rgba(16, 185, 129, 0.45); color: #6ee7b7; margin-bottom: 14px;">
+              <span class="live-rec-dot" style="background-color: #10b981; box-shadow: 0 0 10px #10b981;"></span>
+              <span>NEW EDUCATION PORTAL • VISUAL HYDROLOGY</span>
             </div>
 
-            <video controls playsinline preload="metadata" poster="assets/images/dad_screens/screen_01_spatial_variation.jpg">
-              <!-- Local video -->
-              <source src="assets/videos/dad_analysis_animation.mp4" type="video/mp4">
-              <!-- Online CDN Fallback -->
-              <source src="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
-              <source src="https://muhammadwaqas07171991-tech.github.io/rwesl-/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
+            <h2 style="font-family: var(--font-heading); font-size: clamp(1.6rem, 2.6vw, 2.25rem); font-weight: 800; color: #ffffff; line-height: 1.25; margin-bottom: 14px;">
+              🎬 Visualizing DAD Analysis in Hydrology 🌧️💧
+            </h2>
 
-          <!-- Lecture Info with Left Top Corner Badge Box -->
-          <div class="lecture-info">
-            
-            <!-- Box on Left Top Corner above title -->
-            <div class="lecture-badge-row">
-              <span class="badge-lecture">Lecture 01</span>
-              <span class="badge-topic">Depth–Area–Duration (DAD)</span>
-            </div>
-
-            <h2 class="lecture-title">🎬 Visualizing DAD Analysis in Hydrology 🌧️💧</h2>
-            
-            <p class="lecture-desc">
-              A <strong>50-second scientific animation</strong> explaining <strong>Depth–Area–Duration (DAD) Analysis</strong>—a key concept in hydrology for understanding how rainfall depth varies with <strong>storm duration and spatial area</strong>. The goal is to transform a numerical hydrology concept into a <strong>clear, visual, and engaging learning experience</strong>.
+            <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.68; margin-bottom: 24px;">
+              We have launched a dedicated <strong>Education & Visual Hydrology</strong> page featuring our <strong>50-second scientific animation</strong>, interactive <strong>7-stage keyframe breakdown</strong>, and fundamental hydrological pillars of <strong>Depth–Area–Duration (DAD) Analysis</strong>.
             </p>
 
-            <!-- YouTube-style Show More Box -->
-            <div class="show-more-box">
-              <button id="showMoreBtn" class="show-more-btn" onclick="toggleShowMore()">
-                <span>Show more</span> ▾
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-primary" onclick="playDadVideo()" style="display: inline-flex; align-items: center; gap: 8px; padding: 11px 26px; border-radius: 9999px; font-weight: 700; cursor: pointer; border: none;">
+                <span>Explore Education Page</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
-              <div id="moreDetails" style="display: none;">
-                <div class="more-details-content">
-                  <p><strong>Methodology:</strong> Depth–Area–Duration (DAD) Analysis & Attenuation Curves</p>
-                  <p><strong>Watershed Focus:</strong> Namgang Dam Basin & Nakdong River, South Korea</p>
-                  <p><strong>Duration & Quality:</strong> 50 Seconds • 1080p Full High-Definition</p>
-                  <p><strong>Institution:</strong> Regional Water Environment System Laboratory (RWESL), Gyeongsang National University</p>
+              <button type="button" class="btn btn-secondary" onclick="openDadModal(0)" style="display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 9999px; font-weight: 600; cursor: pointer;">
+                <span>Interactive Keyframes</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Video & Preview with Play Overlay -->
+          <div>
+            <div class="video-preview-box">
+              <video id="dadLectureVideo" controls playsinline preload="metadata" poster="assets/images/dad_screens/screen_01_spatial_variation.jpg">
+                <!-- Local Video -->
+                <source src="assets/videos/dad_analysis_animation.mp4" type="video/mp4">
+                <!-- CDN Fallbacks -->
+                <source src="https://muhammadwaqas07171991-tech.github.io/k-waterguard-dashboard/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
+                <source src="https://muhammadwaqas07171991-tech.github.io/rwesl-/assets/videos/dad_analysis_animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+              <div id="dadVideoOverlay" class="video-play-overlay" onclick="playDadVideo()">
+                <div class="play-circle-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
                 </div>
+                <span class="play-badge-pill">
+                  Watch 50s Animation & Stages ↗
+                </span>
               </div>
             </div>
-
           </div>
-        </article>
 
-        <!-- New daily lectures will naturally sit right next to or below Lecture 01 -->
-
+        </div>
       </div>
 
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Interactive 7-Stage Keyframes Lightbox Modal -->
+  <div id="dadModalBackdrop" onclick="handleDadBackdrop(event)" style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(2, 6, 15, 0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); align-items: center; justify-content: center; padding: 20px;">
+    <div style="position: relative; max-width: 960px; width: 100%; background: rgba(8, 20, 38, 0.95); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 20px; overflow: hidden; box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);">
+      
+      <div style="padding: 18px 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: space-between; gap: 14px;">
+        <div>
+          <span id="dadModalCounter" style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #38bdf8; display: block; margin-bottom: 2px;">Screen 1 of 7</span>
+          <h3 id="dadModalTitle" style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; margin: 0; font-weight: 700;">Stage 01: Spatial Rainfall Variation Across Watershed</h3>
+        </div>
+        <button onclick="closeDadModal()" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; line-height: 1;">&times;</button>
+      </div>
+
+      <div style="position: relative; width: 100%; background: #000; display: flex; align-items: center; justify-content: center; max-height: 65vh; overflow: hidden;">
+        <button onclick="navDadModal(-1)" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); background: rgba(3, 11, 24, 0.75); border: 1px solid rgba(56, 189, 248, 0.4); color: #fff; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; font-size: 1.2rem;">◀</button>
+        <img id="dadModalImg" src="assets/images/dad_screens/screen_01_spatial_variation.jpg" alt="DAD Large Screen" style="max-width: 100%; max-height: 65vh; object-fit: contain; display: block;">
+        <button onclick="navDadModal(1)" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgba(3, 11, 24, 0.75); border: 1px solid rgba(56, 189, 248, 0.4); color: #fff; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; font-size: 1.2rem;">▶</button>
+      </div>
+
+      <div style="padding: 14px 20px; background: rgba(4, 12, 26, 0.95); border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+        <p id="dadModalDesc" style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.45; margin: 0; max-width: 820px;"></p>
+        <a id="dadModalDownload" href="" download target="_blank" style="padding: 6px 14px; border-radius: 9999px; font-size: 0.78rem; font-weight: 700; text-decoration: none; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; display: inline-flex; align-items: center; gap: 6px;">
+          Download HD 📥
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -396,17 +351,107 @@
 
   <script src="assets/js/main.js"></script>
   <script>
-    function toggleShowMore() {
-      const more = document.getElementById('moreDetails');
-      const btn = document.getElementById('showMoreBtn');
-      if (more.style.display === 'none') {
-        more.style.display = 'block';
-        btn.innerHTML = '<span>Show less</span> ▴';
-      } else {
-        more.style.display = 'none';
-        btn.innerHTML = '<span>Show more</span> ▾';
+    // Play video and dismiss overlay
+    function playDadVideo() {
+      const v = document.getElementById('dadLectureVideo');
+      const overlay = document.getElementById('dadVideoOverlay');
+      if (v) {
+        v.play();
+        if (overlay) overlay.style.display = 'none';
       }
     }
+
+    const dadVid = document.getElementById('dadLectureVideo');
+    if (dadVid) {
+      dadVid.addEventListener('play', () => {
+        const overlay = document.getElementById('dadVideoOverlay');
+        if (overlay) overlay.style.display = 'none';
+      });
+      dadVid.addEventListener('pause', () => {
+        // keep overlay hidden while user controls video
+      });
+    }
+
+    // 7-Stage Keyframes Data & Modal Logic
+    const dadScreens = [
+      {
+        title: "Stage 01: Spatial Rainfall Variation Across Watershed",
+        desc: "Peak precipitation intensity (140 mm/hr), runoff flow (115 m³/s), and watershed mountain topography extent.",
+        img: "assets/images/dad_screens/screen_01_spatial_variation.jpg"
+      },
+      {
+        title: "Stage 02: Concentric Isohyetal Monitoring Zones",
+        desc: "Isohyetal rings radiating outward from storm core: Zone I (100 km² core), Zone II (200 km²), Zone III (2,100 km²).",
+        img: "assets/images/dad_screens/screen_02_monitoring_zones.jpg"
+      },
+      {
+        title: "Stage 03: Telemetric Rain Gauge Sensor Array",
+        desc: "Optical rain gauge network logging spot precipitation depths: 59 mm (Zone I), 157 mm (Zone II), 159 mm (Zone III).",
+        img: "assets/images/dad_screens/screen_03_gauge_telemetry.jpg"
+      },
+      {
+        title: "Stage 04: Watershed Hydrology & Area-Weighted Averaging",
+        desc: "Spatial distribution model integrating incremental catchment areas (100 km², 300 km², 600 km²) to determine areal weighted mean depth.",
+        img: "assets/images/dad_screens/screen_04_weighted_averaging.jpg"
+      },
+      {
+        title: "Stage 05: 3D DAD Analysis Results Matrix",
+        desc: "Glassmorphic 3D matrix table calculating maximum rainfall depths across durations (2h, 4h, 6h) and catchment areas (100, 300, 600 km²).",
+        img: "assets/images/dad_screens/screen_05_dad_matrix_results.jpg"
+      },
+      {
+        title: "Stage 06: Depth–Area–Duration (DAD) Curves Formulation",
+        desc: "Semi-logarithmic curves displaying average depth vs area (1 to 20,000 km²), showing attenuation as storm footprint broadens.",
+        img: "assets/images/dad_screens/screen_06_dad_curves.jpg"
+      },
+      {
+        title: "Stage 07: Watershed Telemetry & Field Validation",
+        desc: "Field empirical observation over the Namgang basin validating empirical Depth-Area-Duration curves (4h, 300 km²) for flood engineering.",
+        img: "assets/images/dad_screens/screen_07_watershed_validation.jpg"
+      }
+    ];
+
+    let dadCurrentIdx = 0;
+
+    function openDadModal(idx) {
+      dadCurrentIdx = idx;
+      renderDadModal();
+      const m = document.getElementById('dadModalBackdrop');
+      m.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDadModal() {
+      const m = document.getElementById('dadModalBackdrop');
+      m.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleDadBackdrop(e) {
+      if (e.target.id === 'dadModalBackdrop') closeDadModal();
+    }
+
+    function renderDadModal() {
+      const item = dadScreens[dadCurrentIdx];
+      document.getElementById('dadModalCounter').textContent = `Screen ${dadCurrentIdx + 1} of ${dadScreens.length}`;
+      document.getElementById('dadModalTitle').textContent = item.title;
+      document.getElementById('dadModalDesc').textContent = item.desc;
+      document.getElementById('dadModalImg').src = item.img;
+      document.getElementById('dadModalDownload').href = item.img;
+    }
+
+    function navDadModal(delta) {
+      dadCurrentIdx = (dadCurrentIdx + delta + dadScreens.length) % dadScreens.length;
+      renderDadModal();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      const m = document.getElementById('dadModalBackdrop');
+      if (!m || m.style.display !== 'flex') return;
+      if (e.key === 'Escape') closeDadModal();
+      else if (e.key === 'ArrowLeft') navDadModal(-1);
+      else if (e.key === 'ArrowRight') navDadModal(1);
+    });
   </script>
 </body>
 </html>
