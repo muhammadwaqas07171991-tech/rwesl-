@@ -4,11 +4,12 @@ This folder contains the complete, modern, unified **RWESL Laboratory Website** 
 
 ---
 
-## 📁 Website Structure (All 7 Pages)
+## 📁 Website Structure (All 8 Pages)
 
 | File | Page | Highlights |
 | :--- | :--- | :--- |
-| [`index.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/index.html) | **Home** | Fluid wave canvas, real-time counters, research pillars, K-Water Guard agent spotlight. |
+| [`index.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/index.html) | **Home** | Fluid wave canvas, real-time counters, research pillars, K-Water Guard agent spotlight, education banner. |
+| [`education.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/education.html) | **Education** | 50s scientific DAD animation, 7-stage interactive keyframe viewer with lightbox modal, and 5 hydrological pillars. |
 | [`k-waterguard-ai.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/k-waterguard-ai.html) | **K-WaterGuard AI** | Full agent architecture, 14 telemetry parameters, research team credits, direct dashboard launch. |
 | [`publications.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/publications.html) | **Publications** | Instant category filters (AI/ML, Watershed, Groundwater), DOI links, 1-click citation copy. |
 | [`members.html`](file:///c:/Users/USER/Desktop/Modeling%20work/AI_Water_Guard_Dashboard_All_Files/rwesl_website/members.html) | **Members** | Prof. Sang Min Kim (PI & KSAE President), Dr. Muhammad Waqas, graduate & undergraduate researchers. |
@@ -23,7 +24,7 @@ This folder contains the complete, modern, unified **RWESL Laboratory Website** 
 1. On GitHub (`github.com/muhammadwaqas07171991-tech`), create a new public repository:
    - Name: **`rwesl`**
 2. Upload the files inside `rwesl_website/` to this new repository:
-   - `index.html`, `k-waterguard-ai.html`, `publications.html`, `members.html`, `ongoing-research.html`, `events.html`, `gallery.html`
+   - `index.html`, `education.html`, `k-waterguard-ai.html`, `publications.html`, `members.html`, `ongoing-research.html`, `events.html`, `gallery.html`
    - `assets/` folder (with `css/`, `js/`, and `images/`)
 3. In repository **Settings** > **Pages**:
    - Set **Branch**: `main`, **Folder**: `/ (root)`
