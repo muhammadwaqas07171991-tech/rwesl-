@@ -84,8 +84,11 @@
 
     .video-play-overlay {
       position: absolute;
-      inset: 0;
-      background: rgba(3, 11, 24, 0.42);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 52px; /* Leaves native bottom controls & fullscreen icon fully clickable */
+      background: rgba(3, 11, 24, 0.38);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -97,7 +100,7 @@
     }
 
     .video-play-overlay:hover {
-      background: rgba(3, 11, 24, 0.28);
+      background: rgba(3, 11, 24, 0.22);
     }
 
     .video-play-overlay:hover .play-circle-btn {
@@ -116,6 +119,33 @@
       color: #030712;
       box-shadow: 0 0 28px rgba(0, 212, 255, 0.75);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .video-fs-corner-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(3, 11, 24, 0.82);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #38bdf8;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 8;
+      backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+    }
+
+    .video-fs-corner-btn:hover {
+      background: rgba(0, 212, 255, 0.2);
+      border-color: #38bdf8;
+      color: #ffffff;
+      transform: scale(1.04);
     }
 
     .play-badge-pill {
@@ -197,7 +227,7 @@
           <div>
             <div class="broadcast-badge-pill" style="border-color: rgba(16, 185, 129, 0.45); color: #6ee7b7; margin-bottom: 14px;">
               <span class="live-rec-dot" style="background-color: #10b981; box-shadow: 0 0 10px #10b981;"></span>
-              <span>NEW EDUCATION PORTAL • VISUAL HYDROLOGY</span>
+              <span>LECTURE 01 • VISUAL HYDROLOGY</span>
             </div>
 
             <h2 style="font-family: var(--font-heading); font-size: clamp(1.6rem, 2.6vw, 2.25rem); font-weight: 800; color: #ffffff; line-height: 1.25; margin-bottom: 14px;">
@@ -205,13 +235,17 @@
             </h2>
 
             <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.68; margin-bottom: 24px;">
-              We have launched a dedicated <strong>Education & Visual Hydrology</strong> page featuring our <strong>50-second scientific animation</strong>, interactive <strong>7-stage keyframe breakdown</strong>, and fundamental hydrological pillars of <strong>Depth–Area–Duration (DAD) Analysis</strong>.
+              A <strong>50-second scientific animation</strong> explaining <strong>Depth–Area–Duration (DAD) Analysis</strong>—a key concept in hydrology for understanding how rainfall depth varies with <strong>storm duration and spatial area</strong>. The goal is to transform a numerical hydrology concept into a clear, visual, and engaging learning experience.
             </p>
 
-            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-              <button type="button" class="btn btn-primary" onclick="playDadVideo()" style="display: inline-flex; align-items: center; gap: 8px; padding: 11px 26px; border-radius: 9999px; font-weight: 700; cursor: pointer; border: none;">
-                <span>Explore Education Page</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-primary" onclick="playDadVideo()" style="display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; border-radius: 9999px; font-weight: 700; cursor: pointer; border: none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                <span>Play Video</span>
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="toggleFullscreen()" style="display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 9999px; font-weight: 600; cursor: pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                <span>Full Screen</span>
               </button>
               <button type="button" class="btn btn-secondary" onclick="openDadModal(0)" style="display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 9999px; font-weight: 600; cursor: pointer;">
                 <span>Interactive Keyframes</span>
@@ -222,6 +256,13 @@
           <!-- Right Column: Video & Preview with Play Overlay -->
           <div>
             <div class="video-preview-box">
+              <button type="button" class="video-fs-corner-btn" onclick="toggleFullscreen()" title="Toggle Fullscreen">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+                <span>Full Screen</span>
+              </button>
+
               <video id="dadLectureVideo" controls playsinline preload="metadata" poster="assets/images/dad_screens/screen_01_spatial_variation.jpg">
                 <!-- Local Video -->
                 <source src="assets/videos/dad_analysis_animation.mp4" type="video/mp4">
@@ -355,9 +396,45 @@
     function playDadVideo() {
       const v = document.getElementById('dadLectureVideo');
       const overlay = document.getElementById('dadVideoOverlay');
+      if (overlay) overlay.style.display = 'none';
       if (v) {
-        v.play();
-        if (overlay) overlay.style.display = 'none';
+        v.play().catch(e => console.log('Playback error:', e));
+      }
+    }
+
+    // Fullscreen Toggle Supporting All Browsers
+    function toggleFullscreen() {
+      const v = document.getElementById('dadLectureVideo');
+      if (!v) return;
+
+      const overlay = document.getElementById('dadVideoOverlay');
+      if (overlay) overlay.style.display = 'none';
+
+      const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+
+      if (!isFs) {
+        if (v.requestFullscreen) {
+          v.requestFullscreen();
+        } else if (v.webkitRequestFullscreen) {
+          v.webkitRequestFullscreen();
+        } else if (v.webkitEnterFullscreen) {
+          v.webkitEnterFullscreen();
+        } else if (v.mozRequestFullScreen) {
+          v.mozRequestFullScreen();
+        } else if (v.msRequestFullscreen) {
+          v.msRequestFullscreen();
+        }
+        v.play().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
       }
     }
 
