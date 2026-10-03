@@ -255,3 +255,48 @@ function toggleDronePlay() {
     }
   }
 }
+
+// 7. Video Fullscreen & Seamless Theater Expansion Mode
+function toggleVideoFullscreen(wrapperId, videoId) {
+  const wrapper = document.getElementById(wrapperId);
+  const video = document.getElementById(videoId);
+  if (!wrapper || !video) return;
+
+  if (wrapper.classList.contains('theater-mode')) {
+    exitTheaterMode(wrapperId);
+    return;
+  }
+
+  // Try native element requestFullscreen first
+  const requestFS = video.requestFullscreen || video.webkitRequestFullscreen || video.mozRequestFullScreen || video.msRequestFullscreen;
+  if (requestFS && document.fullscreenEnabled) {
+    requestFS.call(video).catch(() => {
+      // Fallback to theater mode if blocked by iframe / container
+      enterTheaterMode(wrapper);
+    });
+  } else {
+    enterTheaterMode(wrapper);
+  }
+}
+
+function enterTheaterMode(wrapper) {
+  wrapper.classList.add('theater-mode');
+  document.body.style.overflow = 'hidden';
+}
+
+function exitTheaterMode(wrapperId) {
+  const wrapper = typeof wrapperId === 'string' ? document.getElementById(wrapperId) : wrapperId;
+  if (wrapper) {
+    wrapper.classList.remove('theater-mode');
+    document.body.style.overflow = '';
+  }
+}
+
+// Global Escape Key to exit Theater Mode
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const activeTheaters = document.querySelectorAll('.theater-mode');
+    activeTheaters.forEach(w => exitTheaterMode(w));
+  }
+});
+
