@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education & Courseware | RWESL - Regional Water Environment System Lab</title>
-  <meta name="description" content="RWESL Visual Hydrology Education: Video lectures, PowerPoint presentations, and Excel practice models for Water Cycle Dynamics, Precipitation Estimation, Thiessen Polygon Method, and DAD Analysis.">
+  <title>Basic / Elementary Hydrology (Undergraduate) | Education & Courseware - RWESL</title>
+  <meta name="description" content="Basic / Elementary Hydrology undergraduate courseware at RWESL: Video lectures, PowerPoint slides, and applied Excel practice models covering Water Cycle, Precipitation Estimation, Thiessen Polygons, and DAD Analysis.">
   <link rel="icon" type="image/png" href="assets/images/rwesl_logo_circle.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -624,15 +624,35 @@
   <main class="main-content">
     <div class="container" style="padding-top: 32px; padding-bottom: 90px;">
       
-      <!-- Page Header -->
-      <div>
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-          <span class="live-rec-dot" style="background-color: #10b981; box-shadow: 0 0 10px #10b981;"></span>
-          <span style="font-size: 0.76rem; font-weight: 700; color: #6ee7b7; letter-spacing: 0.08em; text-transform: uppercase;">RWESL Educational Repository & Courseware</span>
+      <!-- Academic Subject & Course Banner -->
+      <div class="edu-subject-banner" style="background: linear-gradient(135deg, rgba(8, 24, 44, 0.95) 0%, rgba(13, 38, 66, 0.95) 100%); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 18px; padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 212, 255, 0.1); position: relative; overflow: hidden;">
+        <div style="position: absolute; right: -20px; top: -20px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%); pointer-events: none;"></div>
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 9999px; background: rgba(56, 189, 248, 0.16); border: 1px solid rgba(56, 189, 248, 0.45); color: #38bdf8;">
+              📖 SUBJECT / COURSE MODULES
+            </span>
+            <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 10px; border-radius: 9999px; background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.5); color: #6ee7b7; display: inline-flex; align-items: center; gap: 4px;">
+              🎓 FOR UNDERGRADUATE STUDENTS
+            </span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: #94a3b8; padding: 3px 6px;">
+              GNU Smart Agriculture & Agricultural Engineering
+            </span>
+          </div>
+          <span style="font-size: 0.76rem; font-weight: 700; color: #cbd5e1; background: rgba(15, 23, 42, 0.7); padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            4 Modules (Lectures 01–04)
+          </span>
         </div>
-        <h1 class="edu-page-title">Education & Hydrologic Modules</h1>
-        <p class="edu-page-subtitle">
-          Scientific video lectures, slide presentations (PPTX), and applied workbook models (XLSX). Click to view slides and spreadsheets directly in your browser or download the full files.
+
+        <h1 class="edu-page-title" style="font-size: clamp(1.8rem, 2.8vw, 2.3rem); margin-bottom: 4px;">
+          Basic / Elementary Hydrology
+        </h1>
+        <span style="color: #38bdf8; font-size: 0.96rem; font-weight: 700; margin-bottom: 10px; display: block; letter-spacing: 0.01em;">
+          기초 수문학 (학부생 전공 기초 과정)
+        </span>
+        <p class="edu-page-subtitle" style="max-width: 900px; font-size: 0.92rem; line-height: 1.6; color: #cbd5e1;">
+          Foundational hydrologic curriculum for undergraduate engineering students. Topics include global catchment water balance, rain gauge measurement principles, spatial area-weighted precipitation estimation, Thiessen polygon geometric weighting, and storm Depth–Area–Duration (DAD) analysis. Includes scientific video lectures, slide decks (PPTX), and applied calculation workbooks (XLSX).
         </p>
       </div>
 
@@ -641,7 +661,7 @@
         <div class="edu-filter-pills" id="lectureFilterPills">
           <button type="button" class="edu-filter-pill active" onclick="filterLectures('all', this)">
             <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #00d4ff;"></span>
-            All Modules (4)
+            All 4 Modules
           </button>
           <button type="button" class="edu-filter-pill" onclick="filterLectures('lec1', this)">
             <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #38bdf8;"></span>
@@ -676,7 +696,7 @@
         <!-- ========================================== -->
         <!-- LECTURE 01: The Global Water Cycle         -->
         <!-- ========================================== -->
-        <div class="edu-lecture-row" id="lecture-01" data-cat="lec1" data-keywords="water cycle evaporation condensation precipitation rainfall telemetry infiltration groundwater aquifers runoff">
+        <div class="edu-lecture-row" id="lecture-01" data-cat="lec1" data-keywords="basic elementary hydrology undergraduate water cycle evaporation condensation precipitation rainfall telemetry infiltration groundwater aquifers runoff">
           
           <!-- Small Video Window (260px) -->
           <div class="edu-small-video-box" id="mediaBox1">
@@ -706,7 +726,8 @@
             <div>
               <div class="edu-meta-strip">
                 <span class="edu-pill-badge pill-l1">Lecture 01</span>
-                <span class="edu-course-label">Basic Hydrology • Cycle Dynamics • 8K Scientific Video</span>
+                <span class="edu-course-label" style="color: #7dd3fc; font-weight: 700;">Basic / Elementary Hydrology</span>
+                <span style="font-size: 0.7rem; color: #6ee7b7; background: rgba(16, 185, 129, 0.12); padding: 1px 7px; border-radius: 4px; font-weight: 700;">🎓 Undergraduate</span>
               </div>
               <h3 class="edu-row-title">The Global Water Cycle & Catchment Hydrology</h3>
               <span class="edu-row-subkorean">전 지구적 물순환 및 유역 수문학</span>
@@ -750,7 +771,8 @@
             <div>
               <div class="edu-meta-strip">
                 <span class="edu-pill-badge pill-l2">Lecture 02</span>
-                <span class="edu-course-label">Basic Hydrology • Dr. Muhammad Waqas</span>
+                <span class="edu-course-label" style="color: #6ee7b7; font-weight: 700;">Basic / Elementary Hydrology</span>
+                <span style="font-size: 0.7rem; color: #6ee7b7; background: rgba(16, 185, 129, 0.12); padding: 1px 7px; border-radius: 4px; font-weight: 700;">🎓 Undergraduate</span>
               </div>
               <h3 class="edu-row-title">Precipitation Estimation & Areal Weighting</h3>
               <span class="edu-row-subkorean">강수량 산정 및 면적가중평균 기법</span>
@@ -790,7 +812,7 @@
         <!-- LECTURE 03: The Thiessen Polygon Method    -->
         <!-- Small Video Window + Clickable Buttons     -->
         <!-- ========================================== -->
-        <div class="edu-lecture-row" id="lecture-03" data-cat="lec3" data-keywords="thiessen polygon method perpendicular bisectors weights influence zones worked example excel practice ppt video">
+        <div class="edu-lecture-row" id="lecture-03" data-cat="lec3" data-keywords="basic elementary hydrology undergraduate thiessen polygon method perpendicular bisectors weights influence zones worked example excel practice ppt video">
           
           <!-- Small Video Window (260px) -->
           <div class="edu-small-video-box" id="mediaBox3">
@@ -819,7 +841,8 @@
             <div>
               <div class="edu-meta-strip">
                 <span class="edu-pill-badge pill-l3">Lecture 03</span>
-                <span class="edu-course-label">Basic Hydrology • Spatial Polygons • Video + Courseware</span>
+                <span class="edu-course-label" style="color: #fde047; font-weight: 700;">Basic / Elementary Hydrology</span>
+                <span style="font-size: 0.7rem; color: #6ee7b7; background: rgba(16, 185, 129, 0.12); padding: 1px 7px; border-radius: 4px; font-weight: 700;">🎓 Undergraduate</span>
               </div>
               <h3 class="edu-row-title">The Thiessen Polygon Method (Simplified)</h3>
               <span class="edu-row-subkorean">티센 다각형법 · 수직이등분선과 면적비율 가중</span>
@@ -869,7 +892,7 @@
         <!-- LECTURE 04: Depth-Area-Duration (DAD)      -->
         <!-- Small Video Window + Clickable Buttons     -->
         <!-- ========================================== -->
-        <div class="edu-lecture-row" id="lecture-04" data-cat="lec4" data-keywords="dad analysis depth area duration curves isohyets moving window rainfall intensity namgang flood validation ppt excel video">
+        <div class="edu-lecture-row" id="lecture-04" data-cat="lec4" data-keywords="basic elementary hydrology undergraduate dad analysis depth area duration curves isohyets moving window rainfall intensity namgang flood validation ppt excel video">
           
           <!-- Small Video Window (260px) -->
           <div class="edu-small-video-box" id="mediaBox4">
@@ -898,7 +921,8 @@
             <div>
               <div class="edu-meta-strip">
                 <span class="edu-pill-badge pill-l4">Lecture 04</span>
-                <span class="edu-course-label">Basic Hydrology • Storm Analysis • Video + Courseware</span>
+                <span class="edu-course-label" style="color: #d8b4fe; font-weight: 700;">Basic / Elementary Hydrology</span>
+                <span style="font-size: 0.7rem; color: #6ee7b7; background: rgba(16, 185, 129, 0.12); padding: 1px 7px; border-radius: 4px; font-weight: 700;">🎓 Undergraduate</span>
               </div>
               <h3 class="edu-row-title">Depth–Area–Duration (DAD) Analysis</h3>
               <span class="edu-row-subkorean">강우깊이–면적–지속기간 DAD 해석 및 곡선</span>
@@ -1260,7 +1284,7 @@
     // =========================================================================
     const lectureDatasets = {
       1: {
-        tag: "Lecture 01 • Global Water Cycle",
+        tag: "Basic / Elementary Hydrology (Undergraduate) • Lecture 01",
         screens: [
           {
             title: "Stage 01: Watershed Landscape & Hydrologic Baseline",
@@ -1300,7 +1324,7 @@
         ]
       },
       2: {
-        tag: "Lecture 02 • Precipitation Estimation",
+        tag: "Basic / Elementary Hydrology (Undergraduate) • Lecture 02",
         screens: [
           {
             title: "Slide 01: Lecture 2 Overview — Precipitation Estimation",
@@ -1330,7 +1354,7 @@
         ]
       },
       3: {
-        tag: "Lecture 03 • Thiessen Polygon Method",
+        tag: "Basic / Elementary Hydrology (Undergraduate) • Lecture 03",
         screens: [
           {
             title: "Slide 01: The Thiessen Polygon Method — Conceptual Foundations",
@@ -1370,7 +1394,7 @@
         ]
       },
       4: {
-        tag: "Lecture 04 • DAD Analysis",
+        tag: "Basic / Elementary Hydrology (Undergraduate) • Lecture 04",
         screens: [
           {
             title: "Slide 01: DAD Analysis Principles",
