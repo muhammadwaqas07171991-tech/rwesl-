@@ -284,6 +284,7 @@
           <span class="journal-chip highlight">Water Research</span>
           <span class="journal-chip highlight">Journal of Hydrology</span>
           <span class="journal-chip highlight">Ecohydrology & Hydrobiology</span>
+          <span class="journal-chip highlight">Technologies (MDPI)</span>
           <span class="journal-chip">Science of the Total Environment</span>
           <span class="journal-chip">Environmental Pollution</span>
           <span class="journal-chip">Water (MDPI)</span>
@@ -304,6 +305,33 @@
       <div class="container">
         <div class="pub-list">
           
+          <!-- Publication 0: Technologies MDPI 2026 (Jinyang Lake Cyanobacterial Bloom-Risk) -->
+          <div class="pub-card" data-category="ai watershed">
+            <div class="pub-meta">
+              <span class="pub-year">2026</span>
+              <span class="pub-journal">Technologies (MDPI)</span>
+              <span class="badge badge-cyan" style="font-size: 0.72rem; padding: 3px 10px;">SCIE • IF 5.2 • CiteScore 6.7 • Open Access</span>
+            </div>
+            <h3 class="pub-title">Weekly Cyanobacterial Bloom-Risk Early Warning Using Deep LSTM and Hybrid CNN-LSTM Models in Jinyang Lake, South Korea</h3>
+            <div class="pub-authors">
+              <strong>Ha S†</strong>, <strong>Waqas M†</strong>, <strong>Kim SM*</strong> <span style="font-size: 0.85rem; color: var(--text-dim);">(† Equal contribution)</span>.
+            </div>
+            <p style="font-size: 0.96rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7;">
+              Develops a multi-week probabilistic cyanobacterial bloom-risk early-warning framework (1–4 week lead time for &gt;1000 cells/mL) across 16 monitoring stations in Jinyang Lake and the Namgang Dam basin (2011–2025). Integrates spatial Principal Component Analysis (PCA), ExtraTrees feature screening, Deep LSTM, and Hybrid CNN-LSTM sequence classifiers with Platt scaling calibration, achieving F1 = 0.849 (CSI = 0.738) at Naedong and F1 = 0.758 (CSI = 0.610) at Panmun at the 4-week operational horizon.
+            </p>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.3390/technologies14110725" target="_blank" rel="noopener noreferrer" class="pub-link-btn" style="background: rgba(0, 212, 255, 0.16); color: #7dd3fc; border-color: rgba(56, 189, 248, 0.45);">
+                DOI: 10.3390/technologies14110725 ↗
+              </a>
+              <a href="https://www.mdpi.com/2227-7080/14/11/725" target="_blank" rel="noopener noreferrer" class="pub-link-btn">
+                MDPI Article ↗
+              </a>
+              <button class="pub-link-btn" onclick="copyCitation('Ha, S., Waqas, M., & Kim, S. M. (2026). Weekly Cyanobacterial Bloom-Risk Early Warning Using Deep LSTM and Hybrid CNN-LSTM Models in Jinyang Lake, South Korea. Technologies, 14(11), 725. https://doi.org/10.3390/technologies14110725')">
+                Copy Citation
+              </button>
+            </div>
+          </div>
+
           <!-- Publication 1: Ecohydrology & Hydrobiology -->
           <div class="pub-card" data-category="ai">
             <div class="pub-meta">
@@ -554,7 +582,8 @@
         btn.classList.add('active');
         const filter = btn.getAttribute('data-filter');
         document.querySelectorAll('.pub-card').forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          const categories = (card.getAttribute('data-category') || '').split(/\s+/);
+          if (filter === 'all' || categories.includes(filter)) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
